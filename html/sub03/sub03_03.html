@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.fancybox.js"></script>
+<link rel="stylesheet" href="../../css/jquery.fancybox.css">
+<link rel="stylesheet" href="../../css/style.css">
+<script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=0c39d2727183afcc0e2f6c2edda6ebd7"></script>
+<script type="text/javascript" src="../../js/border.js"></script>
+<link rel="stylesheet" href="../../css/style.css">
+<style>
+
+	.map_wrap {position:relative;overflow:hidden;width:100%;height:650px; text-align:center;}
+	.radius_border{border:1px solid #919191;border-radius:5px;}     
+	.label {margin-bottom: 96px;}
+	.label * {display: inline-block;vertical-align: top;}
+	.label .left {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
+	.label .center {background: url(http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;}
+	.label .right {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
+	.custom_typecontrol {visibility: hidden;position:absolute;top:200px;overflow:hidden;width:600px;height:400px;margin-left:150px;padding:0;z-index:1;font-size:12px;font-family:'Malgun Gothic', '맑은 고딕', sans-serif;background-color: #3e8e41}
+	.button {
+      display: inline-block;
+	  height:35px;
+	  padding: 0px 20px;
+	  font-size: 20px;
+	  cursor: pointer;
+	  text-align: center;
+	  text-decoration: none;
+	  outline: none;
+	  color: #fff;
+	  background-color: #8060DF;
+	  border: none;
+	  border-radius: 7px;
+	  line-height:37px;
+	  box-shadow:0px 5px 5px rgba(0,0,0,0.3);  
+	  letter-spacing: 1px;
+	  font-weight: bold;
+	}
+	
+
+	</style>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.fancybox').fancybox();
+	});
+</script>
+<link rel="stylesheet" href="../../css/common2.css">
+</head>
+<body class="bodyfont">
+	<div class="wrap">
+		<div class="lnb bg03">
+			<h1 style="letter-spacing: 3px;">공원시설</h1>
+			<ul>
+				<li><a href="#" onClick=location.href('./sub03_01.html')><span style="letter-spacing: 3px;">탐방로</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_02.html')><span style="letter-spacing: 3px;">자연관찰로</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_03.html') class="on"  ><span style="letter-spacing: 3px;">야영장</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_04.html')><span style="letter-spacing: 3px;">주차장</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_06.html')><span style="letter-spacing: 3px;">탐방지원센터</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_05.html')><span style="letter-spacing: 3px;">탐방안내소</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_07.html')><span style="letter-spacing: 3px;">자원봉사센터</span></a></li>
+			</ul>
+		</div>
+		<div class="content_box type03">
+			<div class="sub_nav type3 wide">
+				<ul class="type2">
+					<li><a href="#" onClick=location.href('./sub03_03_01.html')>닷돈재 풀옵션캠핑존</a></li>
+					<li><a href="#" onClick=location.href('./sub03_03_02.html')>닷돈재 자동차야영장</a></li>
+					<li><a href="#" onClick=location.href('./sub03_03_04.html')>송계 자동차야영장</a></li>
+					<li><a href="#" onClick=location.href('./sub03_03_06.html') style="width: 150px;">덕주 야영장</a></li>
+					<li><a href="#" onClick=location.href('./sub03_03_08.html') style="width: 150px;">용하 야영장</a></li>
+					<li><a href="#" onClick=location.href('./sub03_03_10.html')>하선암카라반야영장</a></li>
+				</ul>
+			</div>
+			<div class="r_box2 type2">
+				<h2>야영장</h2>
+				<div class="map_area">
+					<div class="map_daum"><div id="map" style="width:100%;height:720px;"></div></div>
+					<ul class="position06">
+						
+						<!-- <li><a href="resource07_01.html" style="left:367px;top:286px" class="fancybox fancybox.iframe" data-fancybox-group="mygroup9">송계 자동차야영장</a></li>
+						<li><a href="resource07_02.html" style="left:460px;top:514px" class="fancybox fancybox.iframe" data-fancybox-group="mygroup9">닷돈재 자동차야영장</a></li>
+						<li><a href="resource07_03.html" style="left:397px;top:407px" class="fancybox fancybox.iframe" data-fancybox-group="mygroup9">덕주 야영장</a></li>
+						<li><a href="resource07_04.html" style="left:659px;top:413px" class="fancybox fancybox.iframe" data-fancybox-group="mygroup9">용하 야영장</a></li>
+						<li><span style="left:972px;top:259px">소선암자동차야영장<br>( 현 주차장 )</span></li>
+						<li><span style="left:951px;top:399px">상선암자동차야영장<br>( 현 주차장 )</span></li> -->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="fm_logo">국립공원</p> 
+		<ul class="nav">
+						
+			<li><a href="#" class="nav01" onClick=location.href('./sub03_02_05.html')>이전</a></li>
+			<li><a href="#" class="nav02" onClick=location.href('./sub03_03_01.html')>다음</a></li>
+			<li><a href="#" class="nav03" onClick=location.href('/html/main/main.html')>홈</a></li>
+
+		</ul>
+	</div>
+<script>
+    
+	
+	 
+    var message='';
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	    mapOption = { 
+			center: new daum.maps.LatLng(36.88508761502684,128.1974791344576), // 지도의 중심좌표
+	        level: 8
+	    };
+	
+	var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+	map.setMapTypeId(daum.maps.MapTypeId.HYBRID);    
+	var mapTypeControl = new daum.maps.MapTypeControl();
+	map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+	var zoomControl = new daum.maps.ZoomControl();
+	map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+    
+
+	// 지도에 표시할 선을 생성합니다
+	var polyline = new daum.maps.Polyline({
+	    path: linePath, // 선을 구성하는 좌표배열 입니다
+	    strokeWeight: 2, // 선의 두께 입니다
+	    strokeColor: '#FF0000', // 선의 색깔입니다
+	    strokeOpacity: 0.5, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+	    strokeStyle: 'solid’' // 선의 스타일입니다
+	});
+
+	// 지도에 선을 표시합니다 
+	polyline.setMap(map); 
+	
+	function movepos(x,y){
+        var moveLatLon = new daum.maps.LatLng(x,y);
+    	map.panTo(moveLatLon);  
+    }
+	
+    function setLevel(level){
+        	map.setLevel(level);
+    }
+
+	/*$( document ).ready(function() {
+	    var myVar = setInterval(function(){ setMap(36.857171, 128.127398); clearInterval(myVar); }, 1000);
+	});*/
+
+	function setMap(x,y){
+		movepos(x,y);  
+		window.setTimeout(function(){ setLevel(7);}, 1000);
+	}
+
+	var linePath = [
+		new daum.maps.LatLng(36.88474563090314,128.0784199056674),
+		new daum.maps.LatLng(36.89017348,128.09306417)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+	
+	var content = '<ul class="position03"><li><a href="#" onClick=location.href("./sub03_03_04.html") style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="button">송계 자동차야영장</div></a></li></div>';
+	var position = new daum.maps.LatLng(36.89017348,128.09306417);  
+	var customOverlay1 = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay1.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_03.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.88474563090314,128.0784199056674); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+
+	var linePath = [
+		new daum.maps.LatLng(36.84339979880184,128.09379216192502),
+		new daum.maps.LatLng(36.84517348,128.10806417)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+ 
+	var content = '<ul class="position03"><li><a href="#" onClick=location.href("./sub03_03_01.html") style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="button">닷돈재 풀옵션캠핑존</div></a></li></div>';
+	var position = new daum.maps.LatLng(36.84517348,128.10806417);  
+	var customOverlay1 = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay1.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_03.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.84339979880184,128.09379216192502); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+
+	var linePath = [
+		new daum.maps.LatLng(36.84339979880184,128.09379216192502),
+		new daum.maps.LatLng(36.83317348,128.10806417)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+ 
+	var content = '<ul class="position03"><li><a href="#" onClick=location.href("./sub03_03_02.html") style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="button">닷돈재 자동차야영장</div></a></li></div>';
+	var position = new daum.maps.LatLng(36.83317348,128.10806417);  
+	var customOverlay1 = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay1.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_03.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.84339979880184,128.09379216192502); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+
+	var linePath = [
+		new daum.maps.LatLng(36.86745356192314,128.08789974701096),
+		new daum.maps.LatLng(36.86217348,128.09806417)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position03"><li><a href="#" onClick=location.href("./sub03_03_06.html") style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="button">덕주 야영장</div></a></li></div>';
+	var position = new daum.maps.LatLng(36.86217348,128.09806417);  
+	var customOverlay1 = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay1.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_03.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.86745356192314,128.08789974701096); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+
+	var linePath = [
+		new daum.maps.LatLng(36.85787497232186,128.16218485671962),
+		new daum.maps.LatLng(36.85517348,128.17306417)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position03"><li><a href="#" onClick=location.href("./sub03_03_08.html") style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="button">용하 야영장</div></a></li></div>';
+	var position = new daum.maps.LatLng(36.85517348,128.17306417);  
+	var customOverlay1 = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay1.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_03.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.85787497232186,128.16218485671962); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);	
+
+	var linePath = [
+		new daum.maps.LatLng(36.9106,128.3073),
+		new daum.maps.LatLng(36.9156,128.3223)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position03"><li><a href="#" onClick=location.href("./sub03_03_10.html") style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="button">하선암카라반야영장</div></a></li></div>';
+	var position = new daum.maps.LatLng(36.9156,128.3223);  
+	var customOverlay1 = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay1.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_03.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.9106,128.3073); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+ 
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="../../css/style.css">
+<script>
+$(document).ready(function(){
+	var slider_02 =	$('.slider2').bxSlider({
+			auto: true,controls: false,autoControls: true,captions: true,
+		});
+		// 클릭시 멈춤 현상 해결 //
+		$(document).on('click','.bx-next, .bx-prev',function() {
+		slider_02.stopAuto();
+		slider_02.startAuto();;
+		});
+		$(document).on('mouseover','.bx-pager, #bx-pager1',function() {
+		slider_02.stopAuto();
+		slider_02.startAuto();
+		});	
+});
+</script>
+<link rel="stylesheet" href="../../css/common2.css">
+</head>
+<body class="bodyfont">
+	<div class="wrap">
+		<div class="lnb bg05"> 
+			<h1 style="letter-spacing: 3px;">공원탐방</h1>
+			<ul>
+				<li><a href="#" class="on" onClick=location.href('./sub05_01.html')><span style="letter-spacing: 3px;">탐방프로그램</span></a></li>
+				<li><a href="#" onClick=location.href('./sub05_02.html')><span style="letter-spacing: 3px;">미래세대<br/>환경교육</span></a></li>
+				<li><a href="#" onClick=location.href('./sub05_03.html')><span style="letter-spacing: 3px;">생태관광</span></a></li>
+				<li><a href="#" onClick=location.href('./sub05_04.html')><span style="letter-spacing: 3px;">명품마을</span></a></li>
+			</ul>
+		</div>
+		<div class="content_box type05">
+			<div class="sub_nav type2">
+				<ul>
+					<li><a href="#" class="on" onClick=location.href('./sub05_01.html') >야생화 향기와 함께 떠나는 만수골</a></li>
+					<li><a href="#" onClick=location.href('./sub05_01_02.html')>중원문화유산답사기</a></li>
+					<li><a href="#" onClick=location.href('./sub05_01_03.html')>마의태자의 흔적을 찾아나서는 하늘재</a></li>
+					<li><a href="#" onClick=location.href('./sub05_01_04.html')>에코로드 탐사대</a></li>
+				</ul>
+			</div>
+			<div class="r_box">
+				<h2>야생화 향기와 함께 떠나는 만수골</h2>
+				<div class="txt">
+					<div class="program_wrap type3">
+						<div class="program_info">
+							<dl>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;width: 140px;"><img src="../../images/contents/blt05.png"/> 주제</dt>
+								<dd style="font-size: 24px;font-weight: bold;">만수계곡의 계절별로 변하는 자연생태계 이해</dd>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;width: 140px;"><img src="../../images/contents/blt05.png"/> 장소/시간</dt>
+								<dd style="font-size: 24px;font-weight: bold;">만수계곡자연관찰로(2km)/2시간</dd>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;width: 140px;"><img src="../../images/contents/blt05.png"/> 운영방법</dt>
+								<dd style="font-size: 24px;font-weight: bold;">전화 및 인터넷 사전 접수</dd>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;width: 140px;"><img src="../../images/contents/blt05.png"/> 주요내용</dt>
+								<dd style="font-size: 24px;font-weight: bold;">계절별로 피는 야생화와 소나무, 참나무군락, 덩굴식물과 계곡 등 다양한 생태계의 계절변화를 직접 관찰하고 체험하는 시간</dd>
+							</dl>
+						</div>
+						<div class="program_photo_bg">
+							<div class="program_photo">
+								<ul class="slider2">
+									<li><img src="../../images/contents/program01_01.jpg" alt="" style="width: 660px;height: 445px;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/contents/program01_03.jpg" alt="" style="width: 660px;height: 445px;"></li>
+									<li><img src="../../images/contents/program01_04.jpg" alt="" style="width: 660px;height: 445px;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/contents/program01_05.jpg" alt="" style="width: 660px;height: 445px;"></li>
+									<li><img src="../../images/contents/program01_06.jpg" alt="" style="width: 660px;height: 445px;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/contents/program01_09.jpg" alt="" style="width: 660px;height: 445px;"></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="fm_logo">국립공원</p> 
+		<ul class="nav">
+			<li><a class="nav01_no">이전</a></li>
+			<li><a href="#" class="nav02" onClick=location.href('./sub05_01_02.html')>다음</a></li>
+			<li><a href="#" class="nav03" onClick=location.href('/html/main/main.html')>홈</a></li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/TweenMax.min.js"></script>
+<script src="../../js/TweenLite.min.js"></script>
+<script src="../../js/jquery.viewportchecker.min.js"></script>
+<script src="../../js/jquery.animatecss.js"></script>
+<script src="../../js/design.js"></script>
+<link rel="shortcut icon" href="../../images/favicon.ico" type="image/ico" />
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/animate.css">
+<script>
+$(document).ready(function(){
+	//$(".main h1").fadeIn(1000);
+	//$(".main h1").animate({top:'135px'},{queue:false,duration:500});
+	//$(".main h1 img").animate({height:'128px'},{queue:false,duration:500});
+	
+	$(".main h1 img").animate({height:'128px'},{queue:false,duration:1000});
+	$(".main h1").css({ top: '135px' }).show().addClass("animated fadeInDown");
+
+	var isTrident5 = navigator.userAgent.indexOf("Trident/5") > -1;
+	
+	if (isTrident5) {
+		var TimeLine = 600;
+		var ANI_VALUE = {marginLeft: 0, marginTop: 0, width: 230, height: 230};
+		$(".main_nav ul li").hide().css({"margin-left":"57px", "margin-top":"57px", "width": "115px", "height":"115px"});
+		
+		$('.nav01').show().animate(ANI_VALUE, TimeLine, function() {
+		    $('.nav02').show().animate(ANI_VALUE, TimeLine, function() {
+			    $('.nav03').show().animate(ANI_VALUE, TimeLine, function() {
+			    	$('.nav04').show().animate(ANI_VALUE, TimeLine, function() {
+				    	$('.nav05').show().animate(ANI_VALUE, TimeLine, function() {
+				    		$('.nav06').show().animate(ANI_VALUE, TimeLine, function() {
+								$('.nav07').show().animate(ANI_VALUE, TimeLine, function() {
+				    			});
+				    		});
+				    	});
+			    	});
+			    });
+		    });
+	    });
+	
+	} else {
+	
+		$(".main_nav ul li").hide();
+		var ANI_NAME = "animated zoomIn";
+		var EVENT_NAME = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
+	
+		$('.nav01').show().addClass(ANI_NAME).one(EVENT_NAME, function() {
+			$('.nav02').show().addClass(ANI_NAME).one(EVENT_NAME, function() {
+				$('.nav03').show().addClass(ANI_NAME).one(EVENT_NAME, function() {
+					$('.nav04').show().addClass(ANI_NAME).one(EVENT_NAME, function() {
+						$('.nav05').show().addClass(ANI_NAME).one(EVENT_NAME, function() {
+							$('.nav06').show().addClass(ANI_NAME).one(EVENT_NAME, function() {
+								$('.nav07').show().addClass(ANI_NAME).one(EVENT_NAME, function() {
+								});
+							});
+						});
+					});
+				});
+			});
+		});
+	
+	}
+	
+	TweenMax.to( $( ".cloud" ), 180, { left: "1920px", repeat: -1, onRepeat: function() {
+		TweenLite.set(this.target[0], { left: "0px" });
+	}});
+	
+});
+
+  function maxwin() {
+  if(window.innerWidth == 1920 && window.innerHeight == 1079){
+    var wscript = new ActiveXObject("WScript.Shell");
+	if (wscript!=null) {
+		 wscript.SendKeys("{F11}");
+	}
+  }
+  }
+  function closeWin() {
+    if (confirm("전자현황판을 종료하시겠습니까?") == true){    //확인
+		maxwin();
+		setTimeout(function(){var nvua = navigator.userAgent;
+		if (nvua.indexOf('MSIE') >= 0){
+			if(nvua.indexOf('MSIE 5.0') == -1) {
+				top.opener = '';
+			}
+		} else if (nvua.indexOf('Gecko') >= 0){
+			top.name = 'CLOSE_WINDOW';
+			wid = window.open('','CLOSE_WINDOW');
+		}
+		top.close();}, 500);
+	}else{   //취소
+		return;
+	}
+ }
+</script>
+</head>
+<body class="main" style="height: 1079px;">
+	<div class="cloudbg">
+		<div class="cloud"></div>
+	</div>
+	<h1><a href="javascript:closeWin();"><img src="../../images/main/copy.png" alt="월악산 국립공원"></a></h1>
+	<div class="main_nav">
+		<ul>
+			<li class="nav01"><a href="#" onClick=location.href('../sub01/sub01_01.html')>일반현황</a></li>
+			<li class="nav02"><a href="#" onClick=location.href('../sub02/sub02_01.html')>자원보전</a></li>
+			<li class="nav03"><a href="#" onClick=location.href('../sub03/sub03_01.html')>공원시설</a></li>
+			<li class="nav04"><a href="#" onClick=location.href('../sub04/sub04_01.html')>재난안전</a></li>
+			<li class="nav05"><a href="#" onClick=location.href('../sub05/sub05_01.html')>공원탐방</a></li>
+			<li class="nav06"><a href="#" onClick=location.href('../sub06/sub06_01.html')>홍보영상</a></li>
+			<li class="nav07"><a href="#" onClick=location.href('./total_map.html')>현황지도</a></li>
+		</ul>
+	</div>
+</body>
+</html>

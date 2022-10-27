@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.fancybox.js"></script>
+<link rel="stylesheet" href="../../css/jquery.fancybox.css">
+<link rel="stylesheet" href="../../css/style.css">
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.fancybox').fancybox();
+	});
+</script>
+<script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=0c39d2727183afcc0e2f6c2edda6ebd7"></script>
+<script type="text/javascript" src="../../js/border.js"></script>
+<link rel="stylesheet" href="../../css/common2.css">
+<style>
+
+	.map_wrap {position:relative;overflow:hidden;width:100%;height:650px; text-align:center;}
+	.radius_border{border:1px solid #919191;border-radius:5px;}     
+	.label {margin-bottom: 96px;}
+	.label * {display: inline-block;vertical-align: top;}
+	.label .left {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
+	.label .center {background: url(http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;}
+	.label .right {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
+	.custom_typecontrol {visibility: hidden;position:absolute;top:200px;overflow:hidden;width:600px;height:400px;margin-left:150px;padding:0;z-index:1;font-size:12px;font-family:'Malgun Gothic', '맑은 고딕', sans-serif;background-color: #3e8e41}
+	.button {
+      display: inline-block;
+	  height:25px;
+	  padding: 0px 20px;
+	  font-size: 14px;
+	  cursor: pointer;
+	  text-align: center;
+	  text-decoration: none;
+	  outline: none;
+	  color: #fff;
+	  background-color: #cc0066;
+	  border: none;
+	  border-radius: 11px;
+	  line-height:25px;
+	  box-shadow:0px 5px 5px rgba(0,0,0,0.3);
+	  font-weight: bold;
+	}
+	
+
+	</style>
+<link rel="stylesheet" href="../../css/common2.css">
+</head>
+<body class="bodyfont">
+	<div class="wrap">
+		<div class="lnb bg04">
+			<h1 style="letter-spacing: 3px;">재난안전</h1>
+			<ul>
+				<li><a href="#" onClick=location.href('../sub04/sub04_01.html') class="on"><span style="letter-spacing: 3px;">재난예경보<br/>시설</span></a></li>
+				<li><a href="#" onClick=location.href('../sub04/sub04_02.html')><span style="letter-spacing: 3px;">재해위험지구</span></a></li>
+				<li><a href="#" onClick=location.href('../sub04/sub04_03.html')><span style="letter-spacing: 3px;">안전사고현황</span></a></li>
+				
+			</ul>
+		</div>
+		<div class="content_box type04">
+			<div class="r_box2 big">
+				<h2>재난예경보시설</h2>
+				<div class="mapb">
+					<div class="map_area">
+						<div class="map_daum">
+							 <div id="map" style="width:100%;height:743px;"></div>
+						</div>
+						
+					</div>
+					<div class="map_footer">
+						<ul class="icon_list">
+							<li><span class="icon i01">우량국</span></li>
+							<li><span class="icon i05">수위국</span></li>
+							<li><span class="icon i08">경보국</span></li>
+							<li><span class="icon i07">통제국</span></li>
+							<li><span class="icon i06">중계국</span></li>
+							<li><span class="icon i03">AWS</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="btn_open"><a href="#;">open</a></div>
+				<div class="tg_box" style="height: 735px;">
+					<div class="list">
+						<table>
+							<caption style="font-weight: bold;">시설현황</caption>
+							<colgroup>
+								<col width="35%">
+								<col width="35%">
+								<col width="*">
+							</colgroup>
+							<thead>
+								<tr height=50>
+									<th scope="col" colspan="2" style="font-weight: bold;">구분</th>
+									<th scope="col" style="font-weight: bold;">수량</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="total" height=50>
+									<th colspan="2" scope="row" style="font-weight: bold;">합계</th>
+									<td style="font-weight: bold;">32</td>
+								</tr>
+								<tr height=50>
+									<td rowspan="3" class="noline l30" style="font-weight: bold;">송계지구<br>12개소</td>
+									<td style="font-weight: bold;">우량국</td>
+									<td style="font-weight: bold;">4</td>
+								</tr>
+								<tr height=50>
+									<td style="font-weight: bold;">경보국</td>
+									<td style="font-weight: bold;">7</td>
+								</tr>
+								<tr height=50>
+									<td style="font-weight: bold;">통제국</td>
+									<td style="font-weight: bold;">1</td>
+								</tr>
+								<tr height=50>
+									<td rowspan="3" class="noline l30" style="font-weight: bold;">덕산지구<br>8개소</td>
+									<td style="font-weight: bold;">우량국</td>
+									<td style="font-weight: bold;">2</td>
+								</tr>
+								<tr height=50>
+									<td style="font-weight: bold;">경보국</td>
+									<td style="font-weight: bold;">5</td>
+								</tr>
+								<tr>
+									<td style="font-weight: bold;">통제국</td>
+									<td style="font-weight: bold;">1</td>
+								</tr>
+								<tr height=50>
+									<td rowspan="3" class="noline l30" style="font-weight: bold;">단양지구<br>9개소</td>
+									<td style="font-weight: bold;">우량국</td>
+									<td style="font-weight: bold;">3</td>
+								</tr>
+								<tr height=50>
+									<td style="font-weight: bold;">경보국</td>
+									<td style="font-weight: bold;">5</td>
+								</tr>
+								<tr height=50>
+									<td style="font-weight: bold;">통제국</td>
+									<td style="font-weight: bold;">1</td>
+								</tr>
+								<tr height=50>
+									<td colspan="2" class="noline l30" style="font-weight: bold;">AWS</td>
+									<td style="font-weight: bold;">3</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="btn_close"><a href="#;">close</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="fm_logo">국립공원</p> 
+		<ul class="nav">
+			<li><a class="nav01_no">이전</a></li>
+			<li><a href="#" class="nav02" onClick=location.href('./sub04_02.html') >다음</a></li>
+			<li><a href="#" class="nav03" onClick=location.href('../main/main.html') >홈</a></li>
+		</ul>
+	</div>
+<script>
+
+	function showLayer(tgtEl) { document.getElementById(tgtEl).style.visibility = "visible"; }
+	function hideLayer(tgtEl) { document.getElementById(tgtEl).style.visibility = "hidden"; }
+
+    var message='';
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	    mapOption = { 
+			center: new daum.maps.LatLng(36.89508761502684,128.1974791344576), // 지도의 중심좌표
+	        level: 8
+	    };
+	
+	var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+	map.setMapTypeId(daum.maps.MapTypeId.HYBRID);    
+	var mapTypeControl = new daum.maps.MapTypeControl();
+	map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+	var zoomControl = new daum.maps.ZoomControl();
+	map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+    
+
+	// 지도에 표시할 선을 생성합니다
+	var polyline = new daum.maps.Polyline({
+	    path: linePath, // 선을 구성하는 좌표배열 입니다
+	    strokeWeight: 2, // 선의 두께 입니다
+	    strokeColor: '#FF0000', // 선의 색깔입니다
+	    strokeOpacity: 0.5, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+	    strokeStyle: 'solid’' // 선의 스타일입니다
+	});
+
+	// 지도에 선을 표시합니다 
+	polyline.setMap(map);   
+	
+	var content = '<div class="icon_list"><ul><li><span class="icon i01" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip711\');" onmouseout="javascript:hideLayer(\'ttip711\');">우량국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.82431,128.09126);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i01" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip714\');" onmouseout="javascript:hideLayer(\'ttip714\');">우량국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.86154,128.09978);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i01" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip715\');" onmouseout="javascript:hideLayer(\'ttip715\');">우량국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.83158,128.10554);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i01" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip716\');" onmouseout="javascript:hideLayer(\'ttip716\');">우량국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.86077,128.05653);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip719\');" onmouseout="javascript:hideLayer(\'ttip719\');">경보국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.86643,128.08803);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7110\');" onmouseout="javascript:hideLayer(\'ttip7110\');">경보국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.8572,128.07799);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7111\');" onmouseout="javascript:hideLayer(\'ttip7111\');">경보국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.85464,128.08657);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7112\');" onmouseout="javascript:hideLayer(\'ttip7112\');">경보국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.84863,128.09148);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7113\');" onmouseout="javascript:hideLayer(\'ttip7113\');">경보국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.8435,128.09315);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7114\');" onmouseout="javascript:hideLayer(\'ttip7114\');">경보국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.83498,128.09639);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7115\');" onmouseout="javascript:hideLayer(\'ttip7115\');">경보국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.88017348,128.06806417);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i07" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7165\');" onmouseout="javascript:hideLayer(\'ttip7165\');">통제국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.88705,128.07866);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i01" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip721\');" onmouseout="javascript:hideLayer(\'ttip721\');">우량국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.84958,128.18537);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+	
+	var content = '<div class="icon_list"><ul><li><span class="icon i01" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip722\');" onmouseout="javascript:hideLayer(\'ttip722\');">우량국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.85124,128.16925);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip729\');" onmouseout="javascript:hideLayer(\'ttip729\');">경보국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.89892,128.12468);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7210\');" onmouseout="javascript:hideLayer(\'ttip7210\');">경보국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.87424,128.15016);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7211\');" onmouseout="javascript:hideLayer(\'ttip7211\');">경보국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.86289,128.15909);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7212\');" onmouseout="javascript:hideLayer(\'ttip7212\');">경보국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.85862,128.16173);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7213\');" onmouseout="javascript:hideLayer(\'ttip7213\');">경보국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.85376,128.17207);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i07" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7265\');" onmouseout="javascript:hideLayer(\'ttip7265\');">통제국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.89251,128.13938);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i01" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip741\');" onmouseout="javascript:hideLayer(\'ttip741\');">우량국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.90752,128.30992);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i01" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip742\');" onmouseout="javascript:hideLayer(\'ttip742\');">우량국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.85465,128.28315);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i01" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip743\');" onmouseout="javascript:hideLayer(\'ttip743\');">우량국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.87302,128.29283);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip749\');" onmouseout="javascript:hideLayer(\'ttip749\');">경보국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.91109,128.3085);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7410\');" onmouseout="javascript:hideLayer(\'ttip7410\');">경보국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.87738,128.29566);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7411\');" onmouseout="javascript:hideLayer(\'ttip7411\');">경보국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.86753,128.28787);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7412\');" onmouseout="javascript:hideLayer(\'ttip7412\');">경보국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.86277,128.287);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7413\');" onmouseout="javascript:hideLayer(\'ttip7413\');">경보국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.88961,128.30848);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i07" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7465\');" onmouseout="javascript:hideLayer(\'ttip7465\');">통제국</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.87329011,128.292938);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i03" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip075001\');" onmouseout="javascript:hideLayer(\'ttip075001\');">AWS</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.890077, 128.101411);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i03" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip075002\');" onmouseout="javascript:hideLayer(\'ttip075002\');">AWS</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.872341, 128.291794);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list"><ul><li><span class="icon i03" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip075003\');" onmouseout="javascript:hideLayer(\'ttip075003\');">AWS</span></li></ul></div>';
+	var position = new daum.maps.LatLng(36.827945, 128.0984);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip711" style="visibility: hidden;"><ul><li><span class="icon i01" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip711\');" onmouseout="javascript:hideLayer(\'ttip711\');">우량국</span><div class="info_txt"><p><strong>미륵우량국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.82431,128.09126);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip714" style="visibility: hidden;"><ul><li><span class="icon i01" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip714\');" onmouseout="javascript:hideLayer(\'ttip714\');">우량국</span><div class="info_txt"><p><strong>덕주우량국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.86154,128.09978);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip715" style="visibility: hidden;"><ul><li><span class="icon i01" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip715\');" onmouseout="javascript:hideLayer(\'ttip715\');">우량국</span><div class="info_txt"><p><strong>만수우량국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.83158,128.10554);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip716" style="visibility: hidden;"><ul><li><span class="icon i01" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip716\');" onmouseout="javascript:hideLayer(\'ttip716\');">우량국</span><div class="info_txt"><p><strong>골미우량국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.86077,128.05653);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip719" style="visibility: hidden;"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip719\');" onmouseout="javascript:hideLayer(\'ttip719\');">경보국</span><div class="info_txt"><p><strong>덕주경보국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.86643,128.08803);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip7110" style="visibility: hidden;"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7110\');" onmouseout="javascript:hideLayer(\'ttip7110\');">경보국</span><div class="info_txt"><p><strong>골미경보국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.8572,128.07799);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip7111" style="visibility: hidden;"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7111\');" onmouseout="javascript:hideLayer(\'ttip7111\');">경보국</span><div class="info_txt"><p><strong>물래방아경보국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.85464,128.08657);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip7112" style="visibility: hidden;"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7112\');" onmouseout="javascript:hideLayer(\'ttip7112\');">경보국</span><div class="info_txt"><p><strong>팔랑소경보국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.84863,128.09148);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip7113" style="visibility: hidden;"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7113\');" onmouseout="javascript:hideLayer(\'ttip7113\');">경보국</span><div class="info_txt"><p><strong>닷돈재경보국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.8435,128.09315);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip7114" style="visibility: hidden;"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7114\');" onmouseout="javascript:hideLayer(\'ttip7114\');">경보국</span><div class="info_txt"><p><strong>만수경보국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.83498,128.09639);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip7115" style="visibility: hidden;"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7115\');" onmouseout="javascript:hideLayer(\'ttip7115\');">경보국</span><div class="info_txt"><p><strong>송계야영장경보국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.88017348,128.06806417);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip7165" style="visibility: hidden;"><ul><li><span class="icon i07" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7165\');" onmouseout="javascript:hideLayer(\'ttip7165\');">통제국</span><div class="info_txt"><p><strong>송계통제국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.88705,128.07866);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip721" style="visibility: hidden;"><ul><li><span class="icon i01" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip721\');" onmouseout="javascript:hideLayer(\'ttip721\');">우량국</span><div class="info_txt"><p><strong>청벽대우량국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.84958,128.18537);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+	
+	var content = '<div class="icon_list" id="ttip722" style="visibility: hidden;"><ul><li><span class="icon i01" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip722\');" onmouseout="javascript:hideLayer(\'ttip722\');">우량국</span><div class="info_txt"><p><strong>수문동우량국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.85124,128.16925);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip729" style="visibility: hidden;"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip729\');" onmouseout="javascript:hideLayer(\'ttip729\');">경보국</span><div class="info_txt"><p><strong>금곡경보국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.89892,128.12468);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip7210" style="visibility: hidden;"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7210\');" onmouseout="javascript:hideLayer(\'ttip7210\');">경보국</span><div class="info_txt"><p><strong>솔밭경보국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.87424,128.15016);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip7211" style="visibility: hidden;"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7211\');" onmouseout="javascript:hideLayer(\'ttip7211\');">경보국</span><div class="info_txt"><p><strong>용하경보국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.86289,128.15909);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip7212" style="visibility: hidden;"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7212\');" onmouseout="javascript:hideLayer(\'ttip7212\');">경보국</span><div class="info_txt"><p><strong>주차장경보국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.85862,128.16173);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip7213" style="visibility: hidden;"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7213\');" onmouseout="javascript:hideLayer(\'ttip7213\');">경보국</span><div class="info_txt"><p><strong>억수경보국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.85376,128.17207);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip7265" style="visibility: hidden;"><ul><li><span class="icon i07" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7265\');" onmouseout="javascript:hideLayer(\'ttip7265\');">통제국</span><div class="info_txt"><p><strong>용하통제국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.89251,128.13938);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip741" style="visibility: hidden;"><ul><li><span class="icon i01" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip741\');" onmouseout="javascript:hideLayer(\'ttip741\');">우량국</span><div class="info_txt"><p><strong>하선암우량국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.90752,128.30992);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip742" style="visibility: hidden;"><ul><li><span class="icon i01" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip742\');" onmouseout="javascript:hideLayer(\'ttip742\');">우량국</span><div class="info_txt"><p><strong>명전교우량국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.85465,128.28315);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip743" style="visibility: hidden;"><ul><li><span class="icon i01" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip743\');" onmouseout="javascript:hideLayer(\'ttip743\');">우량국</span><div class="info_txt"><p><strong>상선암우량국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.87302,128.29283);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip749" style="visibility: hidden;"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip749\');" onmouseout="javascript:hideLayer(\'ttip749\');">경보국</span><div class="info_txt"><p><strong>하선암경보국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.91109,128.3085);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip7410" style="visibility: hidden;"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7410\');" onmouseout="javascript:hideLayer(\'ttip7410\');">경보국</span><div class="info_txt"><p><strong>중선암경보국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.87738,128.29566);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip7411" style="visibility: hidden;"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7411\');" onmouseout="javascript:hideLayer(\'ttip7411\');">경보국</span><div class="info_txt"><p><strong>상선암경보국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.86753,128.28787);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip7412" style="visibility: hidden;"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7412\');" onmouseout="javascript:hideLayer(\'ttip7412\');">경보국</span><div class="info_txt"><p><strong>특선암경보국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.86277,128.287);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip7413" style="visibility: hidden;"><ul><li><span class="icon i08" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7413\');" onmouseout="javascript:hideLayer(\'ttip7413\');">경보국</span><div class="info_txt"><p><strong>가산교경보국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.88961,128.30848);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip7465" style="visibility: hidden;"><ul><li><span class="icon i07" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip7465\');" onmouseout="javascript:hideLayer(\'ttip7465\');">통제국</span><div class="info_txt"><p><strong>선암통제국</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.87329011,128.292938);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip075001" style="visibility: hidden;"><ul><li><span class="icon i03" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip075001\');" onmouseout="javascript:hideLayer(\'ttip075001\');">AWS</span><div class="info_txt"><p><strong>영봉</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.890077, 128.101411);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip075002" style="visibility: hidden;"><ul><li><span class="icon i03" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip075002\');" onmouseout="javascript:hideLayer(\'ttip075002\');">AWS</span><div class="info_txt"><p><strong>상선암</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.872341, 128.291794);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_list" id="ttip075003" style="visibility: hidden;"><ul><li><span class="icon i03" style="background: none;box-shadow: none;" onmouseover="javascript:showLayer(\'ttip075003\');" onmouseout="javascript:hideLayer(\'ttip075003\');">AWS</span><div class="info_txt"><p><strong>미륵리주차장</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.827945, 128.0984);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+</script>
+</script>
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.fancybox.js"></script>
+<link rel="stylesheet" href="../../css/jquery.fancybox.css">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/common2.css">
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.fancybox').fancybox();
+	});
+</script>
+<script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=0c39d2727183afcc0e2f6c2edda6ebd7"></script>
+<script type="text/javascript" src="../../js/border.js"></script>
+<style>
+
+	.map_wrap {position:relative;overflow:hidden;width:100%;height:650px; text-align:center;}
+	.radius_border{border:1px solid #919191;border-radius:5px;}     
+	.label {margin-bottom: 96px;}
+	.label * {display: inline-block;vertical-align: top;}
+	.label .left {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
+	.label .center {background: url(http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;}
+	.label .right {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
+	.custom_typecontrol {visibility: hidden;position:absolute;top:200px;overflow:hidden;width:600px;height:400px;margin-left:150px;padding:0;z-index:1;font-size:12px;font-family:'Malgun Gothic', '맑은 고딕', sans-serif;background-color: #3e8e41}
+	.button {
+      display: inline-block;
+	  height:35px;
+	  padding: 0px 20px;
+	  font-size: 20px;
+	  cursor: pointer;
+	  text-align: center;
+	  text-decoration: none;
+	  outline: none;
+	  color: #fff;
+	  background-color: #cc0066;
+	  border: none;
+	  border-radius: 7px;
+	  line-height:35px;
+	  box-shadow:0px 5px 5px rgba(0,0,0,0.3);  
+	  letter-spacing: 1px;
+	}
+	
+
+	</style>
+</head>
+<body class="bodyfont">
+	<div class="wrap">
+		<div class="lnb bg02">
+			<h1 style="letter-spacing: 3px;">자원보전</h1>
+			<ul>
+				<li><a href="./sub02_01.html" class="on"><span style="letter-spacing: 3px;">자원현황</span></a></li>
+				<li><a href="./sub02_02.html"><span style="letter-spacing: 3px;">특별보호구</span></a></li>
+				<li><a href="./sub02_03.html"><span style="letter-spacing: 3px;">생태복원</span></a></li>
+			</ul>
+		</div>
+		<div class="content_box type02">
+			<div class="sub_nav">
+				<ul>
+					<li><a href="./sub02_01.html">생물자원</a></li>
+					<li><a href="./sub02_01_2.html">역사자원</a></li>
+					<li><a href="./sub02_01_3.html" class="on">경관자원</a></li>
+				</ul>
+			</div>
+			<div class="r_box2">
+				<h2>경관자원</h2>
+				<div class="mapb">
+					<div class="map_area">
+						<div class="map_daum">
+							 <div id="map" style="width:100%;height:720px;"></div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="btn_open"><a href="#;">open</a></div>
+				<div class="tg_box" style="height: 720px;">
+					<div class="list type2">
+						<table>
+							<caption style="font-weight: bold;">경관자원 현황</caption>
+							<colgroup>
+								<col width="15%">
+								<col width="*">
+							</colgroup>
+							<thead>
+								<tr height=70>
+									<th scope="col"><strong>구분</strong></th>
+									<th scope="col"><strong>경관자원</strong></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr height=70>
+									<td><strong>산봉우리(18)</strong></td>
+									<td class="tl"><strong>월악산(1,097m), 하설산(1,028m), 매두막(1,099m), 문수봉(1,162m), 대미산(1,115m), 포암산(961m), 만수봉(984m), <br>도락산(964m), 황장산(1,077m), 부봉(913m), 금수산(1,016m), 마패봉(920m), 제비봉(721m), 가은산(575m), 말목산(710m), 북바위산(772m), 제천 옥순봉(286m 명승), 단양 구담봉(330m, 명승)</strong></td>
+								</tr>
+								<tr height=70>
+									<td><strong>고개(2)</strong></td>
+									<td class="tl"><strong>충주 계립령로 하늘재(명승), 계란재</strong></td>
+								</tr>
+								<tr height=70>
+									<td><strong>바위(14)</strong></td>
+									<td class="tl"><strong>망폭대, 하선암, 상선암, 중선암, 단양 사인암(명승), 특선암, 암수바위, 자연대, 수경대, 학소대, 관폭대, 청벽대, 선미대, <br>용하선대</strong></td>
+								</tr>
+								<tr height=70>
+									<td><strong>동굴(1)</strong></td>
+									<td class="tl"><strong>보덕굴</strong></td>
+								</tr>
+								<tr height=70>
+									<td><strong>군락(2)</strong></td>
+									<td class="tl"><strong>제원 송계리 망개나무(천연기념물), 제천 복평리 모감주나무 군락(시도기념물)</strong></td>
+								</tr>
+								<tr height=70>
+									<td><strong>계곡(7)</strong></td>
+									<td class="tl"><strong>송계, 용하(구곡), 선암(구곡), 만수, 명전, 덕주, 고무서리</strong></td>
+								</tr>
+								<tr height=70>
+									<td><strong>폭포(7)</strong></td>
+									<td class="tl"><strong>월광, 수문동, 수곡용담, 병풍, 용담, 만수, 신선</strong></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="btn_close"><a href="#;">close</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="fm_logo">국립공원</p> 
+		<ul class="nav">
+			<li><a href="#" class="nav01" onClick=location.href('./sub02_01_2.html')>이전</a></li>
+			<li><a href="#" class="nav02" onClick=location.href('./sub02_02.html')>다음</a></li>
+			<li><a href="#" class="nav03" onClick=location.href('../main/main.html')>홈</a></li>
+		</ul>
+	</div>
+	<script>
+    
+    var message='';
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	    mapOption = { 
+			center: new daum.maps.LatLng(36.88508761502684,128.1974791344576), // 지도의 중심좌표
+	        level: 8
+	    };
+	
+	var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+	map.setMapTypeId(daum.maps.MapTypeId.HYBRID);    
+	var mapTypeControl = new daum.maps.MapTypeControl();
+	map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+	var zoomControl = new daum.maps.ZoomControl();
+	map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+    
+
+	// 지도에 표시할 선을 생성합니다
+	var polyline = new daum.maps.Polyline({
+	    path: linePath, // 선을 구성하는 좌표배열 입니다
+	    strokeWeight: 2, // 선의 두께 입니다
+	    strokeColor: '#FF0000', // 선의 색깔입니다
+	    strokeOpacity: 0.5, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+	    strokeStyle: 'solid’' // 선의 스타일입니다
+	});
+
+	// 지도에 선을 표시합니다 
+	polyline.setMap(map);    
+	
+	var linePath = [
+		new daum.maps.LatLng(36.865207, 128.087811),
+		new daum.maps.LatLng(36.875207, 128.022811)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+	
+	var content = '<ul class="position03"><li><a href="resource03_01.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;margin-top: -10px;margin-left: -25px"><div class="button" style="background-color: #0654DA;"><strong>송계계곡</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.875207, 128.022811);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_02.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.865207, 128.087811); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);   
+	
+	var linePath = [
+		new daum.maps.LatLng(36.900108, 128.091009),
+		new daum.maps.LatLng(36.915207, 128.022811)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position03"><li><a href="resource03_02.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;margin-top: -10px;margin-left: -25px"><div class="button" style="background-color: #e8352d;"><strong>보덕굴</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.915207, 128.022811);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_05.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.900108, 128.091009); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);  
+	
+	var linePath = [
+		new daum.maps.LatLng(36.885516, 128.1059387),
+		new daum.maps.LatLng(36.895207, 128.022811)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position03"><li><a href="resource03_03.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;margin-top: -10px;margin-left: -25px"><div class="button" style="background-color: #07991B;"><strong>월악산(영봉)</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.895207, 128.022811);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_01.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.885516, 128.1059387); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+	
+	var linePath = [
+		new daum.maps.LatLng(36.834347, 128.096853),
+		new daum.maps.LatLng(36.855207, 128.022811)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position03"><li><a href="resource03_04.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;margin-top: -10px;margin-left: -25px"><div class="button" style="background-color: #0654DA;"><strong>만수계곡</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.855207, 128.022811);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_02.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.834347, 128.096853); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+	
+	var linePath = [
+		new daum.maps.LatLng(36.814747, 128.110946),
+		new daum.maps.LatLng(36.825207, 128.152811)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position03"><li><a href="resource03_05.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;margin-top: -10px;margin-left: -25px"><div class="button" style="background-color: #d8980e;"><strong>하늘재</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.825207, 128.152811);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_04.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.814747, 128.110946); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+	
+	var linePath = [
+		new daum.maps.LatLng(36.857215, 128.163295),
+		new daum.maps.LatLng(36.857207, 128.192811)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position03"><li><a href="resource03_06.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;margin-top: -10px;margin-left: -25px"><div class="button" style="background-color: #0654DA;"><strong>용하계곡</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.857207, 128.192811);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_02.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.857215, 128.163295); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+	
+	var linePath = [
+		new daum.maps.LatLng(36.943625, 128.236998),
+		new daum.maps.LatLng(36.945207, 128.182811)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position03"><li><a href="resource03_10.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;margin-top: -10px;margin-left: -25px"><div class="button" style="background-color: #07991B;"><strong>옥순봉</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.945207, 128.182811);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_01.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.943625, 128.236998); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+	
+	var linePath = [
+		new daum.maps.LatLng(36.937593, 128.247077),
+		new daum.maps.LatLng(36.936207, 128.282811)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position03"><li><a href="resource03_07.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;margin-top: -10px;margin-left: -25px"><div class="button" style="background-color: #07991B;"><strong>구담봉</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.936207, 128.282811);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_01.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.937593, 128.247077); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+	
+	var linePath = [
+		new daum.maps.LatLng(36.921093, 128.271077),
+		new daum.maps.LatLng(36.900207, 128.212811)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position03"><li><a href="resource03_08.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;margin-top: -10px;margin-left: -25px"><div class="button" style="background-color: #07991B;"><strong>제비봉</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.900207, 128.212811);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_01.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.921093, 128.271077); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+	
+	var linePath = [
+		new daum.maps.LatLng(36.866529, 128.287289),
+		new daum.maps.LatLng(36.840207, 128.262811)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position03"><li><a href="resource03_09.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;margin-top: -10px;margin-left: -25px"><div class="button" style="background-color: #0654DA;"><strong>선암계곡</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.840207, 128.262811);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_02.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.866529, 128.287289); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+</script>
+</body>
+</html>

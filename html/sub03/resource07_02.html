@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="../../css/style.css">
+<script>
+$(document).ready(function(){
+	var slider_01 =	$('.slider').bxSlider({
+			auto: true,controls: false,autoControls: false,captions: true,
+		});
+		// 클릭시 멈춤 현상 해결 //
+		$(document).on('click','.bx-next, .bx-prev',function() {
+		slider_01.stopAuto();
+		slider_01.startAuto();;
+		});
+		$(document).on('mouseover','.bx-pager, #bx-pager1',function() {
+		slider_01.stopAuto();
+		slider_01.startAuto();
+		});	
+});
+</script>
+</head>
+<body class="popup">
+	<p class="top_tit">닷돈재 자동차야영장</p>
+	<div class="pop_content">
+		<div class="con_photo">
+			<ul class="slider">
+				<li><img src="../../images/contents/resource07_02_01.jpg" alt="" title="닷돈재 자동차야영장01"></li>
+				<li><img src="../../images/contents/resource07_02_02.jpg" alt="" title="닷돈재 자동차야영장02"></li>
+				<li><img src="../../images/contents/resource07_02_03.jpg" alt="" title="닷돈재 자동차야영장03"></li>
+				<li><img src="../../images/contents/resource07_02_04.jpg" alt="" title="닷돈재 자동차야영장04"></li>
+				<li><img src="../../images/contents/resource07_02_05.jpg" alt="" title="닷돈재 자동차야영장05"></li>
+				<li><img src="../../images/contents/resource07_02_06.jpg" alt="" title="닷돈재 자동차야영장06"></li>
+				<li><img src="../../images/contents/resource07_02_07.jpg" alt="" title="닷돈재 자동차야영장07"></li>
+				<li><img src="../../images/contents/resource07_02_08.jpg" alt="" title="닷돈재 자동차야영장08"></li>
+				<li><img src="../../images/contents/resource07_02_09.jpg" alt="" title="닷돈재 자동차야영장09"></li>
+				<li><img src="../../images/contents/resource07_02_10.jpg" alt="" title="닷돈재 자동차야영장10"></li>
+				<li><img src="../../images/contents/resource07_02_11.jpg" alt="" title="닷돈재 자동차야영장11"></li>
+			</ul>
+		</div>
+		<div class="con_info">
+			<p class="sub_tit">야영장 소개</p>
+			<p class="pop_basic">가족단위 캠핑 등 국민의 여가문화 수요를 충족하고자 캠핑체험에 필요한 텐트, 취사도구, 침구세트 등이 갖추어진 고급화된 국민형 캠핑시설</p>
+			<ul class="list_arr type2">
+				<li>위치 : 송계지구</li>
+				<li>면적 : 26,000(㎡)</li>
+				<li>규모 : 180</li>
+				<li>영지 : 자동차 - 124 /  풀옵션 - 56</li>
+				<li>편의시설 : 전기, 취사장, 화장실, 샤워장</li>
+				<li>이용방법 : 예약제</li>
+				<li>이용기간 : 연중</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

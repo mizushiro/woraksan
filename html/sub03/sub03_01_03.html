@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="../../css/style.css">
+<script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=0c39d2727183afcc0e2f6c2edda6ebd7"></script>
+<script type="text/javascript" src="../../js/border.js"></script>
+
+<style type="text/css">
+	.map_wrap {position:relative;overflow:hidden;width:100%;height:650px; text-align:center;}
+	.radius_border{border:1px solid #919191;border-radius:5px;}     
+	.label {margin-bottom: 96px;}
+	.label * {display: inline-block;vertical-align: top;}
+	.label .left {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
+	.label .center {background: url(http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;}
+	.label .right {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
+	.custom_typecontrol {visibility: hidden;position:absolute;top:200px;overflow:hidden;width:600px;height:400px;margin-left:150px;padding:0;z-index:1;font-size:12px;font-family:'Malgun Gothic', '맑은 고딕', sans-serif;background-color: #3e8e41}
+
+	.button {
+		  display: inline-block;
+		  height:25px;
+		  padding: 0px 20px;
+		  font-size: 15px;
+		  cursor: pointer;
+		  text-align: center;
+		  text-decoration: none;
+		  outline: none;
+		  color: #fff;
+		  background-color: #cc0066;
+		  border: none;
+		  border-radius: 11px;
+		  line-height:25px;
+		  box-shadow:0px 5px 5px rgba(0,0,0,0.3);
+		  font-weight: bold;}
+	.buttonB {
+		  display: inline-block;
+		  height:25px;
+		  padding: 0px 20px;
+		  font-size: 15px;
+		  cursor: pointer;
+		  text-align: center;
+		  text-decoration: none;
+		  outline: none;
+		  color: #fff;
+		  background-color: #3a58db;
+		  border: none;
+		  border-radius: 3px;
+		  line-height:25px;
+		  box-shadow:0px 5px 5px rgba(0,0,0,0.3);
+		  font-weight: bold;}
+
+
+
+</style>
+<script>
+$(document).ready(function(){
+	var slider_03 =	$('.slider3').bxSlider({
+			auto: false,controls: false,autoControls: false,captions: true,
+		});
+		// 클릭시 멈춤 현상 해결 //
+		$(document).on('click','.bx-next, .bx-prev',function() {
+		slider_03.stopAuto();
+		slider_03.startAuto();
+		});
+		$(document).on('mouseover','.bx-pager, #bx-pager1',function() {
+		slider_03.stopAuto();
+		slider_03.startAuto();
+		});	
+	$('.layer_box').hide();
+});
+</script>
+<link rel="stylesheet" href="../../css/common2.css">
+</head>
+<body class="bodyfont">
+	<div class="wrap">
+		<div class="lnb bg03">
+			<h1 style="letter-spacing: 3px;">공원시설</h1>
+			<ul>
+				<li><a href="#" class="on" onClick=location.href('./sub03_01.html')><span style="letter-spacing: 3px;">탐방로</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_02.html')><span style="letter-spacing: 3px;">자연관찰로</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_03.html')><span style="letter-spacing: 3px;">야영장</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_04.html')><span style="letter-spacing: 3px;">주차장</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_06.html')><span style="letter-spacing: 3px;">탐방지원센터</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_05.html')><span style="letter-spacing: 3px;">탐방안내소</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_07.html')><span style="letter-spacing: 3px;">자원봉사센터</span></a></li>
+			</ul>
+		</div>
+		<div class="content_box type03">
+			<div class="sub_nav type3">
+				<ul>
+					<li><a href="#" onClick=location.href('./sub03_01_02.html') class="on" >영봉탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_06.html')>만수봉탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_07.html')>북바위산탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_08.html')>마패봉.부봉탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_09.html')>하늘재.포암산탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_10.html')>금수산탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_12.html')>가은산탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_13.html')>옥순봉.구담봉탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_15.html')>제비봉탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_17.html')>도락산탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_20.html')>황장산탐방로</a></li>
+					<li><a href="javascript:alert('준비중입니다.');">선암골생태유람길</a></li>
+				</ul>
+			</div>
+			<div class="r_box2 small">
+				<div class="course_list">
+					<ul>
+						<li>
+							<button class="course_name" onclick="javascript:window.location.href='./sub03_01_02.html'">덕주사코스</button>
+							<a href="#;" class="icon_type course_info" title="course_info01">탐방로</a>
+							<a href="#;" class="icon_type course_photo" title="course_photo01">사진</a>
+						</li>
+						<li  class="on">
+							<button class="course_name" onclick="javascript:window.location.href='./sub03_01_03.html'">동창교코스</button>
+							<a href="#;" class="icon_type course_info" title="course_info01">탐방로</a>
+							<a href="#;" class="icon_type course_photo" title="course_photo01">사진</a>
+						</li>
+						<li>
+							<button class="course_name" onclick="javascript:window.location.href='./sub03_01_04.html'">신륵사코스</button>
+							<a href="#;" class="icon_type course_info" title="course_info01">탐방로</a>
+							<a href="#;" class="icon_type course_photo" title="course_photo01">사진</a>
+						</li>
+						<li>
+							<button class="course_name" onclick="javascript:window.location.href='./sub03_01_05.html'">보덕암코스</button>
+							<a href="#;" class="icon_type course_info" title="course_info01">탐방로</a>
+							<a href="#;" class="icon_type course_photo" title="course_photo01">사진</a>
+						</li>
+					</ul>
+				</div>
+				<div class="map_area">
+					<div class="map_daum">
+					    <div id="map" style="width:100%;height:690px;"></div>
+				   </div>
+					<!-- S : 탐방로 -->
+					<div class="layer_box" id="course_info01">
+						<div class="gray_box" style="margin-right: 15px;">
+							<p><strong>동창교~송계삼거리~영봉(거리4.3km, 3시간 소요)<br>송계지구에서 영봉을 오를 수 있는 짧은 탐방코스</strong><br>- 숲이 우거져 전망은 볼 수 없지만 아름드리 소나무며 탐방로 주변에 핀 야생화 등을 보면서 탐방 할 수 있는 코스 </p>
+						</div>
+						<div class="course_map"><img src="../../images/contents/course_map02.jpg" alt=""></div>
+						<button class="btn_close2">닫기</button>
+					</div>
+					<!-- E : 탐방로 -->
+					<!-- S : 사진 -->
+					<div class="layer_box" id="course_photo01">
+						<div class="course_photo">
+							<ul class="slider3">
+								<li><img src="../../images/contents/course02_01.jpg" alt="" title="입구"></li>
+								<li><img src="../../images/contents/course02_02.jpg" alt="" title="숲길"></li>
+								<li><img src="../../images/contents/course02_03.jpg" alt="" title="자광사"></li>
+								<li><img src="../../images/contents/course02_04.jpg" alt="" title="나무계단"></li>
+								
+							</ul>
+						</div>
+						<button class="btn_close2">닫기</button>
+					</div>
+					<!-- E : 사진 -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="fm_logo">국립공원</p> 
+		<ul class="nav">
+			<li><a href="#" class="nav01" onClick=location.href('./sub03_01_02.html')>이전</a></li>
+			<li><a href="#" class="nav02" onClick=location.href('./sub03_01_04.html')>다음</a></li>
+			<li><a href="#" class="nav03" onClick=location.href('/html/main/main.html')>홈</a></li>
+		</ul>
+	</div>
+</body>
+<script>
+    var message='';
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	    mapOption = { 
+			center: new daum.maps.LatLng(36.88508761502684,128.1974791344576), // 지도의 중심좌표
+	        level: 8
+	    };
+	
+	var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+	map.setMapTypeId(daum.maps.MapTypeId.HYBRID);    
+	var mapTypeControl = new daum.maps.MapTypeControl();
+	map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+	var zoomControl = new daum.maps.ZoomControl();
+	map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+	// 지도에 표시할 선을 생성합니다
+	var polyline = new daum.maps.Polyline({
+	    path: linePath, // 선을 구성하는 좌표배열 입니다
+	    strokeWeight: 2, // 선의 두께 입니다
+	    strokeColor: '#FF0000', // 선의 색깔입니다
+	    strokeOpacity: 0.5, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+	    strokeStyle: 'solid’' // 선의 스타일입니다
+	});
+	// 지도에 선을 표시합니다 
+	polyline.setMap(map);   
+	
+     var imageSrc = '../../images/contents/climber.gif', // 마커이미지의 주소입니다    
+		imageSize = new daum.maps.Size(32, 32), // 마커이미지의 크기입니다
+		imageOption = {offset: new daum.maps.Point(0, 0)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+		// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+		var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption),
+			markerPosition = new daum.maps.LatLng(36.88039731342362,128.08147410064868); // 마커가 표시될 위치입니다
+		
+		// 마커를 생성합니다
+		var marker = new daum.maps.Marker({
+			position: markerPosition, 
+			image: markerImage // 마커이미지 설정 
+		});
+		
+		// 마커가 지도 위에 표시되도록 설정합니다
+		marker.setMap(map);
+
+   
+	var content = '<div class="button">영봉(4.3km 3시간)</div>';
+	var position = new daum.maps.LatLng(36.889583163786684,128.10594368219935);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+
+	// 커스텀 오버레이를 지도에 표시합니다
+	customOverlay.setMap(map);
+
+
+
+    function movepos(x,y){
+        var moveLatLon = new daum.maps.LatLng(x,y);
+    	map.panTo(moveLatLon);  
+    }
+	
+    function setLevel(level){
+        	map.setLevel(level);
+    }
+    
+
+	$( document ).ready(function() {
+	    var myVar = setInterval(function(){ setMap(36.88428283257953,128.1057350352521); clearInterval(myVar); }, 1000);
+	});
+
+	function setMap(x,y){
+		movepos(x,y);  
+		window.setTimeout(function(){ setLevel(7);}, 1000);
+		window.setTimeout(function(){ setLevel(6);}, 2000);
+
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.88039731342362  ,128.08147410064868) );}, 2500 );   
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.88125649763942  ,128.08211434168976) );}, 2600 );   
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.88164105625721  ,128.0834208887049 ) );}, 2700 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.881413781112606 ,128.08462906168455) );}, 2800 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.881398618729314 ,128.0862888915258 ) );}, 2900 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.88189083294641  ,128.08764185467356) );}, 3000 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.88246127158248  ,128.08832294597917) );}, 3100 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.883028005078856 ,128.08940779786755) );}, 3200 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.88301689380286  ,128.09061904874312) );}, 3300 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.883365320153494 ,128.0919251530721 ) );}, 3400 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.88346105720089  ,128.0932725336137 ) );}, 3500 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.88294579585347  ,128.0944317272365 ) );}, 3600 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.88246614717415  ,128.0956362807138 ) );}, 3700 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.88170481065783  ,128.0961189306953 ) );}, 3800 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.88158593342614  ,128.09728375065495) );}, 3900 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.88160912061695  ,128.09867493256985) );}, 4000 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.881607461341865 ,128.09905437331005) );}, 4200 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.8809479970216   ,128.1000114325167 ) );}, 4300 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.88046787696691  ,128.1012607780567 ) );}, 4400 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.880273545033425 ,128.10278340864661) );}, 4500 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.880839311935055 ,128.10395805198973) );}, 4600 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.88162546203747  ,128.10468722767237) );}, 4700 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.88255826018451  ,128.10514933262715) );}, 4800 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.8836012549339   ,128.10538870172098) );}, 4900 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.884569669443806 ,128.10589620923915) );}, 5000 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.88524894787529  ,128.10648929394398) );}, 5100 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.885964678330446 ,128.10703804699665) );}, 5200 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.88652830828809  ,128.10843712353028) );}, 5300 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.88707932445686  ,128.10732335773306) );}, 5300 );  
+		 window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.88611968921693  ,128.1058736980633)  );}, 5400 );  
+
+		 window.setTimeout(function(){
+		    var content = '<div class="buttonB">송계삼거리(2.8km,1시간 30분)</div>';
+			var position = new daum.maps.LatLng(36.881677849627536,128.10486744695476);  
+			var customOverlay = new daum.maps.CustomOverlay({
+				position: position,
+				content: content,
+				xAnchor: 0.3,
+				yAnchor: -0.05
+			});
+            customOverlay.setMap(map);
+		 }, 4900 ); 
+
+		 window.setTimeout(function(){
+		    var content = '<div class="buttonB">신륵사삼거리(3.5km,2시간 10분)</div>';
+			var position = new daum.maps.LatLng(36.886474461709774,128.10841391056667);  
+			var customOverlay = new daum.maps.CustomOverlay({
+				position: position,
+				content: content,
+				xAnchor: 0.3,
+				yAnchor: -0.05
+			});
+            customOverlay.setMap(map);
+		 }, 5300 ); 
+
+		
+  
+		
+	}
+
+</script>
+
+</html>

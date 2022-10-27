@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="../../css/style.css">
+<script>
+$(document).ready(function(){
+	var slider_02 =	$('.slider2').bxSlider({
+			auto: true,controls: false,autoControls: true,captions: true,
+		});
+		// 클릭시 멈춤 현상 해결 //
+		$(document).on('click','.bx-next, .bx-prev',function() {
+		slider_02.stopAuto();
+		slider_02.startAuto();;
+		});
+		$(document).on('mouseover','.bx-pager, #bx-pager1',function() {
+		slider_02.stopAuto();
+		slider_02.startAuto();
+		});	
+});
+</script>
+<link rel="stylesheet" href="../../css/common2.css">
+</head>
+<body class="bodyfont">
+	<div class="wrap">
+		<div class="lnb bg03"> 
+			<h1 style="letter-spacing: 3px;">공원시설</h1>
+			<ul>
+				<li><a href="#" onClick=location.href('./sub03_01.html')><span style="letter-spacing: 3px;">탐방로</span></a></li>
+				<li><a href="#" class="on" onClick=location.href('./sub03_02.html')><span style="letter-spacing: 3px;">자연관찰로</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_03.html')><span style="letter-spacing: 3px;">야영장</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_04.html')><span style="letter-spacing: 3px;">주차장</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_06.html')><span style="letter-spacing: 3px;">탐방지원센터</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_05.html')><span style="letter-spacing: 3px;">탐방안내소</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_07.html')><span style="letter-spacing: 3px;">자원봉사센터</span></a></li>
+			</ul>
+		</div>
+		<div class="content_box type03">
+			<div class="sub_nav type3 wide">
+				<ul>
+					<li><a href="#" onClick=location.href('./sub03_02_01.html')>덕주역사자연관찰로</a></li>
+					<li><a href="#" class="on" onClick=location.href('./sub03_02_02.html')>만수계곡자연관찰로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_02_03.html')>만수무장애탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_02_04.html') style="width: 250px;">하늘재역사자연관찰로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_02_05.html')>사문리1자연관찰로</a></li>
+				</ul>
+			</div>
+			<div class="r_box">
+				<h2>만수계곡자연관찰로</h2>
+				<div class="txt">
+					<div class="program_wrap type3">
+						<div class="program_info">
+							<dl>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;width: 140px;"><img src="../../images/contents/blt03.png"/> 소개</dt>
+								<dd style="font-size: 24px;font-weight: bold;">계절별로 피는 야생화를 볼 수 있는 월악산 대표 관찰로</dd>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;width: 140px;"><img src="../../images/contents/blt03.png"/> 거리(시간)</dt>
+								<dd style="font-size: 24px;font-weight: bold;">2.0km/순환(1시간 소요)</dd>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;width: 140px;"><img src="../../images/contents/blt03.png"/> 위치</dt>
+								<dd style="font-size: 24px;font-weight: bold;">만수봉 탐방로 입구</dd>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;width: 140px;"><img src="../../images/contents/blt03.png"/> 특징</dt>
+								<dd style="font-size: 24px;font-weight: bold;">만수계곡을 끼고 돌아오는 순환코스로 완만한 경사에 조릿대, 소나무림, 참나무림 등 다양한 숲속의 모습을 <br>경험할 수 있음</dd>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;width: 140px;"><img src="../../images/contents/blt03.png"/> 시설</dt>
+								<dd style="font-size: 24px;font-weight: bold;">미래세대 체험장, 계곡토론장, 점자해설판, 송유채취 가마터, 숯가마터 등</dd>
+							</dl>
+						</div>
+						<div class="program_photo_bg">
+							<div class="program_photo">
+								<ul class="slider2">
+									<div class="be_after" style="margin: 0px;">
+										<ul style="padding-right: 20px;padding-left: 20px;">
+											<li style="width: 660px;height: 445px;"><img src="../../images/contents/resource06_02_00.jpg" alt="" style="width: 660px;height: 445px;"><p>만수자연관찰로 안내도</p></li>
+											<li style="width: 660px;height: 445px;"><img src="../../images/contents/resource06_02_01.jpg" alt="" style="width: 660px;height: 445px;"><p>자연관찰로입구</p></li>
+										</ul>
+									</div>
+									<div class="be_after" style="margin: 0px;">
+										<ul style="padding-right: 20px;padding-left: 20px;">
+											<li style="width: 660px;height: 445px;"><img src="../../images/contents/resource06_02_02.jpg" alt="" style="width: 660px;height: 445px;"><p>만수교</p></li>
+											<li style="width: 660px;height: 445px;"><img src="../../images/contents/resource06_02_03.jpg" alt="" style="width: 660px;height: 445px;"><p>관찰로 전경</p></li>
+										</ul>
+									</div>
+									<div class="be_after" style="margin: 0px;">
+										<ul style="padding-right: 20px;padding-left: 20px;">
+											<li style="width: 660px;height: 445px;"><img src="../../images/contents/resource06_02_04.jpg" alt="" style="width: 660px;height: 445px;"><p>미래세대 자연체험장</p></li>
+											<li style="width: 660px;height: 445px;"><img src="../../images/contents/resource06_02_05.jpg" alt="" style="width: 660px;height: 445px;"><p>야생화단지</p></li>
+										</ul>
+									</div>
+									<div class="be_after" style="margin: 0px;">
+										<ul style="padding-right: 20px;padding-left: 20px;">
+											<li style="width: 660px;height: 445px;"><img src="../../images/contents/resource06_02_06.jpg" alt="" style="width: 660px;height: 445px;"><p>송유채취가마터</p></li>
+											<li style="width: 660px;height: 445px;"><img src="../../images/contents/resource06_02_07.jpg" alt="" style="width: 660px;height: 445px;"><p>만수계곡</p></li>
+										</ul>
+									</div>
+									<div class="be_after" style="margin: 0px;">
+										<ul style="padding-right: 365px;padding-left: 365px;">
+											<li style="width: 660px;height: 445px;"><img src="../../images/contents/resource06_02_08.jpg" alt="" style="width: 660px;height: 445px;"><p>자연관찰로 숲길</p></li>
+										</ul>
+									</div>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="fm_logo">국립공원</p> 
+		<ul class="nav">
+			<li><a href="#" class="nav01" onClick=location.href('./sub03_02_01.html')>이전</a></li>
+			<li><a href="#" class="nav02" onClick=location.href('./sub03_02_03.html')>다음</a></li>
+			<li><a href="#" class="nav03" onClick=location.href('/html/main/main.html')>홈</a></li>
+		</ul>
+	</div>
+</body>
+</html>

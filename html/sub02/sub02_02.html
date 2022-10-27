@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.fancybox.js"></script>
+<link rel="stylesheet" href="../../css/jquery.fancybox.css">
+<link rel="stylesheet" href="../../css/style.css">
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.fancybox').fancybox();
+	});
+</script>
+<script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=0c39d2727183afcc0e2f6c2edda6ebd7"></script>
+<script type="text/javascript" src="../../js/border.js"></script>
+<style>
+
+	.map_wrap {position:relative;overflow:hidden;width:100%;height:650px; text-align:center;}
+	.radius_border{border:1px solid #919191;border-radius:5px;}     
+	.label {margin-bottom: 96px;}
+	.label * {display: inline-block;vertical-align: top;}
+	.label .left {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
+	.label .center {background: url(http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;}
+	.label .right {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
+	.custom_typecontrol {visibility: hidden;position:absolute;top:200px;overflow:hidden;width:600px;height:400px;margin-left:150px;padding:0;z-index:1;font-size:12px;font-family:'Malgun Gothic', '맑은 고딕', sans-serif;background-color: #3e8e41}
+	.button {
+      display: inline-block;
+	  height:25px;
+	  padding: 0px 10px;
+	  font-size: 17px;
+	  cursor: pointer;
+	  text-align: center;
+	  text-decoration: none;
+	  outline: none;
+	  color: #fff;
+	  background-color: #cc0066;
+	  border: none;
+	  border-radius: 7px;
+	  line-height:25px;
+	  box-shadow:0px 5px 5px rgba(0,0,0,0.3)
+	}
+	.buttonT {
+      display: inline-block;
+	  height:40px;
+	  padding: 0px 20px;
+	  font-size: 20px;
+	  cursor: pointer;
+	  text-align: center;
+	  text-decoration: none;
+	  outline: none;
+	  color: #fff;
+	  background-color: #cc0066;
+	  border: none;
+	  border-radius: 7px;
+	  line-height:40px;
+	  box-shadow:0px 5px 5px rgba(0,0,0,0.3);	  
+	  letter-spacing: 1px;
+	}
+	
+
+	</style>
+<link rel="stylesheet" href="../../css/common2.css">
+</head>
+<body class="bodyfont">
+	<div class="wrap">
+		<div class="lnb bg02">
+			<h1 style="letter-spacing: 3px;">자원보전</h1>
+			<ul>
+				<li><a href="#" onClick=location.href('./sub02_01.html')><span style="letter-spacing: 3px;">자원현황</span></a></li>
+				<li><a href="#" onClick=location.href('./sub02_02.html') class="on"><span style="letter-spacing: 3px;">특별보호구</span></a></li>
+				<li><a href="#" onClick=location.href('./sub02_03.html')><span style="letter-spacing: 3px;">생태복원</span></a></li>
+			</ul>
+		</div>
+		<div class="content_box type02">
+			<div class="r_box2 big">
+				<h2>특별보호구</h2>
+				<div class="mapb">
+					<div class="map_area">
+						<div class="map_daum">
+							 <div id="map" style="width:100%;height:785px;"></div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="btn_open"><a href="#;">open</a></div>
+				<div class="tg_box" style="height: 500px;">
+					<div class="list">
+						<table>
+							<caption style="font-weight: bold;">특별보호구 현황</caption>
+							<colgroup>
+								<col width="20%">
+								<col width="10%">
+								<col width="10%">
+								<col width="15%">
+								<col width="*">
+							</colgroup>
+							<thead>
+								<tr height=60>
+									<th scope="col"><strong>구분</th>
+									<th scope="col"><strong>면적</th>
+									<th scope="col"><strong>지역</th>
+									<th scope="col"><strong>시행기간</th>
+									<th scope="col"><strong>지정장소</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr height=60>
+									<td rowspan="3" class="noline"><strong>산양 특별보호구역</strong></td>
+									<td rowspan="3"><strong>129백만㎡</strong></td>
+									<td><strong>월악 1</strong></td>
+									<td><strong>2007년 ~ 2026년</strong></td>
+									<td class="tl"><strong>제천시 덕산면, 한수면 일원 (영봉, 중봉, 하봉 일원)</strong></td>
+								</tr>
+								<tr height=60>
+									<td><strong>월악 7</strong></td>
+									<td><strong>2012년 ~ 2031년</strong></td>
+									<td class="tl"><strong>제천시 덕산면 월억라 산1-1 (꾀꼬리봉 일원)</strong></td>
+								</tr>
+								<tr height=60>
+									<td><strong>월악 8</strong></td>
+									<td><strong>2013년 ~ 2032년</strong></td>
+									<td class="tl"><strong>제천시 덕산면 월악리 산1-1 (시루봉 일원)</strong></td>
+								</tr>
+								<!--<tr height=60>
+									<td rowspan="3" class="noline"><strong>솔나리 특별보호구역</strong></td>
+									<td rowspan="3"><strong>28,594㎡</strong></td>
+									<td><strong>월악 2</strong></td>
+									<td><strong>2007년 ~ 2026년</strong></td>
+									<td class="tl"><strong>제천시 덕산면, 수산리 일원 (영봉 일원)</strong></td>
+								</tr>
+								<tr height=60>
+									<td><strong>월악 3</strong></td>
+									<td><strong>2007년 ~ 2026년</strong></td>
+									<td class="tl"><strong>제천시 덕산면 수산리 일원 (하봉 일원)</strong></td>
+								</tr>
+								<tr height=60>
+									<td><strong>월악 6</strong></td>
+									<td><strong>2011년 ~ 2030년</strong></td>
+									<td class="tl"><strong>제천시 덕산면 수산리 (하봉~보덕암 일원)</strong></td>
+								</tr>-->
+								<!--<tr height=60>
+									<td class="noline"><strong>망개나무 특별보호구역</strong></td>
+									<td><strong>12,122㎡</strong></td>
+									<td><strong>월악 4</strong></td>
+									<td><strong>2007년 ~ 2026년</strong></td>
+									<td class="tl"><strong>제천시 한수면 송계리 (고무서리 계곡 일원)</strong></td>
+								</tr>-->
+								<tr height=60>
+									<td class="noline"><strong>왕제비꽃 특별보호구역</strong></td>
+									<td><strong>10,689㎡</strong></td>
+									<td><strong>월악 5</strong></td>
+									<td><strong>2010년 ~ 2029년</strong></td>
+									<td class="tl"><strong>단양군 적성면 상리 (금수산 일원)</strong></td>
+								</tr>
+								<tr height=60>
+									<td class="noline"><strong>복주머니란 특별보호구역</strong></td>
+									<td><strong>5,213㎡</strong></td>
+									<td><strong>월악 9</strong></td>
+									<td><strong>2014년 ~ 2033년</strong></td>
+									<td class="tl"><strong>충주시 수안보면 사문리 (지릅재 일원)</strong></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="btn_close"><a href="#;">close</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="fm_logo">국립공원</p> 
+		<ul class="nav">
+			<li><a href="#" class="nav01" onClick=location.href('./sub02_01_3.html')>이전</a></li>
+			<li><a href="#" class="nav02" onClick=location.href('./sub02_03.html')>다음</a></li>
+			<li><a href="#" class="nav03" onClick=location.href('../main/main.html')>홈</a></li>
+		</ul>
+	</div>
+	<script>
+    
+    var message='';
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	    mapOption = { 
+			center: new daum.maps.LatLng(36.88508761502684,128.1974791344576), // 지도의 중심좌표
+	        level: 8
+	    };
+	
+	var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+	map.setMapTypeId(daum.maps.MapTypeId.HYBRID);    
+	var mapTypeControl = new daum.maps.MapTypeControl();
+	map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+	var zoomControl = new daum.maps.ZoomControl();
+	map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+    
+
+	// 지도에 표시할 선을 생성합니다
+	var polyline = new daum.maps.Polyline({
+	    path: linePath, // 선을 구성하는 좌표배열 입니다
+	    strokeWeight: 2, // 선의 두께 입니다
+	    strokeColor: '#FF0000', // 선의 색깔입니다
+	    strokeOpacity: 0.5, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+	    strokeStyle: 'solid’' // 선의 스타일입니다
+	});
+
+	polyline.setMap(map);   
+	
+	/*var linePath = [
+		new daum.maps.LatLng(36.865047, 127.993000),
+		new daum.maps.LatLng(36.852902, 128.091960)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position04"><li><a href="resource04_01.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="buttonT" style="background-color: #7823E0;"><strong>망개나무 특별보호구역</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.865047, 127.993000);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<ul class="position04"><li><a href="#" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="button" style="background-color: #7823E0;"><strong>월악4</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.852902, 128.091960);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);*/
+
+	var linePath = [
+		new daum.maps.LatLng(36.835019, 127.995320),
+		new daum.maps.LatLng(36.824304, 128.104640)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position04"><li><a href="resource04_02.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="buttonT" style="background-color: #B8105E;"><strong>복주머니란 특별보호구역</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.835019, 127.995320);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<ul class="position04"><li><a href="#" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="button" style="background-color: #B8105E;"><strong>월악9</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.824304, 128.104640);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	/*var linePath = [
+		new daum.maps.LatLng(36.895065, 128.147346),
+		new daum.maps.LatLng(36.898279, 128.102680)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var linePath = [
+		new daum.maps.LatLng(36.895065, 128.147346),
+		new daum.maps.LatLng(36.886134, 128.117146)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var linePath = [
+		new daum.maps.LatLng(36.895065, 128.147346),
+		new daum.maps.LatLng(36.876488, 128.124293)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position04"><li><a href="resource04_03.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="buttonT" style="background-color: #F05912;"><strong>솔나리꽃 특별보호구역</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.895065, 128.147346);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<ul class="position04"><li><a href="#" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="button" style="background-color: #F05912;"><strong>월악6</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.898279, 128.102680);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<ul class="position04"><li><a href="#" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -45px;"><div class="button" style="background-color: #F05912;"><strong>월악3</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.886134, 128.117146);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<ul class="position04"><li><a href="#" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -45px;"><div class="button" style="background-color: #F05912;"><strong>월악2</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.876488, 128.124293);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);*/
+
+	var linePath = [
+		new daum.maps.LatLng(36.876130, 128.196033),
+		new daum.maps.LatLng(36.865053, 128.111886)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var linePath = [
+		new daum.maps.LatLng(36.876130, 128.196033),
+		new daum.maps.LatLng(36.850978, 128.151813)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var linePath = [
+		new daum.maps.LatLng(36.876130, 128.196033),
+		new daum.maps.LatLng(36.840392, 128.186926)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position04"><li><a href="resource04_04.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="buttonT" style="background-color: #0654DA;"><strong>산양 특별보호구역</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.876130, 128.196033);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<ul class="position04"><li><a href="#" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="button" style="background-color: #0654DA;"><strong>월악1</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.865053, 128.111886);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<ul class="position04"><li><a href="#" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -45px;"><div class="button" style="background-color: #0654DA;"><strong>월악7</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.850978, 128.151813);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<ul class="position04"><li><a href="#" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -25px;"><div class="button" style="background-color: #0654DA;"><strong>월악8</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.840392, 128.186926);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var linePath = [
+		new daum.maps.LatLng(36.951138, 128.278666),
+		new daum.maps.LatLng(36.977912, 128.239459)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position04"><li><a href="resource04_05.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="buttonT" style="background-color: #B71EB6;"><strong>왕제비꽃 특별보호구역</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.951138, 128.278666);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<ul class="position04"><li><a href="#" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="button" style="background-color: #B71EB6;"><strong>월악5</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.977912, 128.239459);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+</script>
+</body>
+</html>

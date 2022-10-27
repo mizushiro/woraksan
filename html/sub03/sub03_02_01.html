@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="../../css/style.css">
+<script>
+$(document).ready(function(){
+	var slider_02 =	$('.slider2').bxSlider({
+			auto: true,controls: false,autoControls: false,captions: true,
+		});
+		// 클릭시 멈춤 현상 해결 //
+		$(document).on('click','.bx-next, .bx-prev',function() {
+		slider_02.stopAuto();
+		slider_02.startAuto();;
+		});
+		$(document).on('mouseover','.bx-pager, #bx-pager1',function() {
+		slider_02.stopAuto();
+		slider_02.startAuto();
+		});	
+});
+</script>
+<link rel="stylesheet" href="../../css/common2.css">
+</head>
+<body class="bodyfont">
+	<div class="wrap">
+		<div class="lnb bg03"> 
+			<h1 style="letter-spacing: 3px;">공원시설</h1>
+			<ul>
+				<li><a href="#" onClick=location.href('./sub03_01.html')><span style="letter-spacing: 3px;">탐방로</span></a></li>
+				<li><a href="#" class="on" onClick=location.href('./sub03_02.html')><span style="letter-spacing: 3px;">자연관찰로</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_03.html')><span style="letter-spacing: 3px;">야영장</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_04.html')><span style="letter-spacing: 3px;">주차장</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_06.html')><span style="letter-spacing: 3px;">탐방지원센터</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_05.html')><span style="letter-spacing: 3px;">탐방안내소</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_07.html')><span style="letter-spacing: 3px;">자원봉사센터</span></a></li>
+			</ul>
+		</div>
+		<div class="content_box type03">
+			<div class="sub_nav type3 wide">
+				<ul>
+					<li><a href="#" class="on" onClick=location.href('./sub03_02_01.html')>덕주역사자연관찰로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_02_02.html')>만수계곡자연관찰로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_02_03.html')>만수무장애탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_02_04.html') style="width: 250px;">하늘재역사자연관찰로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_02_05.html')>사문리자연관찰로</a></li>
+				</ul>
+			</div>
+			<div class="r_box">
+				<h2>덕주역사자연관찰로</h2>
+				<div class="txt">
+					<div class="program_wrap type3">
+						<div class="program_info">
+							<dl>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;width: 140px;"><img src="../../images/contents/blt03.png"/> 소개</dt>
+								<dd style="font-size: 24px;font-weight: bold;">중원문화 유적을 만날 수 있는 역사관찰로</dd>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;width: 140px;"><img src="../../images/contents/blt03.png"/> 거리(시간)</dt>
+								<dd style="font-size: 24px;font-weight: bold;">2.0km/왕복(1시간 소요)</dd>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;width: 140px;"><img src="../../images/contents/blt03.png"/> 위치</dt>
+								<dd style="font-size: 24px;font-weight: bold;">덕주사~영봉 탐방로 입구</dd>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;width: 140px;"><img src="../../images/contents/blt03.png"/> 특징</dt>
+								<dd style="font-size: 24px;font-weight: bold;">월악산 영봉의 대표 탐방로 입구에 위치하며 송계계곡과 암석이 어우러진 수경대, 학소대 몽골의 침입을 <br>막기위해 만든 덕주산성 동문, 덕주공주의 전설이 깃든 덕주사를 볼수있음</dd>
+							</dl>
+						</div>
+						<div class="program_photo_bg">
+							<div class="program_photo">
+								<ul class="slider2">
+									<div class="be_after" style="margin: 0px;">
+										<ul style="padding-right: 20px;padding-left: 20px;">
+											<li style="width: 660px;height: 445px;"><img src="../../images/contents/resource06_01_00.jpg" alt="" style="width: 660px;height: 445px;"><p>덕주역사자연관찰로 안내도</p></li>
+											<li style="width: 660px;height: 445px;"><img src="../../images/contents/resource06_01_01.jpg" alt="" style="width: 660px;height: 445px;"><p>자연관찰로 입구</p></li>
+										</ul>
+									</div>
+									<div class="be_after" style="margin: 0px;">
+										<ul style="padding-right: 20px;padding-left: 20px;">
+											<li style="width: 660px;height: 445px;"><img src="../../images/contents/resource06_01_02.jpg" alt="" style="width: 660px;height: 445px;"><p>계곡 옆 숲길</p></li>
+											<li style="width: 660px;height: 445px;"><img src="../../images/contents/resource06_01_03.jpg" alt="" style="width: 660px;height: 445px;"><p>송계6경 수경대</p></li>
+										</ul>
+									</div>
+									<div class="be_after" style="margin: 0px;">
+										<ul style="padding-right: 20px;padding-left: 20px;">
+											<li style="width: 660px;height: 445px;"><img src="../../images/contents/resource06_01_04.jpg" alt="" style="width: 660px;height: 445px;"><p>송계4경 학소대</p></li>
+											<li style="width: 660px;height: 445px;"><img src="../../images/contents/resource06_01_05.jpg" alt="" style="width: 660px;height: 445px;"><p>덕주산성 동문</p></li>
+										</ul>
+									</div>
+									<div class="be_after" style="margin: 0px;">
+										<ul style="padding-right: 20px;padding-left: 20px;">
+											<li style="width: 660px;height: 445px;"><img src="../../images/contents/resource06_01_06.jpg" alt="" style="width: 660px;height: 445px;"><p>덕주산성 성곽</p></li>
+											<li style="width: 660px;height: 445px;"><img src="../../images/contents/resource06_01_07.jpg" alt="" style="width: 660px;height: 445px;"><p>덕주사</p></li>
+										</ul>
+									</div>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="fm_logo">국립공원</p> 
+		<ul class="nav">
+			<li><a href="#" class="nav01" onClick=location.href('./sub03_02.html')>이전</a></li>
+			<li><a href="#" class="nav02" onClick=location.href('./sub03_02_02.html')>다음</a></li>
+			<li><a href="#" class="nav03" onClick=location.href('/html/main/main.html')>홈</a></li>
+		</ul>
+	</div>
+</body>
+</html>

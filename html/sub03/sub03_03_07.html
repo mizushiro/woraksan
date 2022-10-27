@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="../../css/style.css">
+<script>
+$(document).ready(function(){
+	var slider_07 =	$('.slider7').bxSlider({
+			auto: true,controls: true,autoControls: false,
+		});
+		// 클릭시 멈춤 현상 해결 //
+		$(document).on('click','.bx-next, .bx-prev',function() {
+		slider_07.stopAuto();
+		slider_07.startAuto();;
+		});
+		$(document).on('mouseover','.bx-pager, #bx-pager1',function() {
+		slider_07.stopAuto();
+		slider_07.startAuto();
+		});	
+});
+</script>
+<link rel="stylesheet" href="../../css/common2.css">
+</head>
+<body class="bodyfont">
+	<div class="wrap">
+		<div class="lnb bg03">
+			<h1 style="letter-spacing: 3px;">공원시설</h1>
+			<ul>
+				<li><a href="#" onClick=location.href('./sub03_01.html')><span style="letter-spacing: 3px;">탐방로</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_02.html')><span style="letter-spacing: 3px;">자연관찰로</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_03.html') class="on"  ><span style="letter-spacing: 3px;">야영장</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_04.html')><span style="letter-spacing: 3px;">주차장</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_06.html')><span style="letter-spacing: 3px;">탐방지원센터</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_05.html')><span style="letter-spacing: 3px;">탐방안내소</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_07.html')><span style="letter-spacing: 3px;">자원봉사센터</span></a></li>
+			</ul>
+		</div>
+		<div class="content_box type03">
+			<div class="sub_nav type3 wide">
+				<ul class="type2">
+					<li><a href="#" onClick=location.href('./sub03_03_01.html') style="width: 260px;">닷돈재 풀옵션/자동차야영장</a></li>
+					<li><a href="#" onClick=location.href('./sub03_03_04.html')>송계 자동차야영장</a></li>
+					<li><a href="#" onClick=location.href('./sub03_03_06.html') class="on">덕주 야영장</a></li>
+					<li><a href="#" onClick=location.href('./sub03_03_08.html')>용하 야영장</a></li>
+				</ul>
+			</div>
+			<div class="r_box2 type2">
+				<div class="course_list">
+					<ul>
+						<li><a href="#" onClick=location.href('./sub03_03_06.html') class="course_name">야영장</a></li>
+						<li><a href="#" onClick=location.href('./sub03_03_07.html') class="course_name on">사진</a></li>
+					</ul>
+				</div>
+				<div class="sub_con">
+					<div class="only_photo">
+						<ul class="slider7">
+							<li><img src="../../images/contents/tour01_01.jpg" alt=""></li>
+							<li><img src="../../images/contents/tour01_01.jpg" alt=""></li>
+							<li><img src="../../images/contents/tour01_01.jpg" alt=""></li>
+							<li><img src="../../images/contents/tour01_01.jpg" alt=""></li>
+							<li><img src="../../images/contents/tour01_01.jpg" alt=""></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="fm_logo">국립공원</p> 
+		<ul class="nav">
+			<li><a href="#" class="nav01" onClick=location.href('./sub03_03_06.html')>이전</a></li>
+			<li><a href="#" class="nav02" onClick=location.href('./sub03_03_08.html')>다음</a></li>
+			<li><a href="#" class="nav03" onClick=location.href('/html/main/main.html')>홈</a></li>
+		</ul>
+	</div>
+</body>
+</html>

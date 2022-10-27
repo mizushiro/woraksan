@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="../../css/style.css">
+<script>
+$(document).ready(function(){
+	var slider_02 =	$('.slider2').bxSlider({
+			auto: false,controls: true,autoControls: false, pager: false, infiniteLoop: false, hideControlOnEnd: true,
+		});
+		// 클릭시 멈춤 현상 해결 //
+		/*$(document).on('click','.bx-next, .bx-prev',function() {
+		slider_02.stopAuto();
+		slider_02.startAuto();;
+		});
+		$(document).on('mouseover','.bx-pager, #bx-pager1',function() {
+		slider_02.stopAuto();
+		slider_02.startAuto();
+		});	*/
+});
+</script>
+<link rel="stylesheet" href="../../css/common2.css">
+</head>
+<body class="bodyfont">
+	<div class="wrap">
+		<div class="lnb bg03"> 
+			<h1 style="letter-spacing: 3px;">공원시설</h1>
+			<ul>
+				<li><a href="#" onClick=location.href('./sub03_01.html')><span style="letter-spacing: 3px;">탐방로</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_02.html')><span style="letter-spacing: 3px;">자연관찰로</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_03.html') ><span style="letter-spacing: 3px;">야영장</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_04.html')><span style="letter-spacing: 3px;">주차장</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_06.html') class="on"><span style="letter-spacing: 3px;">탐방지원센터</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_05.html')><span style="letter-spacing: 3px;">탐방안내소</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_07.html')><span style="letter-spacing: 3px;">자원봉사센터</span></a></li>
+			</ul>
+		</div>
+		<div class="content_box type03">
+			<div class="sub_nav type3 wide">
+				<ul>
+					<li><a href="#" class="on" onClick=location.href('./sub03_06_01.html')>송계탐방지원센터</a></li>
+					<li><a href="#" onClick=location.href('./sub03_06_02.html')>덕주탐방지원센터</a></li>
+					<li><a href="#" onClick=location.href('./sub03_06_03.html')>만수탐방지원센터</a></li>
+					<li><a href="#" onClick=location.href('./sub03_06_04.html')>사문리탐방지원센터</a></li>
+				</ul>
+			</div>
+			<div class="r_box">
+				<h2>송계 탐방지원센터</h2>
+				<div class="sub_con txt">
+					<div class="program_wrap type3">
+						<div class="program_info">
+							<dl>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;"><img src="../../images/contents/blt03.png"/> 위치</dt>
+								<dd style="font-size: 24px;font-weight: bold;">송계자동차야영장 내</dd>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;margin-top: -30px;margin-left: 680px;"><img src="../../images/contents/blt03.png"/> 설치년도</dt>
+								<dd style="font-size: 24px;font-weight: bold;margin-top: -30px;margin-left: 815px;">1992년</dd>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;"><img src="../../images/contents/blt03.png"/> 규모</dt>
+								<dd style="font-size: 24px;font-weight: bold;">18㎡</dd>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;margin-top: -30px;margin-left: 680px;"><img src="../../images/contents/blt03.png"/> 운영시기</dt>
+								<dd style="font-size: 24px;font-weight: bold;margin-top: -30px;margin-left: 815px;">여름 성수기</dd>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;"><img src="../../images/contents/blt03.png"/> 기능</dt>
+								<dd style="font-size: 24px;font-weight: bold;">공원안내, 야영 편의용품 대여</dd>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;"><img src="../../images/contents/blt03.png"/> 주변시설</dt>
+								<dd style="font-size: 24px;font-weight: bold;">푸드뱅크 저장고</dd>
+							</dl>
+						</div>
+						<div class="program_photo_bg">
+							<div class="program_photo">
+								<ul class="slider2">
+									<li><img src="../../images/contents/resource08_04_01.jpg" alt="" style="width: 660px;height: 445px;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/contents/resource08_04_02.jpg" alt="" style="width: 660px;height: 445px;"></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="fm_logo">국립공원</p> 
+		<ul class="nav">
+			<li><a href="#" class="nav01" onClick=location.href('./sub03_06.html')>이전</a></li>
+			<li><a href="#" class="nav02" onClick=location.href('./sub03_06_02.html')>다음</a></li>
+			<li><a href="#" class="nav03" onClick=location.href('/html/main/main.html')>홈</a></li>
+		</ul>
+	</div>
+</body>
+</html>

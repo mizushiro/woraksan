@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.fancybox.js"></script>
+<link rel="stylesheet" href="../../css/jquery.fancybox.css">
+<link rel="stylesheet" href="../../css/style.css">
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.fancybox').fancybox();
+	});
+</script>
+<script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=0c39d2727183afcc0e2f6c2edda6ebd7"></script>
+<script type="text/javascript" src="../../js/border.js"></script>
+<link rel="stylesheet" href="../../css/common2.css">
+<style>
+
+	.map_wrap {position:relative;overflow:hidden;width:100%;height:650px; text-align:center;}
+	.radius_border{border:1px solid #919191;border-radius:5px;}     
+	.label {margin-bottom: 96px;}
+	.label * {display: inline-block;vertical-align: top;}
+	.label .left {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
+	.label .center {background: url(http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;}
+	.label .right {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
+	.custom_typecontrol {visibility: hidden;position:absolute;top:200px;overflow:hidden;width:600px;height:400px;margin-left:150px;padding:0;z-index:1;font-size:12px;font-family:'Malgun Gothic', '맑은 고딕', sans-serif;background-color: #3e8e41}
+	.button {
+      display: inline-block;
+	  height:28px;
+	  padding: 0px 20px;
+	  font-size: 17px;
+	  cursor: pointer;
+	  text-align: center;
+	  text-decoration: none;
+	  outline: none;
+	  color: #fff;
+	  background-color: #0654DA;
+	  border: none;
+	  border-radius: 7px;
+	  line-height:28px;
+	  box-shadow:0px 5px 5px rgba(0,0,0,0.3);
+	  font-weight: bold;
+	}
+	
+
+	</style>
+<link rel="stylesheet" href="../../css/common2.css">
+</head>
+<body class="bodyfont">
+	<div class="wrap">
+		<div class="lnb bg04">
+			<h1 style="letter-spacing: 3px;">재난안전</h1>
+			<ul>
+				<li><a href="#" onClick=location.href('../sub04/sub04_01.html')><span style="letter-spacing: 3px;">재난예경보<br/>시설</span></a></li>
+				<li><a href="#" onClick=location.href('../sub04/sub04_02.html') class="on"><span style="letter-spacing: 3px;">재해위험지구</span></a></li>
+				<li><a href="#" onClick=location.href('../sub04/sub04_03.html')><span style="letter-spacing: 3px;">안전사고현황</span></a></li>
+			</ul>
+		</div>
+		<div class="content_box type04">
+			<div class="r_box2 big">
+				<h2>재해위험지구</h2>
+				<div class="mapb">
+					<div class="map_area">
+						<div class="map_daum">
+							 <div id="map" style="width:100%;height:743px;"></div>
+						</div>
+						
+					</div>
+					<div class="map_footer icon_wrap2">
+						<ul class="icon_list">
+							<li class="ico01" style="margin-top: -12px;">급경사지</li>
+							<li class="ico04" style="margin-top: -12px;">재해위험지구</li>
+							<li class="ico03" style="margin-top: -12px;">산사태 취약지구</li>
+							<li class="ico02" style="margin-top: -12px;">사고위험지구</li>
+						</ul>
+					</div>
+				</div>
+				<div class="btn_open"><a href="#;">open</a></div>
+				<div class="tg_box" style="height: 800px;">
+					<div class="list">
+						<table>
+							<caption style="font-weight: bold;">재해위험지구현황</caption>
+							<colgroup>
+								<col width="13%">
+								<col width="13%">
+								<col width="10%">
+								<col width="*">
+								<col width="*">
+								<col width="*">
+								<col width="10%">
+							</colgroup>
+							<thead>
+								<tr height=60>
+									<th scope="col" colspan="2" rowspan="2" style="font-weight: bold;">구분</th>
+									<th scope="col" rowspan="2" style="font-weight: bold;">개소</th>
+									<th scope="col" colspan="3" style="font-weight: bold;">지구별 현황</th>
+									<th scope="col" rowspan="2" style="font-weight: bold;">비고</th>
+								</tr>
+								<tr height=60>
+									<th scope="col" class="line" style="font-weight: bold;">송계</th>
+									<th scope="col" style="font-weight: bold;">단양</th>
+									<th scope="col" style="font-weight: bold;">덕산</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="total" height=60>
+									<th colspan="2" scope="row" style="font-weight: bold;">합계</th>
+									<td style="font-weight: bold;">47개소</td>
+									<td style="font-weight: bold;">15개소</td>
+									<td style="font-weight: bold;">22개소</td>
+									<td style="font-weight: bold;">10개소</td>
+									<td style="font-weight: bold;"></td>
+								</tr>
+								<tr class="l30" height=60>
+									<td colspan="2" class="noline" style="font-weight: bold;">급경사지</td>
+									<td style="font-weight: bold;">5개소</td>
+									<td style="font-weight: bold;">하봉(D등급)<br>영봉(E등급)<br><span class="blue">마애불 상단(D등급)</span></td>
+									<td style="font-weight: bold;"><span class="blue">계란재 상단(C등급)</span></td>
+									<td style="font-weight: bold;"><span class="blue">금수산 탐방로(D등급)</span><br><span class="red">하봉(D등급)<br>영봉(E등급)</span></td>
+									<td style="font-weight: bold;"></td>
+								</tr>
+								<tr class="l30" height=60>
+									<td colspan="2" class="noline" style="font-weight: bold;">자연재해위험지구</td>
+									<td style="font-weight: bold;">3개소</td>
+									<td style="font-weight: bold;">송계계곡<br>(6km, 풍수해)</td>
+									<td style="font-weight: bold;">선암계곡<br>(12km, 풍수해)</td>
+									<td style="font-weight: bold;">용하계곡<br>(5km, 풍수해)</td>
+									<td style="font-weight: bold;"></td>
+								</tr>
+								<tr class="l30" height=60>
+									<td colspan="2" class="noline" style="font-weight: bold;">산사태취약지구</td>
+									<td style="font-weight: bold;">11개소</td>
+									<td style="font-weight: bold;">송계지구<br><span class="ts">(사문리 산23-1, 36-1전)</span></td>
+									<td style="font-weight: bold;">단양지구<span class="ts">(가산리 산71-1)</span><br>문경지구<span class="ts">(명전리 산26임,<br> 산28임, 949구, 산29-1, 산29-2)</span></td>
+									<td style="font-weight: bold;">덕산지구<span class="ts">(월악리 산1-1(2개소), <br>상천리 산12-1)</span></td>
+									<td style="font-weight: bold;"></td>
+								</tr>
+								<tr class="l30" height=60>
+									<td rowspan="2" class="noline" style="font-weight: bold;">사고위험지구</td>
+									<td style="font-weight: bold;">추락, 낙석 등</td>
+									<td style="font-weight: bold;">24개소</td>
+									<td style="font-weight: bold;">덕주사~영봉 구간(3개소)</br>북바위산 구간(3개소)</br>포암산~마수봉 구간(1개소)</td>
+									<td style="font-weight: bold;">가은산 구간(4개소)</br>옥순봉,구담봉 구간 (2개소)</br>도락산 구간(3개소)</br>제비봉 구간(4개소)</td>
+									<td style="font-weight: bold;">보덕암~영봉 구간(3개소)</br>지릎재~매패봉<br/>~하늘재 구간(1개소)</td>
+									<td style="font-weight: bold;"></td>
+								</tr>
+								<tr height=60>
+									<td style="font-weight: bold;">물놀이</td>
+									<td style="font-weight: bold;">4개소</td>
+									<td style="font-weight: bold;">와룡대, 수경대</td>
+									<td style="font-weight: bold;">특선암</td>
+									<td style="font-weight: bold;">구)물골야영장</td>
+									<td style="font-weight: bold;">여름철</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="btn_close"><a href="#;">close</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="fm_logo">국립공원</p> 
+		<ul class="nav">
+			
+			<li><a href="#" class="nav01" onClick=location.href('./sub04_01.html') >이전</a></li>
+			<li><a href="#" class="nav02" onClick=location.href('./sub04_03.html') >다음</a></li>
+			<li><a href="#" class="nav03" onClick=location.href('../main/main.html') >홈</a></li>
+
+		</ul>
+	</div>
+<script>
+
+	function showLayer(tgtEl) { document.getElementById(tgtEl).style.visibility = "visible"; }
+	function hideLayer(tgtEl) { document.getElementById(tgtEl).style.visibility = "hidden"; }
+
+    var message='';
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	    mapOption = { 
+			center: new daum.maps.LatLng(36.89508761502684,128.1974791344576), // 지도의 중심좌표
+	        level: 8
+	    };
+	
+	var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+	map.setMapTypeId(daum.maps.MapTypeId.HYBRID);    
+	var mapTypeControl = new daum.maps.MapTypeControl();
+	map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+	var zoomControl = new daum.maps.ZoomControl();
+	map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+    
+
+	// 지도에 표시할 선을 생성합니다
+	var polyline = new daum.maps.Polyline({
+	    path: linePath, // 선을 구성하는 좌표배열 입니다
+	    strokeWeight: 2, // 선의 두께 입니다
+	    strokeColor: '#FF0000', // 선의 색깔입니다
+	    strokeOpacity: 0.5, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+	    strokeStyle: 'solid’' // 선의 스타일입니다
+	});
+
+	// 지도에 선을 표시합니다 
+	polyline.setMap(map);  
+
+	var linePath = [
+		new daum.maps.LatLng(36.887346, 128.077781),//1
+		new daum.maps.LatLng(36.884900, 128.077667),
+		new daum.maps.LatLng(36.882729, 128.077996),
+		new daum.maps.LatLng(36.879416, 128.081483),
+		new daum.maps.LatLng(36.876893, 128.082427),
+		new daum.maps.LatLng(36.873771, 128.081923),
+		new daum.maps.LatLng(36.870304, 128.086150),
+		new daum.maps.LatLng(36.865531, 128.088038),
+		new daum.maps.LatLng(36.863628, 128.087692),//2
+		new daum.maps.LatLng(36.860235, 128.088135),
+		new daum.maps.LatLng(36.859497, 128.087899),
+		new daum.maps.LatLng(36.857368, 128.085714),//3
+		new daum.maps.LatLng(36.851977, 128.087180),
+		new daum.maps.LatLng(36.849332, 128.091257),
+		new daum.maps.LatLng(36.845744, 128.092083),
+		new daum.maps.LatLng(36.844696, 128.093081),
+		new daum.maps.LatLng(36.843837, 128.092920),
+		new daum.maps.LatLng(36.842326, 128.093703),
+		new daum.maps.LatLng(36.839175, 128.094368),
+		new daum.maps.LatLng(36.838368, 128.094336),
+		new daum.maps.LatLng(36.837595, 128.094669),
+		new daum.maps.LatLng(36.836779, 128.093939),
+		new daum.maps.LatLng(36.836400, 128.094669),
+		new daum.maps.LatLng(36.834710, 128.096354) //4
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 6, // 선의 두께 입니다
+		strokeColor: '#005ADD', // 선의 색깔입니다
+		strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i04" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip201\');" onmouseout="javascript:hideLayer(\'ttip201\');">재해위험지구(송계계곡)</span></div>';
+	var position = new daum.maps.LatLng(36.857368, 128.085714);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var linePath = [
+		//new daum.maps.LatLng(36.882662, 128.148565),//1
+		//new daum.maps.LatLng(36.883347, 128.149831),//2
+		//new daum.maps.LatLng(36.879940, 128.149917),
+		new daum.maps.LatLng(36.877537, 128.148780),
+		new daum.maps.LatLng(36.874379, 128.150282),
+		new daum.maps.LatLng(36.871504, 128.152685),
+		new daum.maps.LatLng(36.870130, 128.154809),
+		new daum.maps.LatLng(36.867950, 128.155796),
+		new daum.maps.LatLng(36.866388, 128.158489),
+		new daum.maps.LatLng(36.864448, 128.159991),
+		new daum.maps.LatLng(36.862672, 128.159658),//3
+		new daum.maps.LatLng(36.860465, 128.161150),
+		new daum.maps.LatLng(36.858026, 128.162952),//4
+		new daum.maps.LatLng(36.856920, 128.164487),
+		new daum.maps.LatLng(36.855641, 128.169079),
+		new daum.maps.LatLng(36.853720, 128.172081) //5
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 6, // 선의 두께 입니다
+		strokeColor: '#005ADD', // 선의 색깔입니다
+		strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i04" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip202\');" onmouseout="javascript:hideLayer(\'ttip202\');">재해위험지구(용하계곡)</span></div>';
+	var position = new daum.maps.LatLng(36.862672, 128.159658);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+	
+	var linePath = [
+		new daum.maps.LatLng(36.918310, 128.308069),//1
+		new daum.maps.LatLng(36.916903, 128.306470),
+		new daum.maps.LatLng(36.913258, 128.309110),
+		new daum.maps.LatLng(36.910796, 128.309571),
+		new daum.maps.LatLng(36.908291, 128.308981),
+		new daum.maps.LatLng(36.907278, 128.309399),
+		new daum.maps.LatLng(36.907072, 128.310204),
+		new daum.maps.LatLng(36.907776, 128.311202),
+		new daum.maps.LatLng(36.907442, 128.312035),//2
+		new daum.maps.LatLng(36.906163, 128.312468),
+		new daum.maps.LatLng(36.903752, 128.310558),
+		new daum.maps.LatLng(36.904782, 128.307683),
+		new daum.maps.LatLng(36.904349, 128.306013),//3
+		new daum.maps.LatLng(36.903830, 128.305204),
+		new daum.maps.LatLng(36.901264, 128.304893),
+		new daum.maps.LatLng(36.899137, 128.306524),
+		new daum.maps.LatLng(36.894229, 128.308627),
+		new daum.maps.LatLng(36.892041, 128.309002),
+		new daum.maps.LatLng(36.889843, 128.309221),//4
+		new daum.maps.LatLng(36.889063, 128.307586),
+		new daum.maps.LatLng(36.888892, 128.306159),
+		new daum.maps.LatLng(36.889518, 128.304432),
+		new daum.maps.LatLng(36.889106, 128.302812),
+		new daum.maps.LatLng(36.888233, 128.301633),//5
+		new daum.maps.LatLng(36.886927, 128.300816),
+		new daum.maps.LatLng(36.885614, 128.298789),
+		new daum.maps.LatLng(36.884361, 128.297126),
+		new daum.maps.LatLng(36.883468, 128.295935),
+		new daum.maps.LatLng(36.882945, 128.295763),
+		new daum.maps.LatLng(36.882583, 128.295906) //6
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 6, // 선의 두께 입니다
+		strokeColor: '#005ADD', // 선의 색깔입니다
+		strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i04" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip203\');" onmouseout="javascript:hideLayer(\'ttip203\');">재해위험지구(선암계곡)</span></div>';
+	var position = new daum.maps.LatLng(36.889843, 128.309221);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+	
+	var content = '<div class="icon_pointer"><span class="i01" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip101\');" onmouseout="javascript:hideLayer(\'ttip101\');">급경사지(마애불 상단)</span></div>';
+	var position = new daum.maps.LatLng(36.872617, 128.103850);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i01" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip102\');" onmouseout="javascript:hideLayer(\'ttip102\');">급경사지(하봉)</span></div>';
+	var position = new daum.maps.LatLng(36.894067, 128.098039);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i01" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip103\');" onmouseout="javascript:hideLayer(\'ttip103\');">급경사지(영봉하단)</span></div>';
+	var position = new daum.maps.LatLng(36.887219, 128.108781);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i01" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip104\');" onmouseout="javascript:hideLayer(\'ttip104\');">급경사지(옥순봉․구담봉 입구)</span></div>';
+	var position = new daum.maps.LatLng(36.931472, 128.235083);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i01" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip105\');" onmouseout="javascript:hideLayer(\'ttip105\');">급경사지(금수산하단)</span></div>';
+	var position = new daum.maps.LatLng(36.977917, 128.254194);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i03" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip301\');" onmouseout="javascript:hideLayer(\'ttip301\');">산사태취약지구(사문리 산23-1)</span></div>';
+	var position = new daum.maps.LatLng(36.836472, 128.051361);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer"><span class="i03" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip302\');" onmouseout="javascript:hideLayer(\'ttip302\');">산사태취약지구(사문리 36-1 전)</span></div>';
+	var position = new daum.maps.LatLng(36.831972, 128.061528);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i03" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip303\');" onmouseout="javascript:hideLayer(\'ttip303\');">산사태취약지구(가산리 산71-1)</span></div>';
+	var position = new daum.maps.LatLng(36.872746, 128.293289);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i03" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip304\');" onmouseout="javascript:hideLayer(\'ttip304\');">산사태취약지구(월악리 산1-1(용하))</span></div>';
+	var position = new daum.maps.LatLng(36.853874, 128.177389);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i03" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip305\');" onmouseout="javascript:hideLayer(\'ttip305\');">산사태취약지구(월악리 산1-1(억동))</span></div>';
+	var position = new daum.maps.LatLng(36.879022, 128.149880);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i03" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip306\');" onmouseout="javascript:hideLayer(\'ttip306\');">산사태취약지구(상천리)</span></div>';
+	var position = new daum.maps.LatLng(36.971500, 128.240889);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i03" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip307\');" onmouseout="javascript:hideLayer(\'ttip307\');">산사태취약지구(명전리 산28임)</span></div>';
+	var position = new daum.maps.LatLng(36.863861, 128.248028);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i03" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip308\');" onmouseout="javascript:hideLayer(\'ttip308\');">산사태취약지구(명전리 949구)</span></div>';
+	var position = new daum.maps.LatLng(36.847345, 128.249760);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i03" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip309\');" onmouseout="javascript:hideLayer(\'ttip309\');">산사태취약지구(명전리 산26임)</span></div>';
+	var position = new daum.maps.LatLng(36.868333, 128.242889);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i03" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip310\');" onmouseout="javascript:hideLayer(\'ttip310\');">산사태취약지구(명전리 산29-1임)</span></div>';
+	var position = new daum.maps.LatLng(36.827555, 128.310222);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i03" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip311\');" onmouseout="javascript:hideLayer(\'ttip311\');">산사태취약지구(명전리 산29-2임)</span></div>';
+	var position = new daum.maps.LatLng(36.847417, 128.251305);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i02" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip401\');" onmouseout="javascript:hideLayer(\'ttip401\');">사고위험지구(영봉일원)</span></div>';
+	var position = new daum.maps.LatLng(36.880846, 128.104876);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i02" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip402\');" onmouseout="javascript:hideLayer(\'ttip402\');">사고위험지구(금수산일원)</span></div>';
+	var position = new daum.maps.LatLng(36.986596, 128.255749);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i02" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip403\');" onmouseout="javascript:hideLayer(\'ttip403\');">사고위험지구(가은산)</span></div>';
+	var position = new daum.maps.LatLng(36.955472, 128.250882);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i02" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip404\');" onmouseout="javascript:hideLayer(\'ttip404\');">사고위험지구(제비봉)</span></div>';
+	var position = new daum.maps.LatLng(36.921688, 128.269183);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer"><span class="i02" style="left: -15px; top: -44px;" onmouseover="javascript:showLayer(\'ttip405\');" onmouseout="javascript:hideLayer(\'ttip405\');">사고위험지구(도락산)</span></div>';
+	var position = new daum.maps.LatLng(36.859340, 128.305426);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip201"><span class="i04" onmouseover="javascript:showLayer(\'ttip201\');" onmouseout="javascript:hideLayer(\'ttip201\');">재해위험지구(송계계곡)</span><ul><li><div class="info_txt"><p><strong>재해위험지구(송계계곡)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.857368, 128.085714);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip202"><span class="i04" onmouseover="javascript:showLayer(\'ttip202\');" onmouseout="javascript:hideLayer(\'ttip202\');">재해위험지구(용하계곡)</span><ul><li><div class="info_txt"><p><strong>재해위험지구(용하계곡)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.862672, 128.159658);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip203"><span class="i04" onmouseover="javascript:showLayer(\'ttip203\');" onmouseout="javascript:hideLayer(\'ttip203\');">재해위험지구(선암계곡)</span><ul><li><div class="info_txt"><p><strong>재해위험지구(선암계곡)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.889843, 128.309221);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip101"><span class="i01" onmouseover="javascript:showLayer(\'ttip101\');" onmouseout="javascript:hideLayer(\'ttip101\');">급경사지(마애불 상단)</span><ul><li><div class="info_txt"><p><strong>급경사지(마애불 상단)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.872617, 128.103850);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip102"><span class="i01" onmouseover="javascript:showLayer(\'ttip102\');" onmouseout="javascript:hideLayer(\'ttip102\');">급경사지(하봉)</span><ul><li><div class="info_txt"><p><strong>급경사지(하봉)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.894067, 128.098039);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip103"><span class="i01" onmouseover="javascript:showLayer(\'ttip103\');" onmouseout="javascript:hideLayer(\'ttip103\');">급경사지(영봉하단)</span><ul><li><div class="info_txt"><p><strong>급경사지(영봉하단)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.887219, 128.108781);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip104"><span class="i01" onmouseover="javascript:showLayer(\'ttip104\');" onmouseout="javascript:hideLayer(\'ttip104\');">급경사지(옥순봉․구담봉 입구)</span><ul><li><div class="info_txt"><p><strong>급경사지(옥순봉․구담봉 입구)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.931472, 128.235083);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip105"><span class="i01" onmouseover="javascript:showLayer(\'ttip105\');" onmouseout="javascript:hideLayer(\'ttip105\');">급경사지(금수산하단)</span><ul><li><div class="info_txt"><p><strong>급경사지(금수산하단)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.977917, 128.254194);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip301"><span class="i03" onmouseover="javascript:showLayer(\'ttip301\');" onmouseout="javascript:hideLayer(\'ttip301\');">산사태취약지구(사문리 산23-1)</span><ul><li><div class="info_txt"><p><strong>산사태취약지구(사문리 산23-1)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.836472, 128.051361);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip302"><span class="i03" onmouseover="javascript:showLayer(\'ttip302\');" onmouseout="javascript:hideLayer(\'ttip302\');">산사태취약지구(사문리 36-1 전)</span><ul><li><div class="info_txt"><p><strong>산사태취약지구(사문리 36-1 전)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.831972, 128.061528);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip303"><span class="i03" onmouseover="javascript:showLayer(\'ttip303\');" onmouseout="javascript:hideLayer(\'ttip303\');">산사태취약지구(가산리 산71-1)</span><ul><li><div class="info_txt"><p><strong>산사태취약지구(가산리 산71-1)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.872746, 128.293289);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip304"><span class="i03" onmouseover="javascript:showLayer(\'ttip304\');" onmouseout="javascript:hideLayer(\'ttip304\');">산사태취약지구(월악리 산1-1(용하))</span><ul><li><div class="info_txt"><p><strong>산사태취약지구(월악리 산1-1(용하))</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.853874, 128.177389);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip305"><span class="i03" onmouseover="javascript:showLayer(\'ttip305\');" onmouseout="javascript:hideLayer(\'ttip305\');">산사태취약지구(월악리 산1-1(억동))</span><ul><li><div class="info_txt"><p><strong>산사태취약지구(월악리 산1-1(억동))</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.879022, 128.149880);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip306"><span class="i03" onmouseover="javascript:showLayer(\'ttip306\');" onmouseout="javascript:hideLayer(\'ttip306\');">산사태취약지구(상천리)</span><ul><li><div class="info_txt"><p><strong>산사태취약지구(상천리)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.971500, 128.240889);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip307"><span class="i03" onmouseover="javascript:showLayer(\'ttip307\');" onmouseout="javascript:hideLayer(\'ttip307\');">산사태취약지구(명전리 산28임)</span><ul><li><div class="info_txt"><p><strong>산사태취약지구(명전리 산28임)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.863861, 128.248028);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip308"><span class="i03" onmouseover="javascript:showLayer(\'ttip308\');" onmouseout="javascript:hideLayer(\'ttip308\');">산사태취약지구(명전리 949구)</span><ul><li><div class="info_txt"><p><strong>산사태취약지구(명전리 949구)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.847345, 128.249760);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip309"><span class="i03" onmouseover="javascript:showLayer(\'ttip309\');" onmouseout="javascript:hideLayer(\'ttip309\');">산사태취약지구(명전리 산26임)</span><ul><li><div class="info_txt"><p><strong>산사태취약지구(명전리 산26임)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.868333, 128.242889);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip310"><span class="i03" onmouseover="javascript:showLayer(\'ttip310\');" onmouseout="javascript:hideLayer(\'ttip310\');">산사태취약지구(명전리 산29-1임)</span><ul><li><div class="info_txt"><p><strong>산사태취약지구(명전리 산29-1임)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.827555, 128.310222);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip311"><span class="i03" onmouseover="javascript:showLayer(\'ttip311\');" onmouseout="javascript:hideLayer(\'ttip311\');">산사태취약지구(명전리 산29-2임)</span><ul><li><div class="info_txt"><p><strong>산사태취약지구(명전리 산29-2임)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.847417, 128.251305);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip401"><span class="i02" onmouseover="javascript:showLayer(\'ttip401\');" onmouseout="javascript:hideLayer(\'ttip401\');">사고위험지구(영봉일원)</span><ul><li><div class="info_txt"><p><strong>사고위험지구(영봉일원)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.880846, 128.104876);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip402"><span class="i02" onmouseover="javascript:showLayer(\'ttip402\');" onmouseout="javascript:hideLayer(\'ttip402\');">사고위험지구(금수산일원)</span><ul><li><div class="info_txt"><p><strong>사고위험지구(금수산일원)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.986596, 128.255749);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip403"><span class="i02" onmouseover="javascript:showLayer(\'ttip403\');" onmouseout="javascript:hideLayer(\'ttip403\');">사고위험지구(가은산)</span><ul><li><div class="info_txt"><p><strong>사고위험지구(가은산)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.955472, 128.250882);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip404"><span class="i02" onmouseover="javascript:showLayer(\'ttip404\');" onmouseout="javascript:hideLayer(\'ttip404\');">사고위험지구(제비봉)</span><ul><li><div class="info_txt"><p><strong>사고위험지구(제비봉)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.921688, 128.269183);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+
+	var content = '<div class="icon_pointer icon_list" style="top: -44px;visibility: hidden;" id="ttip405"><span class="i02" onmouseover="javascript:showLayer(\'ttip405\');" onmouseout="javascript:hideLayer(\'ttip405\');">사고위험지구(도락산)</span><ul><li><div class="info_txt"><p><strong>사고위험지구(도락산)</strong></p></div></li></ul></div>';
+	var position = new daum.maps.LatLng(36.859340, 128.305426);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);	
+</script>
+</body>
+</html>

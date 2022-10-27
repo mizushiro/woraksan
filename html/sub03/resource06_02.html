@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="../../css/style.css">
+<script>
+$(document).ready(function(){
+	var slider_01 =	$('.slider').bxSlider({
+			auto: true,controls: false,autoControls: false,captions: true,
+		});
+		// 클릭시 멈춤 현상 해결 //
+		$(document).on('click','.bx-next, .bx-prev',function() {
+		slider_01.stopAuto();
+		slider_01.startAuto();;
+		});
+		$(document).on('mouseover','.bx-pager, #bx-pager1',function() {
+		slider_01.stopAuto();
+		slider_01.startAuto();
+		});	
+});
+</script>
+</head>
+<body class="popup">
+	<p class="top_tit">만수계곡자연관찰로</p>
+	<div class="pop_content">
+		<div class="con_photo">
+			<ul class="slider">
+				<li><img src="../../images/contents/resource06_02_00.jpg" alt="" title="만수자연관찰로 안내도" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_02_01.jpg" alt="" title="자연관찰로입구" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_02_02.jpg" alt="" title="만수교" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_02_03.jpg" alt="" title="관찰로 노면" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_02_04.jpg" alt="" title="미래세대 자연체험장" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_02_05.jpg" alt="" title="야생화단지" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_02_06.jpg" alt="" title="송유채취가마터" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_02_07.jpg" alt="" title="만수계곡" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_02_08.jpg" alt="" title="자연관찰로 숲길" style="height: 535px;width: 655px;"></li>
+			</ul>
+		</div>
+		<div class="con_info">
+			<p class="sub_tit">관찰로 소개</p>
+			<div class="pop_box01 type3" style="height: 450px;">
+				<p class="pop_basic" style="font-size: 18px;font-weight: bold;">계절별로 피는 야생화를 볼 수 있는 월악산 대표 관찰로</p>
+				<ul class="list_arr type2">
+					<li style="font-size: 18px;font-weight: bold;">거리 : 2.0km/순환</li>
+					<li style="font-size: 18px;font-weight: bold;">시간 : 1시간 소요</li>
+					<li style="font-size: 18px;font-weight: bold;">위치 : 만수봉 탐방로 입구</li>
+					<li style="font-size: 18px;font-weight: bold;">특징 <br>만수계곡을 끼고 돌아오는 순환코스로 완만한 경사에 조릿대, <br>소나무림, 참나무림 등 다양한 숲속의 모습을 경험할 수 있음</li>
+					<li style="font-size: 18px;font-weight: bold;">시설 <br>미래세대 체험장, 계곡토론장, 점자해설판, 송유채취 가마터, <br>숯가마터 등</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

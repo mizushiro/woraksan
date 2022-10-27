@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="../../css/style.css">
+<script>
+$(document).ready(function(){
+	var slider_01 =	$('.slider').bxSlider({
+			auto: true,controls: false,autoControls: false,captions: true,
+		});
+		// 클릭시 멈춤 현상 해결 //
+		$(document).on('click','.bx-next, .bx-prev',function() {
+		slider_01.stopAuto();
+		slider_01.startAuto();;
+		});
+		$(document).on('mouseover','.bx-pager, #bx-pager1',function() {
+		slider_01.stopAuto();
+		slider_01.startAuto();
+		});	
+});
+</script>
+</head>
+<body class="popup">
+	<p class="top_tit">덕주 자동차야영장</p>
+	<div class="pop_content">
+		<div class="con_photo">
+			<ul class="slider">
+				<li><img src="../../images/contents/resource07_03_01.jpg" alt="" title="덕주 자동차야영장01"></li>
+				<li><img src="../../images/contents/resource07_03_02.jpg" alt="" title="덕주 자동차야영장02"></li>
+			</ul>
+		</div>
+		<div class="con_info">
+			<p class="sub_tit">야영장 소개</p>
+			<p class="pop_basic">덕주사~영봉 탐방로 입구에 위치한 덕주야영장은 넑고 시원한 소나무 숲 아래, <br>깨끗한 송계계곡과 너른 암반(자연대)이 어우러져 여름철에 큰 인기인 자연발생 <br>야영지 이다.</p>
+			<ul class="list_arr type2">
+				<li>위치 : 송계지구</li>
+				<li>면적 : 18,920(㎡)</li>
+				<li>규모 : 200</li>
+				<li>영지 : 200</li>
+				<li>편의시설 : 취사장, 화장실</li>
+				<li>이용방법 : 선착순</li>
+				<li>이용기간 : 연중</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

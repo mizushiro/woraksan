@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.fancybox.js"></script>
+<link rel="stylesheet" href="../../css/jquery.fancybox.css">
+<link rel="stylesheet" href="../../css/style.css">
+<script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=0c39d2727183afcc0e2f6c2edda6ebd7"></script>
+<script type="text/javascript" src="../../js/border.js"></script>
+<style>
+
+	.map_wrap {position:relative;overflow:hidden;width:100%;height:650px; text-align:center;}
+	.radius_border{border:1px solid #919191;border-radius:5px;}     
+	.label {margin-bottom: 96px;}
+	.label * {display: inline-block;vertical-align: top;}
+	.label .left {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
+	.label .center {background: url(http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;}
+	.label .right {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
+	.custom_typecontrol {visibility: hidden;position:absolute;top:200px;overflow:hidden;width:600px;height:400px;margin-left:150px;padding:0;z-index:1;font-size:12px;font-family:'Malgun Gothic', '맑은 고딕', sans-serif;background-color: #3e8e41}
+	.button {
+      display: inline-block;
+	  height:35px;
+	  padding: 0px 20px;
+	  font-size: 20px;
+	  cursor: pointer;
+	  text-align: center;
+	  text-decoration: none;
+	  outline: none;
+	  color: #fff;
+	  background-color: #F05912;
+	  border: none;
+	  border-radius: 7px;
+	  line-height:37px;
+	  box-shadow:0px 5px 5px rgba(0,0,0,0.3);  
+	  letter-spacing: 1px;
+	  font-weight: bold;
+	}
+	
+
+	</style>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.fancybox').fancybox();
+	});
+</script>
+<link rel="stylesheet" href="../../css/common2.css">
+</head>
+<body class="bodyfont">
+	<div class="wrap">
+		<div class="lnb bg03">
+			<h1 style="letter-spacing: 3px;">공원시설</h1>
+			<ul>
+                <li><a href="#" onClick=location.href('./sub03_01.html')><span style="letter-spacing: 3px;">탐방로</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_02.html')><span style="letter-spacing: 3px;">자연관찰로</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_03.html')><span style="letter-spacing: 3px;">야영장</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_04.html') class="on"><span style="letter-spacing: 3px;">주차장</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_06.html')><span style="letter-spacing: 3px;">탐방지원센터</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_05.html')><span style="letter-spacing: 3px;">탐방안내소</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_07.html')><span style="letter-spacing: 3px;">자원봉사센터</span></a></li>
+			</ul>
+		</div>
+		<div class="content_box type03">
+			<div class="r_box2 big">
+				<h2>주차장</h2>
+				<div class="map_area">
+					<div class="map_daum">
+					      <div id="map" style="width:100%;height:783px;"> 
+					   
+						<!--
+						  <img src="../../images/contents/map06.jpg" alt="">
+						-->
+						</div>
+						<ul class="position06">
+							
+						</ul>
+					</div>
+				</div>
+				<div class="btn_open"><a href="#;">open</a></div>
+				<div class="tg_box" style="height: 670px;">
+					<div class="list">
+						<table>
+							<caption style="font-weight: bold;">주차장 조성 및 관리현황</caption>
+							<colgroup>
+								<col width="8%">
+								<col width="8%">
+								<col width="*">
+								<col width="8%">
+								<col width="8%">
+								<col width="8%">
+								<col width="8%">
+								<col width="7%">
+								<col width="7%">
+								<col width="7%">
+								<col width="8%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" rowspan="2" style="font-weight: bold;">구분</th>
+									<th scope="col" rowspan="2" style="font-weight: bold;">시설명</th>
+									<th scope="col" rowspan="2" style="font-weight: bold;">위치</th>
+									<th scope="col" rowspan="2" style="font-weight: bold;">조성<br>연도</th>
+									<th scope="col" rowspan="2" style="font-weight: bold;">소유자</th>
+									<th scope="col" rowspan="2" style="font-weight: bold;">관리자</th>
+									<th scope="col" rowspan="2" style="font-weight: bold;">면적<br>(㎡)</th>
+									<th scope="col" colspan="3" style="font-weight: bold;">수용능력(대)</th>
+									<th scope="col" rowspan="2" style="font-weight: bold;">비고</th>
+								</tr>
+								<tr height="70">
+									<th scope="col" class="line" style="font-weight: bold;">계</th>
+									<th scope="col" style="font-weight: bold;">대형</th>
+									<th scope="col" style="font-weight: bold;">소형</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="total" height="70">
+									<td colspan="2" class="noline"><strong>계</strong></td>
+									<td><strong>5개소(조성 3, 미조성 2)</strong></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td><strong>40,901</strong></td>
+									<td><strong>674</strong></td>
+									<td><strong>139</strong></td>
+									<td><strong>535</strong></td>
+									<td></td>
+								</tr>
+								<tr height="70">
+									<td rowspan="2" class="noline" style="font-weight: bold;">송계(2)</td>
+									<td style="font-weight: bold;">미륵리</td>
+									<td class="tl" style="font-weight: bold;">충주시 수안보면 미륵리 203</td>
+									<td style="font-weight: bold;">1990</td>
+									<td style="font-weight: bold;">환경부</td>
+									<td style="font-weight: bold;">충주시</td>
+									<td style="font-weight: bold;">19,956</td>
+									<td style="font-weight: bold;">352</td>
+									<td style="font-weight: bold;">67</td>
+									<td style="font-weight: bold;">285</td>
+									<td style="font-weight: bold;"></td>
+								</tr>
+								<tr height="70">
+									<td style="font-weight: bold;">덕주</td>
+									<td class="tl" style="font-weight: bold;">제천시 한수면 송계리 131</td>
+									<td style="font-weight: bold;"></td>
+									<td style="font-weight: bold;"></td>
+									<td style="font-weight: bold;"></td>
+									<td style="font-weight: bold;"><span class="red">(4,337)</span></td>
+									<td style="font-weight: bold;"></td>
+									<td style="font-weight: bold;"></td>
+									<td style="font-weight: bold;"></td>
+									<td style="font-weight: bold;">미조성</td>
+								</tr>
+								<tr height="70">
+									<td class="noline" style="font-weight: bold;">덕산(1)</td>
+									<td style="font-weight: bold;">억수</td>
+									<td class="tl" style="font-weight: bold;">제천시 덕산면 월악리 123-1</td>
+									<td style="font-weight: bold;">1996</td>
+									<td style="font-weight: bold;">제천시</td>
+									<td style="font-weight: bold;">공단</td>
+									<td style="font-weight: bold;">8,879</td>
+									<td style="font-weight: bold;">210</td>
+									<td style="font-weight: bold;">10</td>
+									<td style="font-weight: bold;">200</td>
+									<td style="font-weight: bold;"></td>
+								</tr>
+								<tr height="70">
+									<td rowspan="2" class="noline" style="font-weight: bold;">단양(2)</td>
+									<td style="font-weight: bold;">옥순봉·<br/>구담봉</td>
+									<td class="tl" style="font-weight: bold;">계란리 산4-6일원</td>
+									<td style="font-weight: bold;">2018</td>
+									<td style="font-weight: bold;">환경부</td>
+									<td style="font-weight: bold;">공단</td>
+									<td style="font-weight: bold;">4,618</td>
+									<td style="font-weight: bold;">59</td>
+									<td style="font-weight: bold;">10</td>
+									<td style="font-weight: bold;">49</td>
+									<td style="font-weight: bold;"></td>
+								</tr>
+								<tr height="70">
+									<td style="font-weight: bold;">장회</td>
+									<td class="tl" style="font-weight: bold;">단양군 단성면 장회리 14-2</td>
+									<td style="font-weight: bold;">1994</td>
+									<td style="font-weight: bold;">충북도</td>
+									<td style="font-weight: bold;">단양군</td>
+									<td style="font-weight: bold;">12,066</td>
+									<td style="font-weight: bold;">112</td>
+									<td style="font-weight: bold;">62</td>
+									<td style="font-weight: bold;">50</td>
+									<td style="font-weight: bold;"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="btn_close"><a href="#;">close</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="fm_logo">국립공원</p> 
+		<ul class="nav">
+
+            <li><a href="#" class="nav01" onClick=location.href('./sub03_03_08.html')>이전</a></li>
+			<li><a href="#" class="nav02" onClick=location.href('./sub03_06.html')>다음</a></li>
+			<li><a href="#" class="nav03" onClick=location.href('/html/main/main.html')>홈</a></li>
+
+		</ul>
+	</div>
+	<script>
+    
+	
+	 
+    var message='';
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	    mapOption = { 
+			center: new daum.maps.LatLng(36.88508761502684,128.1974791344576), // 지도의 중심좌표
+	        level: 8
+	    };
+	
+	var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+	map.setMapTypeId(daum.maps.MapTypeId.HYBRID);    
+	var mapTypeControl = new daum.maps.MapTypeControl();
+	map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+	var zoomControl = new daum.maps.ZoomControl();
+	map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+    
+
+	// 지도에 표시할 선을 생성합니다
+	var polyline = new daum.maps.Polyline({
+	    path: linePath, // 선을 구성하는 좌표배열 입니다
+	    strokeWeight: 2, // 선의 두께 입니다
+	    strokeColor: '#FF0000', // 선의 색깔입니다
+	    strokeOpacity: 0.5, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+	    strokeStyle: 'solid’' // 선의 스타일입니다
+	});
+
+	// 지도에 선을 표시합니다 
+	polyline.setMap(map);   
+
+	var linePath = [
+		new daum.maps.LatLng(36.82420239718355,128.0908821228973),
+		new daum.maps.LatLng(36.81917348,128.10086417)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+	
+	var content = '<ul class="position03"><li><a style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="button">미륵리주차장</div></a></li></div>';
+	var position = new daum.maps.LatLng(36.81917348,128.10086417);  
+	var customOverlay1 = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay1.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_04.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.82420239718355,128.0908821228973); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);   
+
+	var linePath = [
+		new daum.maps.LatLng(36.85807558591895,128.1619412081666),
+		new daum.maps.LatLng(36.85317348,128.17006417)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+ 
+	var content = '<ul class="position03"><li><a style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="button">억수주차장</div></a></li></div>';
+	var position = new daum.maps.LatLng(36.85317348,128.17006417);  
+	var customOverlay1 = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay1.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_04.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.85807558591895,128.1619412081666); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);  
+
+	var linePath = [
+		new daum.maps.LatLng(36.93051387695435,128.25675112226776),
+		new daum.maps.LatLng(36.91817348,128.27006417)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position03"><li><a style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="button">장회주차장</div></a></li></div>';
+	var position = new daum.maps.LatLng(36.91817348,128.27006417);  
+	var customOverlay1 = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay1.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_04.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.93051387695435,128.25675112226776); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);  
+
+	var linePath = [
+		new daum.maps.LatLng(36.931050, 128.234723),
+		new daum.maps.LatLng(36.91817348, 128.204723)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+	
+	var content = '<ul class="position03"><li><a style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -65px;"><div class="button">옥순봉주차장</div></a></li></div>';
+	var position = new daum.maps.LatLng(36.91817348, 128.204723);  
+	var customOverlay1 = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay1.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_04.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.931050, 128.234723); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);   
+
+	var linePath = [
+		new daum.maps.LatLng(36.864761, 128.088101),
+		new daum.maps.LatLng(36.854761, 128.083101)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+	
+	var content = '<ul class="position03"><li><a style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="button" style="background-color: #000000;">덕주주차장(예정)</div></a></li></div>';
+	var position = new daum.maps.LatLng(36.854761, 128.083101);  
+	var customOverlay1 = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay1.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_04.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.864761, 128.088101); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);   
+
+</script>
+</body>
+</html>

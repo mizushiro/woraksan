@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="../../css/style.css">
+<script>
+$(document).ready(function(){
+	var slider_01 =	$('.slider').bxSlider({
+			auto: true,controls: false,autoControls: false,captions: true,
+		});
+		// 클릭시 멈춤 현상 해결 //
+		$(document).on('click','.bx-next, .bx-prev',function() {
+		slider_01.stopAuto();
+		slider_01.startAuto();
+		});
+		$(document).on('mouseover','.bx-pager, #bx-pager1',function() {
+		slider_01.stopAuto();
+		slider_01.startAuto();
+		});	
+});
+</script>
+</head>
+<body class="popup">
+	<p class="top_tit">덕주역사자연관찰로</p>
+	<div class="pop_content">
+		<div class="con_photo">
+			<ul class="slider">
+				<li><img src="../../images/contents/resource06_01_00.jpg" alt="" title="덕주역사자연관찰로 안내도" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_01_01.jpg" alt="" title="자연관찰로 입구" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_01_02.jpg" alt="" title="계곡 옆 숲길" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_01_03.jpg" alt="" title="송계6경 수경대" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_01_04.jpg" alt="" title="송계4경 학소대" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_01_05.jpg" alt="" title="덕주산성 동문" style="height: 535px;width: 655px;"></li>
+                <li><img src="../../images/contents/resource06_01_06.jpg" alt="" title="덕주산성 성곽" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_01_07.jpg" alt="" title="덕주사" style="height: 535px;width: 655px;"></li>
+			</ul>
+		</div>
+		<div class="con_info">
+			<p class="sub_tit">관찰로 소개</p>
+			<div class="pop_box01 type3" style="height: 450px;">
+				<p class="pop_basic" style="font-size: 18px;font-weight: bold;">중원문화 유적을 만날 수 있는 역사관찰로</p>
+				<ul class="list_arr type2">
+					<li style="font-size: 18px;font-weight: bold;">거리 : 2km/왕복</li>
+					<li style="font-size: 18px;font-weight: bold;">시간 : 1시간 소요</li>
+					<li style="font-size: 18px;font-weight: bold;">위치 : 덕주사~영봉 탐방로 입구</li>
+					<li style="font-size: 18px;font-weight: bold;">특징 <br>월악산 영봉의 대표 탐방로 입구에 위치 <br>송계계곡과 암석이 어우러진 수경대, 학소대 <br>몽골의 침입을 막기위해 만든 덕주산성 동문 덕주공주의 전설이 깃든 덕주사</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

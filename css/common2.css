@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+.bodyfont {font-size:20px;}
+
+.map_area .icon_list {z-index:30px;position:absolute;top:-42px;left:-15px;bottom:0;right:0}
+.map_area .icon_list li {position:absolute}
+.map_area .icon_list li .icon {font-size:0;text-indent:-999px;display:inline-block;width:30px;height:42px}
+.map_area .icon_list li .icon:before {position:absolute;top:0;left:0;z-index:30}
+.map_area .icon_list .info_txt {background-color:rgba(45,62,149,.8);border:1px solid #464b6b;padding:12px;border-radius:6px;font-size:20px;position:absolute;top:0;left:40px;min-width:100px;z-index:31;color:#fff}
+.map_area .icon_list .info_txt strong, .map_area .icon_list .info_txt span {display:block}
+.map_area .icon_list .info_txt .btn_x {font-size:0;text-indent:-999px;border:0;background:url('../images/btn_x.png') no-repeat 0 0;width:10px;height:10px;position:absolute;top:7px;right:7px;overflow:hidden}
+.map_area .icon_list li .icon.i05 + .info_txt, .map_area .icon_list li .icon.i01 + .info_txt, .map_area .icon_list li .icon.i02 + .info_txt {min-width:100px}
+
+.map_footer {padding-left:30px}
+.map_footer .icon_list li {float:left;color:#fff;margin-right:30px}
+.icon:before {content:'';height:42px;width:30px;display:inline-block;margin-right:5px;background:url('../images/icon02.png') no-repeat 0 0}
+.map_footer .icon_list li .icon:before {position:relative;top:15px}
+.icon.i01:before {background-position:0 0}
+.icon.i02:before {background-position:-30px 0}
+.icon.i03:before {background-position:-210px 0}
+.icon.i04:before {background-position:-120px 0}
+.icon.i05:before {background-position:-150px 0}
+.icon.i06:before {background-position:-60px 0}
+.icon.i07:before {background-position:-90px 0}
+.icon.i08:before {background-position:-180px 0}
+
+/* footer */
+.map_footer {position:absolute;bottom:0;left:0;right:0;height:70px;background:#333;z-index:20}
+
+.icon_wrap2  {position:absolute;padding:10px 37px 15px 37px;min-width:255px}
+.icon_wrap2:after {position:absolute;width:28px;height:23px;bottom:-23px;left:28px;content:''}
+.icon_wrap2 ul li {font-family:'dotum';color:#fff;font-weight:bold;line-height:34px}
+.icon_wrap2 ul li:before {background:url('../images/contents/ico01.png') no-repeat 0 0;width:30px;height:44px;overflow:hidden;content:'';display:inline-block;margin-right:10px;position:relative;top:15px}
+.icon_wrap2 ul li.ico01:before {background-position:0 0}
+.icon_wrap2 ul li.ico02:before {background-position:-30px 0}
+.icon_wrap2 ul li.ico03:before {background-position:-60px 0}
+.icon_wrap2 ul li.ico04:before {background-position:-90px 0}

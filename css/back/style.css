@@ -1,0 +1,368 @@
+@charset "utf-8";
+@import url('common.css');
+
+/* content */
+.r_box {border-radius:15px;background:#fff;box-shadow:0 5px 7px #c8c9cb}
+.r_box + .r_box {margin-top:43px}
+.r_box h2 {background:#ccc;height:72px;line-height:70px;padding:0 40px;position:relative;border-radius:15px 15px 0 0;color:#000;font-size:24px;font-weight:bold}
+.r_box h2:after {display:block;position:absolute;top:72px;left:54px;content:'';background:url('../images/contents/h2_arr.gif') no-repeat 0 0;width:24px;height:14px}
+.r_box .txt {padding:45px 40px}
+.txt.scoll {height:850px;overflow-x:hidden;overflow-y:auto}
+
+.top_tb {width:832px;margin:0 auto 40px auto;overflow:hidden}
+.top_tb .tb {width:354px}
+.top_tb .tb h3 {color:#000;font-size:20px;margin-bottom:10px}
+.top_tb dl {overflow:hidden;font-size:16px}
+.top_tb dl dt {float:left;width:175px;margin-bottom:3px;background:#5e5f63;height:36px;line-height:34px;color:#fff;padding:0 18px;margin-right:4px}
+.top_tb dl dd {background:#eee;color:#000;height:36px;line-height:34px;padding:0 18px;margin-bottom:3px;overflow:hidden}
+.maps {position:relative;width:1108px;margin:0 auto}
+.r_box .maps {margin-bottom:-15px}
+.r_box .maps ul li {position:absolute;background:#7e27b0;line-height:22px;color:#fff;font-size:15px;text-align:center;height:58px;width:190px;border-radius:28px;padding-top:6px}
+.r_box .maps ul li.p01 {top:54px;left:-2px;background:#c70d65;border-radius:18px;height:35px;line-height:33px;padding-top:0;width:237px;font-size:16px}
+.r_box .maps ul li.p01:after {content:'';display:block;position:absolute;top:35px;left:32px;width:12px;height:11px;background:url('../images/contents/map_point.png') no-repeat 0 0}
+.r_box .maps ul li.p02 {top:400px;left:80px}
+.r_box .maps ul li.p03 {top:307px;left:408px}
+.r_box .maps ul li.p04 {top:420px;left:658px}
+.r_box .maps ul li.p05 {top:256px;left:761px}
+.only_img {line-height:0}
+.r_box .tc.only_img {margin:-12px 0}
+
+.graph_wrap {background:url('../images/contents/graph_line.png') no-repeat 0 0;min-height:540px;margin-top:60px;position:relative;padding-left:103px;margin-bottom:-15px}
+.graph_wrap .gt {position:absolute;left:25px;font-size:14px;color:#888}
+.graph_wrap .gt.t01 {top:46px}
+.graph_wrap .gt.t02 {top:271px}
+.graph_wrap .gt.t03 {top:496px}
+.graph_wrap ul li {float:left;width:78px;margin-right:44px}
+.graph_wrap ul li .graph_bar {height:517px;display:table;width:78px}
+.graph_wrap ul li .graph_bar .bar_wrap {display:table-cell;vertical-align:bottom}
+.graph_wrap ul li .graph_bar .bar_wrap span {display:inline-block;width:100%;position:relative;background:url('../images/contents/graph_bg.jpg') repeat-y 0 0}
+.graph_wrap ul li .graph_bar .bar_wrap span:before {display:block;content:'';position:absolute;top:0;left:0;width:100%;height:23px;background:url('../images/contents/graph_top.jpg') no-repeat 0 0}
+.graph_wrap ul li .graph_bar .bar_wrap span:after {display:block;content:'';position:absolute;bottom:0;left:0;width:100%;height:17px;background:url('../images/contents/graph_btm.jpg') no-repeat 0 0}
+.graph_year {text-align:center;font-size:17px;font-weight:bold;margin-top:43px}
+.graph_wrap ul li .graph_bar .bar_wrap .bg01, .graph_wrap ul li .graph_bar .bar_wrap .bg01:before, .graph_wrap ul li .graph_bar .bar_wrap .bg01:after {background-position:0 0}
+.graph_wrap ul li .graph_bar .bar_wrap .bg02, .graph_wrap ul li .graph_bar .bar_wrap .bg02:before, .graph_wrap ul li .graph_bar .bar_wrap .bg02:after {background-position:-78px 0}
+.graph_wrap ul li .graph_bar .bar_wrap .bg03, .graph_wrap ul li .graph_bar .bar_wrap .bg03:before, .graph_wrap ul li .graph_bar .bar_wrap .bg03:after {background-position:-156px 0}
+.graph_wrap ul li .graph_bar .bar_wrap .bg04, .graph_wrap ul li .graph_bar .bar_wrap .bg04:before, .graph_wrap ul li .graph_bar .bar_wrap .bg04:after {background-position:-234px 0}
+.graph_wrap ul li .graph_bar .bar_wrap .bg05, .graph_wrap ul li .graph_bar .bar_wrap .bg05:before, .graph_wrap ul li .graph_bar .bar_wrap .bg05:after {background-position:-312px 0}
+.graph_wrap ul li .graph_bar .bar_wrap .bg06, .graph_wrap ul li .graph_bar .bar_wrap .bg06:before, .graph_wrap ul li .graph_bar .bar_wrap .bg06:after {background-position:-390px 0}
+.graph_wrap ul li .graph_bar .bar_wrap .bg07, .graph_wrap ul li .graph_bar .bar_wrap .bg07:before, .graph_wrap ul li .graph_bar .bar_wrap .bg07:after {background-position:-468px 0}
+.graph_wrap ul li .graph_bar .bar_wrap .bg08, .graph_wrap ul li .graph_bar .bar_wrap .bg08:before, .graph_wrap ul li .graph_bar .bar_wrap .bg08:after {background-position:-546px 0}
+.graph_wrap ul li .graph_bar .bar_wrap .bg09, .graph_wrap ul li .graph_bar .bar_wrap .bg09:before, .graph_wrap ul li .graph_bar .bar_wrap .bg09:after {background-position:-624px 0}
+.graph_wrap ul li .graph_bar .bar_wrap .bg10, .graph_wrap ul li .graph_bar .bar_wrap .bg10:before, .graph_wrap ul li .graph_bar .bar_wrap .bg10:after {background-position:-702px 0}
+
+.graph_wrap2 {background:url('../images/contents/graph_line2.png') no-repeat 0 0;min-height:352px;margin-top:40px;position:relative;padding-left:103px}
+.graph_wrap2 .gt {position:absolute;left:25px;font-size:14px;color:#888}
+.graph_wrap2 .gt.t01 {top:14px}
+.graph_wrap2 .gt.t02 {top:158px}
+.graph_wrap2 .gt.t03 {top:298px}
+.graph_wrap2 ul li {float:left;width:148px;margin-right:60px;position:relative}
+.graph_wrap2 ul li:after {display:block;content:'';clear:both}
+.graph_wrap2 ul li .graph_bar {height:314px;display:table;width:64px;float:left;margin-right:10px;position:relative}
+.graph_wrap2 ul li .graph_bar .bar_wrap {display:table-cell;vertical-align:bottom}
+.graph_wrap2 ul li .graph_bar .bar_wrap span {display:inline-block;width:100%;position:relative;background:url('../images/contents/graph_bg2.jpg') repeat-y 0 0;min-height:32px}
+.graph_wrap2 ul li .graph_bar .bar_wrap span:before {display:block;content:'';position:absolute;top:0;left:0;width:100%;height:18px;background:url('../images/contents/graph_top2.jpg') no-repeat 0 0}
+.graph_wrap2 ul li .graph_bar .bar_wrap span:after {display:block;content:'';position:absolute;bottom:0;left:0;width:100%;height:15px;background:url('../images/contents/graph_btm2.jpg') no-repeat 0 0}
+.graph_wrap2 .graph_year {clear:both;padding-top:50px}
+.graph_wrap2 ul li .graph_bar .bar_wrap .bg01, .graph_wrap2 ul li .graph_bar .bar_wrap .bg01:before, .graph_wrap2 ul li .graph_bar .bar_wrap .bg01:after {background-position:0 0}
+.graph_wrap2 ul li .graph_bar .bar_wrap .bg02, .graph_wrap2 ul li .graph_bar .bar_wrap .bg02:before, .graph_wrap2 ul li .graph_bar .bar_wrap .bg02:after {background-position:-64px 0}
+.graph_wrap2 .graph_t1 {position:absolute;bottom:50px;left:0;right:50%;text-align:center;padding-right:10px;font-weight:bold}
+.graph_wrap2 .graph_t2 {position:absolute;bottom:50px;left:50%;right:0;text-align:center;padding-right:10px;font-weight:bold}
+
+.lh30 {line-height:30px}
+.mb_s {margin-bottom:-15px}
+
+.sub_nav {background:#c3c5c9;height:66px;padding:14px 40px 0 40px;margin:-20px 0 20px 0;border-radius:13px}
+.sub_nav ul li {float:left;margin-right:10px}
+.sub_nav ul li a {display:block;width:220px;text-align:center;border-radius:7px;height:38px;line-height:36px;color:#fff;padding:0 30px;
+	background-color:#0397c8;
+	background-image: -moz-linear-gradient(#0397c8, #02789e);
+	background-image: -webkit-linear-gradient(#0397c8, #02789e);
+	background-image: linear-gradient(#0397c8, #02789e);
+}
+.sub_nav ul li a.on {background-color:#057889;
+	background-image: -moz-linear-gradient(#057889, #045f6d);
+	background-image: -webkit-linear-gradient(#057889, #045f6d);
+	background-image: linear-gradient(#057889, #045f6d);
+}
+.sub_nav.type2 ul li a {width:auto}
+.sub_nav.type2 ul li a.on {background-color:#e82674;
+	background-image: -moz-linear-gradient(#e82674, #b81e5c);
+	background-image: -webkit-linear-gradient(#e82674, #b81e5c);
+	background-image: linear-gradient(#e82674, #b81e5c);
+}
+
+.r_box2 {border-radius:15px;box-shadow:0 5px 7px #9b9b9b;height:859px;padding:33px 40px;background-color:#fff;position:relative;
+	background-image: -moz-linear-gradient(#fff, #dfdfdf);
+	background-image: -webkit-linear-gradient(#fff, #dfdfdf);
+	background-image: linear-gradient(#fff, #dfdfdf);
+}
+
+.r_box2.big {height:925px}
+.r_box2 h2 {font-size:24px;margin-bottom:17px}
+.r_box2 .btn_open {position:absolute;top:0;left:0;right:0;height:6px;background:#c3c5c9;border-radius:15px 15px 0 0}
+.r_box2 .btn_open a {position:absolute;top:6px;left:50%;margin-left:-65px;width:129px;height:19px;background:url('../images/contents/btn_open.jpg') no-repeat 0 0;display:block;font-size:0;text-indent:999px;overflow:hidden}
+.r_box2 .hidden_tab {}
+.mapb {position:relative}
+.mapb > img {vertical-align:top}
+.mapb ul li a span {position:absolute;display:inline-block;height:22px;font-family:'dotum';font-size:13px;color:#fff;background:#7e27b0;border-radius:11px;padding:0 20px;line-height:22px}
+.mapb ul li a span:after {display:block;content:'';width:29px;height:42px;overflow:hidden;background:url('../images/contents/pin.png') no-repeat 0 0;position:absolute}
+.mapb .position01 .p01 {left:242px;top:242px} /* 남생이 */
+.mapb .position01 .p01:after {top:16px;left:-23px}
+.mapb .position01 .p02 {left:188px;top:332px} /* 붉은박쥐 */
+.mapb .position01 .p02:after {top:11px;right:-27px}
+.mapb .position01 .p03 {left:142px;top:363px} /* 토끼박쥐 */
+.mapb .position01 .p03:after {top:5px;left:100px}
+.mapb .position01 .p04 {left:103px;top:430px} /* 까막딱따구리 */
+.mapb .position01 .p04:after {top:6px;right:-30px}
+.mapb .position01 .p05 {left:190px;top:528px} /* 복주머니란 */
+.mapb .position01 .p05:after {top:8px;right:-30px}
+.mapb .position01 .p06 {left:303px;top:395px} /* 구렁이 */
+.mapb .position01 .p06:after {top:8px;left:-28px}
+.mapb .position01 .p07 {left:342px;top:446px} /* 수달 */
+.mapb .position01 .p07:after {top:-2px;left:-32px}
+.mapb .position01 .p08 {left:358px;top:292px} /* 작은관코박쥐 */
+.mapb .position01 .p08:after {top:14px;left:-25px}
+.mapb .position01 .p09 {left:401px;top:352px} /* 하늘다람쥐 */
+.mapb .position01 .p09:after {top:6px;left:-30px}
+.mapb .position01 .p10 {left:420px;top:395px} /* 산양 */
+.mapb .position01 .p10:after {top:11px;left:-28px}
+.mapb .position01 .p11 {left:706px;top:462px} /* 삵 */
+.mapb .position01 .p11:after {top:10px;left:-29px}
+.mapb .position01 .p12 {left:875px;top:464px} /* 참매 */
+.mapb .position01 .p12:after {top:-45px;left:14px}
+.mapb .position01 .p13 {left:957px;top:339px} /* 새매 */
+.mapb .position01 .p13:after {top:19px;left:-22px}
+.mapb .position01 .p14 {left:1044px;top:328px} /* 돌상어 */
+.mapb .position01 .p14:after {top:23px;left:-10px}
+.mapb .position01 .p15 {left:1173px;top:248px} /* 백부자 */
+.mapb .position01 .p15:after {top:16px;left:-23px}
+.mapb .position01 .p16 {left:934px;top:35px} /* 왕제비꽃 */
+.mapb .position01 .p16:after {top:12px;left:-26px}
+
+.mapb ul.position02 li a span {line-height:14px;height:36px;padding-top:4px;border-radius:18px;text-align:center;min-width:160px}
+.mapb .position02 .p01 {left:106px;top:412px} /* 보물 제94호 */
+.mapb .position02 .p01:after {top:41px;right:41px}
+.mapb .position02 .p02 {top:513px;left:133px} /* 보물 제96호 */
+.mapb .position02 .p02:after {top:5px;right:-76px}
+.mapb .position02 .p03 {left:123px;top:552px} /* 보물 제95호 */
+.mapb .position02 .p03:after {top:-19px;right:-50px}
+.mapb .position02 .p04 {left:153px;top:591px} /* 사적 제317호 */
+.mapb .position02 .p04:after {top:-36px;right:-46px}
+.mapb .position02 .p05 {left:221px;top:361px} /* 보물 제406호 */
+.mapb .position02 .p05:after {top:42px;right:30px}
+.mapb .position02 .p06 {left:392px;top:323px} /* 보물 제1296호 */
+.mapb .position02 .p06:after {top:39px;left:65px}
+.mapb .position02 .p07 {left:448px;top:503px} /* 명승 제49호 */
+.mapb .position02 .p07:after {top:45px;left:-29px}
+.mapb .position02 .p08 {left:703px;top:194px} /* 명승 제48호 */
+.mapb .position02 .p08:after {top:-6px;right:-39px}
+.mapb .position02 .p09 {left:758px;top:244px} /* 명승 제46호 */
+.mapb .position02 .p09:after {top:-19px;right:-31px}
+
+.mapb .position03 .p01 {top:443px;left:195px} /* 송계계곡 */
+.mapb .position03 .p01:after {top:-19px;right:-30px}
+.mapb .position03 .p02 {top:292px;left:358px} /* 보덕굴 */
+.mapb .position03 .p02:after {top:24px;left:-17px} 
+.mapb .position03 .p03 {top:336px;left:421px} /* 하봉 */
+.mapb .position03 .p03:after {top:23px;left:-38px}
+.mapb .position03 .p04 {top:363px;left:448px} /* 중봉 */
+.mapb .position03 .p04:after {top:18px;left:-36px}
+.mapb .position03 .p05 {top:396px;left:483px} /* 영봉 */
+.mapb .position03 .p05:after {top:6px;left:-35px}
+.mapb .position03 .p06 {top:495px;left:399px} /* 만수계곡 */
+.mapb .position03 .p06:after {top:2px;left:-37px}
+.mapb .position03 .p07 {top:545px;left:415px} /* 하늘재 */
+.mapb .position03 .p07:after {top:4px;left:-39px}
+.mapb .position03 .p08 {top:440px;left:577px} /* 용하계곡 */
+.mapb .position03 .p08:after {top:6px;left:-37px}
+.mapb .position03 .p09 {top:156px;left:899px} /* 옥순봉 */
+.mapb .position03 .p09:after {top:19px;left:-30px}
+.mapb .position03 .p10 {top:187px;left:940px} /* 구담봉 */
+.mapb .position03 .p10:after {top:1px;left:-36px}
+.mapb .position03 .p11 {top:232px;left:946px} /* 제비봉 */
+.mapb .position03 .p11:after {top:-4px;left:-36px}
+.mapb .position03 .p12 {top:376px;left:960px} /* 선암계곡 */
+.mapb .position03 .p12:after {top:27px;left:29px}
+
+.mapb .position04 a span {height:38px;line-height:38px;font-size:14px;border-radius:19px;font-weight:bold;padding:0 26px;box-shadow:0 3px 3px rgba(0,0,0,.35)}
+.mapb .position04 a span:after {display:none}
+.mapb .position04 .p01 {left:99px;top:482px;background:#8227f2;
+	background-image: -moz-linear-gradient(#8227f2 0%, #6c20c9 95%, #5b1ba9 96%, #5b1ba9 100%);
+	background-image: -webkit-linear-gradient(#8227f2 0%, #6c20c9 95%, #5b1ba9 96%, #5b1ba9 100%);
+	background-image: linear-gradient(#8227f2 0%, #6c20c9 95%, #5b1ba9 96%, #5b1ba9 100%);
+} /* 망개나무 */
+.mapb .position04 .p02 {left:79px;top:543px;background:#cf126b;
+	background-image: -moz-linear-gradient(#cf126b 0%, #ab0f59 95%, #910d4b 96%, #910d4b 100%);
+	background-image: -webkit-linear-gradient(#cf126b 0%, #ab0f59 95%, #910d4b 96%, #910d4b 100%);
+	background-image: linear-gradient(#cf126b 0%, #ab0f59 95%, #910d4b 96%, #910d4b 100%);
+} /* 복주머니란 */
+.mapb .position04 .p03 {left:455px;top:358px;background:#f55a06;
+	background-image: -moz-linear-gradient(#f55a06 0%, #cb4a05 95%, #ab3f04 96%, #ab3f04 100%);
+	background-image: -webkit-linear-gradient(#f55a06 0%, #cb4a05 95%, #ab3f04 96%, #ab3f04 100%);
+	background-image: linear-gradient(#f55a06 0%, #cb4a05 95%, #ab3f04 96%, #ab3f04 100%);
+} /* 솔나리꽃 */
+.mapb .position04 .p04 {left:687px;top:416px;background:#1361e2;
+	background-image: -moz-linear-gradient(#1361e2 0%, #1050bb 95%, #0e449e 96%, #0e449e 100%);
+	background-image: -webkit-linear-gradient(#1361e2 0%, #1050bb 95%, #0e449e 96%, #0e449e 100%);
+	background-image: linear-gradient(#1361e2 0%, #1050bb 95%, #0e449e 96%, #0e449e 100%);
+} /* 산양 */
+.mapb .position04 .p05 {left:954px;top:160px;background:#ce1cc8;
+	background-image: -moz-linear-gradient(#ce1cc8 0%, #aa17a5 95%, #91148c 96%, #91148c 100%);
+	background-image: -webkit-linear-gradient(#ce1cc8 0%, #aa17a5 95%, #91148c 96%, #91148c 100%);
+	background-image: linear-gradient(#ce1cc8 0%, #aa17a5 95%, #91148c 96%, #91148c 100%);
+} /* 왕제비꽃 */
+
+.mapb .position05 a span {height:38px;line-height:38px;font-size:14px;border-radius:19px;font-weight:bold;padding:0 20px;box-shadow:0 3px 3px rgba(0,0,0,.35)}
+.mapb .position05 .p01 {left:325px;top:517px} /* 폐도복원 */
+.mapb .position05 .p01:after {left:-28px;top:41px}
+.mapb .position05 .p02 {left:768px;top:380px} /* 봉양폐광산 */
+.mapb .position05 .p02:after {right:-30px;top:-27px}
+
+.circle_wrap {position:absolute;top:51px;left:52px;height:47px;background:#717275;border-radius:24px;line-height:47px;font-family:'dotum';color:#fff;font-weight:bold;padding:0 37px}
+.circle_wrap:after {position:absolute;background:url('../images/contents/map_point2.png') no-repeat 0 0;width:28px;height:23px;top:47px;left:28px;content:''}
+.circle_wrap span {display:inline-block;margin-left:25px}
+.circle_wrap span:first-child {margin-left:0}
+.circle:before {content:'';display:inline-block;width:18px;height:18px;border-radius:50%;border:3px solid #fff;margin-right:9px;position:relative;top:5px}
+.circle.c01:before {background:#00f3d4}
+.circle.c02:before {background:#ef1d40}
+.circle.c03:before {background:#0555da}
+
+.icon_wrap  {position:absolute;top:51px;left:52px;background:#717275;border-radius:24px;padding:10px 37px 15px 37px;min-width:255px}
+.icon_wrap:after {position:absolute;background:url('../images/contents/map_point2.png') no-repeat 0 0;width:28px;height:23px;bottom:-23px;left:28px;content:''}
+.icon_wrap ul li {font-family:'dotum';color:#fff;font-weight:bold;line-height:34px}
+.icon_wrap ul li:before {background:url('../images/contents/ico01.png') no-repeat 0 0;width:30px;height:30px;overflow:hidden;content:'';display:inline-block;margin-right:10px;position:relative;top:9px}
+.icon_wrap ul li.ico01:before {background-position:0 0}
+.icon_wrap ul li.ico02:before {background-position:-30px 0}
+.icon_wrap ul li.ico03:before {background-position:-60px 0}
+.icon_wrap ul li.ico04:before {background-position:-90px 0}
+
+.icon_pointer span {position:absolute;display:block;width:30px;height:30px;overflow:hidden;font-size:0;text-indent:99px;background:url('../images/contents/ico01.png') no-repeat 0 0}
+.icon_pointer span.i01 {background-position:0 0}
+.icon_pointer span.i02 {background-position:-30px 0}
+.icon_pointer span.i03 {background-position:-60px 0}
+.icon_pointer span.i04 {background-position:-90px 0}
+.icon_pointer .p01 {top:347px;left:368px}
+.icon_pointer .p02 {top:362px;left:392px}
+.icon_pointer .p03 {top:391px;left:404px}
+
+.ts {font-size:14px !important}
+
+.program_wrap {min-height:695px}
+.program_wrap.type2 {min-height:761px}
+.program_wrap:after {content:'';display:block;clear:both}
+.program_photo {float:left;width:700px;margin-right:30px}
+.program_photo .bx-controls {bottom:-65px}
+.program_info {float:left;width:640px}
+.program_info dl {overflow:hidden;font-size:16px}
+.program_info dl dt {float:left;width:120px;height:30px;line-height:28px;border-radius:15px;background:#0395c5;color:#fff;text-align:center;margin-right:15px;clear:both;margin-bottom:10px}
+.program_info dl dd {overflow:hidden;line-height:28px;padding:0 0 2px 0;margin-bottom:10px}
+.program_info {font-size:16px;line-height:30px}
+
+/* toggle_content */
+.tg_box {position:absolute;top:0;left:0;bottom:0;right:0;border-radius:15px;z-index:10;background:#fff;padding:45px 40px;display:none}
+.tg_box .btn_close {position:absolute;bottom:0;left:0;right:0;height:6px;background:#c3c5c9;border-radius:0 0 15px 15px}
+.tg_box .btn_close a {position:absolute;bottom:6px;left:50%;margin-left:-65px;width:129px;height:19px;background:url('../images/contents/btn_close.jpg') no-repeat 0 0;display:block;font-size:0;text-indent:999px;overflow:hidden}
+.tg_box .list table + table {margin-top:50px}
+
+/* ul style */
+.basic li {line-height:48px;font-size:18px;color:#000}
+.basic li strong {margin-right:10px}
+.list_arr li {line-height:48px;font-size:18px;color:#000;background:url('../images/common/blt_arr.gif') no-repeat 0 21px;padding-left:20px}
+.list_arr.type2 li {line-height:28px;font-size:16px;background-position:0 10px;padding-left:10px}
+.list_arr.type3 li {line-height:36px;font-size:16px;background-position:0 14px;padding-left:17px}
+.list_arr.type3 li strong {margin-right:15px}
+.ad_list {margin:0 -50px -58px -50px;padding-left:50px} 
+.ad_list li {float:left;width:355px;margin:0 50px 58px 50px}
+.ad_list li .ad {width:355px;height:270px;overflow:hidden;position:relative}
+.ad_list li .ad img {width:100%;vertical-align:top}
+.ad_list li .ad .btn_play {position:absolute;top:50%;left:50%;margin:-25px 0 0 -25px;z-index:10}
+.ad_list li p {background:#ccc;height:47px;line-height:45px;border-radius:24px;text-align:center;font-size:18px;margin-top:15px}
+
+/* btn */
+.btn_play {width:50px;height:50px;display:inline-block;background:url('../images/contents/btn_play.png') no-repeat 0 0;text-indent:-999px;font-size:0;overflow:hidden}
+
+/* select */
+.cmselw {display:inline-block;*display:inline;position:relative;*zoom:1;text-align:left;*vertical-align:middle}
+.cmselw .t-top {position:relative;height:22px;cursor:pointer;border:1px solid #ccc;background-color:#fff;overflow:hidden}
+.cmselw .t-top .tit {padding:0 0 0 5px;line-height:20px;color:#333}
+.cmselw .t-top .arr {position:absolute;right:0;top:0;width:24px;height:22px;background:url('../images/common/blt_sel.gif') no-repeat 0 0;padding:0}
+.cmselw .a-lay {position:absolute;top:23px;border:1px solid #cdd3d4;background-color:#fafafa}
+.cmselw .a-lay .scroll{
+    position:relative;
+	max-height:130px;
+    margin:0;
+    overflow-x:hidden;
+    overflow-y:auto;
+	scrollbar-face-color:#fff;
+	scrollbar-3dlight-color:#fff;
+	scrollbar-shadow-color:#dad9d9;
+	scrollbar-highlight-color:#dad9d9;
+	scrollbar-darkshadow-color:#fff;
+	scrollbar-track-color:#fff;
+	scrollbar-arrow-color:#dad9d9;
+}
+.cmselw .a-lay ul {padding:0}
+.cmselw .a-lay ul li a {display:block;padding:0 5px;color:#79797a;line-height:22px;font-weight:normal !important}
+.cmselw .a-lay ul li a.selected {}
+.cmselw .a-lay ul li a:hover {text-decoration:none;color:#fff;background-color:#aeaeae}
+.cmselw select {margin-right:0}
+.cmseldisabled * {opacity:0.6;filter:alpha(opacity=60)}
+
+/* popup */
+body.popup {background:none;width:auto;min-width:1470px}
+.popup .top_tit {height:80px;line-height:76px;font-size:30px;text-align:center;background:#d3d3d3;border-radius:15px 15px 0 0;font-weight:bold}
+.pop_content {padding:40px 80px 0 80px;max-width:1470px;margin:0 auto}
+.pop_content:after {content:'';display:block;clear:both}
+.pop_content.type2 {padding:40px 50px 0 50px}
+.pop_content.type3 {padding-top:80px;text-align:center}
+.pop_content .con_photo {float:left;width:665px; text-align:center}
+.pop_content .con_info {float:right;width:610px}
+.con_info .sub_tit {height:60px;line-height:58px;color:#fff;font-weight:bold;font-size:22px;text-align:center;background:#0395c5;border-radius:10px;box-shadow:0 3px 0 #d9d9d9;margin-bottom:25px}
+.con_info .txt {line-height:28px}
+.pop_top {line-height:28px;margin-bottom:30px}
+.movie {width:1114px;margin:0 auto}
+.be_after {margin-top:25px}
+.be_after ul li {float:left;width:640px;height:410px;overflow:hidden;position:relative}
+.be_after ul li:last-child {float:right}
+.be_after ul li img {vertical-align:top}
+.be_after ul li p {background-color:rgba(0,0,0,.7);color:#fff;text-align:center;height:55px;line-height:53px;font-weight:bold;font-size:20px;position:absolute;bottom:0;left:0;right:0}
+
+/* silde */
+/** RESET AND LAYOUT
+===================================*/
+.bx-wrapper {position:relative;margin:0 auto;padding:0;*zoom:1}
+.bx-wrapper img {max-width:100%;display:block}
+
+/** THEME
+===================================*/
+.bx-wrapper .bx-viewport {/*fix other elements on the page moving (on Chrome)*/-webkit-transform:translatez(0);-moz-transform:translatez(0);-ms-transform:translatez(0);-o-transform:translatez(0);transform:translatez(0)}
+.bx-wrapper .bx-viewport ul {margin:0px; padding:0px}
+/*
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {position:absolute;bottom:10px;width:100%}
+*/
+
+.bx-controls {position:absolute;bottom:-55px;left:0;width:100%;padding-top:10px;text-align:center}
+
+/* PAGER */
+.bx-wrapper .bx-pager {text-align:center;font-size:.85em;font-family:Arial;font-weight:bold;color:#ccc}
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {display:inline-block;*zoom:1;*display:inline}
+.bx-wrapper .bx-pager.bx-default-pager a {background:#fff;display:block;width:42px;border:3px solid #0395c5;text-align:center;line-height:40px;font-weight:bold;font-size:22px;color:#0395c5;height:42px;margin:0 4px;outline:0;-moz-border-radius:21px;-webkit-border-radius:21px;border-radius:21px;box-shadow:0 3px 0 #bfbfbf}
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {background:#0395c5;color:#fff}
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+.bx-wrapper .bx-prev {left:-14px;background:url('../images/common/btn_silde.gif') no-repeat 0 0}
+.bx-wrapper .bx-next {right:-12px;background:url('../images/common/btn_silde.gif') no-repeat -10px 0}
+.bx-wrapper .bx-controls-direction a {position:absolute;top:35px;outline:0;width:10px;height:17px;text-indent:-9999px;z-index:9999}
+.bx-wrapper .bx-controls-direction a.disabled {display:none}
+
+/* AUTO CONTROLS (START / STOP) */
+.bx-wrapper .bx-controls-auto {text-align:center}
+.bx-wrapper .bx-controls-auto .bx-start {display:block;text-indent:-9999px;width:5px;height:8px;outline:0;background:url('../images/common/btn_slide_pag.png') -24px 0 no-repeat;margin:0 2px}
+.bx-wrapper .bx-controls-auto .bx-stop {display:block;text-indent:-9999px;width:8px;height:8px;outline:0;background:url('../images/common/btn_slide_pag.png') -16px 0 no-repeat;margin:0 2px}
+
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {display:inline-block}
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {float:left}

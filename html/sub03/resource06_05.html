@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="../../css/style.css">
+<script>
+$(document).ready(function(){
+	var slider_01 =	$('.slider').bxSlider({
+			auto: true,controls: false,autoControls: false,captions: true,
+		});
+		// 클릭시 멈춤 현상 해결 //
+		$(document).on('click','.bx-next, .bx-prev',function() {
+		slider_01.stopAuto();
+		slider_01.startAuto();;
+		});
+		$(document).on('mouseover','.bx-pager, #bx-pager1',function() {
+		slider_01.stopAuto();
+		slider_01.startAuto();
+		});	
+});
+</script>
+</head>
+<body class="popup">
+	<p class="top_tit">만수무장애탐방로</p>
+	<div class="pop_content">
+		<div class="con_photo">
+			<ul class="slider">
+				<li><img src="../../images/contents/resource06_05_01.jpg" alt="" title="만수 무장애탐방로 입구" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_05_02.jpg" alt="" title="무장애 탐방로 황토포장" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_05_03.jpg" alt="" title="미래세대 체험장" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_05_04.jpg" alt="" title="계곡토론장" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_05_05.jpg" alt="" title="무장애탐방로 순환다리" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_05_06.jpg" alt="" title="계곡물체험장" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_05_07.jpg" alt="" title="숯가마터" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_05_08.jpg" alt="" title="계곡변 데크길" style="height: 535px;width: 655px;"></li>
+			</ul>
+		</div>
+		<div class="con_info">
+			<p class="sub_tit">관찰로 소개</p>
+			<div class="pop_box01 type3" style="height: 450px;">
+				<p class="pop_basic" style="font-size: 18px;font-weight: bold;">장애인, 임산부도 장애물 없이 탐방이 가능한 탐방로</p>
+				<ul class="list_arr type2">
+					<li style="font-size: 18px;font-weight: bold;">거리 : 800m/순환</li>
+					<li style="font-size: 18px;font-weight: bold;">시간 : 30분 소요</li>
+					<li style="font-size: 18px;font-weight: bold;">위치 : 만수봉 탐방로 입구</li>
+					<li style="font-size: 18px;font-weight: bold;">특징 <br>2013년에 조성되었으며 노면이 황토포장, 데크로 되어 있어 휠체어, 유모차 운영이 가능</li>
+					<li style="font-size: 18px;font-weight: bold;">시설 <br>계곡토론장, 점자해설판, 계곡물체험장, 숯 가마터 등</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

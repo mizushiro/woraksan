@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.fancybox.js"></script>
+<link rel="stylesheet" href="../../css/jquery.fancybox.css">
+<link rel="stylesheet" href="../../css/style.css">
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.fancybox').fancybox();
+	});
+</script>
+<script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=0c39d2727183afcc0e2f6c2edda6ebd7"></script>
+<script type="text/javascript" src="../../js/border.js"></script>
+<style>
+
+	.map_wrap {position:relative;overflow:hidden;width:100%;height:650px; text-align:center;}
+	.radius_border{border:1px solid #919191;border-radius:5px;}     
+	.label {margin-bottom: 96px;}
+	.label * {display: inline-block;vertical-align: top;}
+	.label .left {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
+	.label .center {background: url(http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;}
+	.label .right {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
+	.custom_typecontrol {visibility: hidden;position:absolute;top:200px;overflow:hidden;width:600px;height:400px;margin-left:150px;padding:0;z-index:1;font-size:12px;font-family:'Malgun Gothic', '맑은 고딕', sans-serif;background-color: #3e8e41}
+	.button {
+      display: inline-block;
+	  height:40px;
+	  padding: 0px 20px;
+	  font-size: 20px;
+	  cursor: pointer;
+	  text-align: center;
+	  text-decoration: none;
+	  outline: none;
+	  color: #fff;
+	  background-color: #FF0080;
+	  border: none;
+	  border-radius: 7px;
+	  line-height:40px;
+	  box-shadow:0px 5px 5px rgba(0,0,0,0.3);
+	  letter-spacing: 1px;
+	}
+	
+
+	</style>
+<link rel="stylesheet" href="../../css/common2.css">
+</head>
+<body class="bodyfont">
+	<div class="wrap">
+		<div class="lnb bg02">
+			<h1 style="letter-spacing: 3px;">자원보전</h1>
+			<ul>
+				<li><a href="#" onClick=location.href('./sub02_01.html')><span style="letter-spacing: 3px;">자원현황</span></a></li>
+				<li><a href="#" onClick=location.href('./sub02_02.html')><span style="letter-spacing: 3px;">특별보호구</span></a></li>
+				<li><a href="#" onClick=location.href('./sub02_03.html')  class="on"><span style="letter-spacing: 3px;">생태복원</span></a></li>
+			</ul>
+		</div>
+		<div class="content_box type02">
+			<div class="r_box2 big">
+				<h2>복원사업</h2>
+				<div class="mapb">
+					<div class="map_area">
+						<div class="map_daum">
+							 <div id="map" style="width:100%;height:785px;"></div>
+						</div>
+						
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="fm_logo">국립공원</p> 
+		<ul class="nav">
+		    <li><a href="#" class="nav01" onClick=location.href('./sub02_02.html')>이전</a></li>
+			<li><a class="nav02_no" style="margin-right: 54px;">다음</a></li>
+			<li><a href="#" class="nav03" onClick=location.href('../main/main.html')>홈</a></li>
+		</ul>
+	</div>
+	<script>
+    
+    var message='';
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	    mapOption = { 
+			center: new daum.maps.LatLng(36.88508761502684,128.1974791344576), // 지도의 중심좌표
+	        level: 8
+	    };
+	
+	var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+	map.setMapTypeId(daum.maps.MapTypeId.HYBRID);    
+	var mapTypeControl = new daum.maps.MapTypeControl();
+	map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+	var zoomControl = new daum.maps.ZoomControl();
+	map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+    
+
+	// 지도에 표시할 선을 생성합니다
+	var polyline = new daum.maps.Polyline({
+	    path: linePath, // 선을 구성하는 좌표배열 입니다
+	    strokeWeight: 2, // 선의 두께 입니다
+	    strokeColor: '#FF0000', // 선의 색깔입니다
+	    strokeOpacity: 0.5, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+	    strokeStyle: 'solid’' // 선의 스타일입니다
+	});
+
+	// 지도에 선을 표시합니다 
+	polyline.setMap(map);   
+	
+	var linePath = [
+		new daum.maps.LatLng(36.824586, 128.083519),
+		new daum.maps.LatLng(36.810567, 128.123468)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+	
+	var content = '<ul class="position03"><li><a href="resource05_01.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;margin-top: -10px;margin-left: -25px;"><div class="button"><strong>폐도복원 생태습지 조성사업</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.810567, 128.123468);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_05.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.824586, 128.083519); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+
+	var content = '<ul class="position03" style="visibility: hidden;"><li><a href="resource05_03.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;margin-top: -10px;margin-left: -25px;"><div class="button"><strong>폐도복원 생태습지 조성사업</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.810567, 128.123468);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+	
+	var linePath = [
+		new daum.maps.LatLng(36.893004, 128.290413),
+		new daum.maps.LatLng(36.880567, 128.263468)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position03"><li><a href="resource05_02.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;margin-top: -10px;margin-left: -25px;"><div class="button"><strong>봉양폐광산 계류생태 복원사업</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.880567, 128.263468);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_05.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.893004, 128.290413); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+
+	var content = '<ul class="position03" style="visibility: hidden;"><li><a href="resource05_04.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;margin-top: -10px;margin-left: -25px;"><div class="button"><strong>봉양폐광산 계류생태 복원사업</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.880567, 128.263468);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+	
+	var linePath = [
+		new daum.maps.LatLng(36.833449, 128.141750),
+		new daum.maps.LatLng(36.861023, 128.163468)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position03"><li><a href="resource05_05.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;margin-top: -10px;margin-left: -25px;"><div class="button"><strong>마골치~벌재 샛길 복원지</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.861023, 128.163468);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_05.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.833449, 128.141750); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+	
+	var linePath = [
+		new daum.maps.LatLng(36.857511, 128.305513),
+		new daum.maps.LatLng(36.840567, 128.323468)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position03"><li><a href="resource05_06.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;margin-top: -10px;margin-left: -25px;"><div class="button"><strong>도락산 훼손 탐방로 복원지</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.840567, 128.323468);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_05.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.857511, 128.305513); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+	
+	var linePath = [
+		new daum.maps.LatLng(36.914346, 128.036024),
+		new daum.maps.LatLng(36.930567, 128.063468)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var content = '<ul class="position03"><li><a href="resource05_07.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;margin-top: -10px;margin-left: -25px;"><div class="button"><strong>무릉리 폐도 복원지</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.930567, 128.063468);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_05.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.914346, 128.036024); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+
+	// 지도에 선을 표시합니다 
+	polyline.setMap(map);   
+	
+	var linePath = [
+		new daum.maps.LatLng(36.839586, 128.093519),
+		new daum.maps.LatLng(36.870567, 128.053468)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+	
+	var content = '<ul class="position03"><li><a href="resource05_08.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;margin-top: -10px;margin-left: -25px;"><div class="button"><strong>송어 양식장 복원지</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.870567, 128.053468);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_05.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.839586, 128.093519); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+</script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.fancybox.js"></script>
+<link rel="stylesheet" href="../../css/jquery.fancybox.css">
+<link rel="stylesheet" href="../../css/style.css">
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.fancybox').fancybox();
+	});
+	
+	$(function () {
+	    $('#container').highcharts({
+	        data: {
+	            table: 'datatable'
+	        },
+	        chart: {
+	            type: 'column'
+	        },
+	        title: {
+	            text: ''
+	        },
+			plotOptions: {
+				column: {
+					depth: 50,
+					dataLabels: {
+						enabled: true,
+						format: '{point.y}건',
+						style: {
+							fontSize: '20px',
+							fontFamily: 'Verdana, sans-serif',
+							fontWeight: 'nomale'
+						}
+					}
+				}
+			},
+	        xAxis: {
+				labels: {
+					style: {
+						fontSize: '20px',
+						fontFamily: 'Verdana, sans-serif',
+						color: '#000000'
+					}
+				}
+	        },
+	        yAxis: {
+	            allowDecimals: false,
+	            title: {
+	                text: ''
+	            },
+				labels: {
+					style: {
+						fontSize: '20px',
+						fontFamily: 'Verdana, sans-serif',
+						color: '#000000'
+					}
+				}
+	        },
+			colors: ['#f15c80', '#90ed7d'],
+	        tooltip: {
+	            enabled: false
+	        },
+			legend: {
+				itemStyle: {
+					fontSize: '20px'
+				},
+				align: 'right',
+				verticalAlign: 'top',
+				layout: 'vertical',
+				x: 0,
+				y: 100
+			}
+	    });
+	});
+</script>
+<link rel="stylesheet" href="../../css/common2.css">
+</head>
+<body class="bodyfont">
+	<div class="wrap">
+		<div class="lnb bg04">
+			<h1 style="letter-spacing: 3px;">재난안전</h1>
+			<ul>
+				<li><a href="#" onClick=location.href('../sub04/sub04_01.html')><span style="letter-spacing: 3px;">재난예경보<br/>시설</span></a></li>
+				<li><a href="#" onClick=location.href('../sub04/sub04_02.html')><span style="letter-spacing: 3px;">재해위험지구</span></a></li>
+				<li><a href="#" onClick=location.href('../sub04/sub04_03.html') class="on"><span style="letter-spacing: 3px;">안전사고현황</span></a></li>
+			</ul>
+		</div>
+		<div class="content_box type04">
+			<div class="r_box">
+				<h2>안전사고현황</h2>
+				<div class="txt" style="padding-top: 20px;">
+					<div class="list">
+						<table id="datatable" style="display: none;">
+							<thead>
+								<tr>
+									<th></th>
+									<th>사망</th>
+									<th>구조</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>2016년</td>
+									<td>0</td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>2017년</td>
+									<td>1</td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>2018년</td>
+									<td>0</td>
+									<td>4</td>
+								</tr>
+								<tr>
+									<td>2019년</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>2020년</td>
+									<td>0</td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>2021년</td>
+									<td>0</td>
+									<td>1</td>
+								</tr>
+							</tbody>
+						</table>
+						<table>
+							<colgroup>
+								<col width="*">
+								<col width="8%">
+								<col width="8%">
+								<col width="8%">
+								<col width="8%">
+								<col width="8%">
+								<col width="8%">
+								<col width="8%">
+								<col width="8%">
+								<col width="8%">
+								<col width="8%">
+								<col width="8%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" rowspan="2" style="font-weight: bold;">구분</th>
+									<th scope="col" rowspan="2" style="font-weight: bold;">계</th>
+									<th scope="colgroup" colspan="5" style="font-weight: bold;">사망</th>
+									<th scope="colgroup" colspan="5" style="font-weight: bold;">구조</th>
+								</tr>
+								<tr class="th_type2">
+									<th scope="col" style="font-weight: bold;">소계</th>
+									<th scope="col" style="font-weight: bold;">신체결함</th>
+									<th scope="col" style="font-weight: bold;">익사</th>
+									<th scope="col" style="font-weight: bold;">추락</th>
+									<th scope="col" style="font-weight: bold;">기타</th>
+									<th scope="col" style="font-weight: bold;">소계</th>
+									<th scope="col" style="font-weight: bold;">부상</th>
+									<th scope="col" style="font-weight: bold;">탈진</th>
+									<th scope="col" style="font-weight: bold;">조난</th>
+									<th scope="col" style="font-weight: bold;">기타</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td style="font-weight: bold;">2016년</td>
+									<td style="font-weight: bold;">2건</td>
+									<td class="sky" style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td class="sky" style="font-weight: bold;">2</td>
+									<td style="font-weight: bold;">2</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+								</tr>
+								<tr>
+									<td style="font-weight: bold;">2017년</td>
+									<td style="font-weight: bold;">3건</td>
+									<td class="sky" style="font-weight: bold;">1</td>
+									<td style="font-weight: bold;">1</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td class="sky" style="font-weight: bold;">2</td>
+									<td style="font-weight: bold;">2</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+								</tr>
+								<tr>
+									<td style="font-weight: bold;">2018년</td>
+									<td style="font-weight: bold;">4건</td>
+									<td class="sky" style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td class="sky" style="font-weight: bold;">4</td>
+									<td style="font-weight: bold;">4</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+								</tr>
+								<tr>
+									<td style="font-weight: bold;">2019년</td>
+									<td style="font-weight: bold;">0건</td>
+									<td class="sky" style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td class="sky" style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+								</tr>
+								<tr>
+									<td style="font-weight: bold;">2020년</td>
+									<td style="font-weight: bold;">2건</td>
+									<td class="sky" style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td class="sky" style="font-weight: bold;">2</td>
+									<td style="font-weight: bold;">2</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+								</tr>
+								<tr>
+									<td style="font-weight: bold;">2021년</td>
+									<td style="font-weight: bold;">1건</td>
+									<td class="sky" style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td class="sky" style="font-weight: bold;">1</td>
+									<td style="font-weight: bold;">1</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+									<td style="font-weight: bold;">0</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<br><br>
+					<div id="container" style="min-width: 310px; height: 390px; margin: 0 auto"></div>
+					<!-- 
+					<div class="graph_wrap2">
+						<p class="gt t01">50</p>
+						<p class="gt t02">25</p>
+						<p class="gt t03">0</p>
+						<ul>
+							<li>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg01" style="height:1%"></span></p>
+								</div>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg02" style="height:44%"></span></p>
+								</div>
+								<span class="graph_t1">사망</span>
+								<span class="graph_t2">구조</span>
+								<p class="graph_year">2011년</p>
+							</li>
+							<li>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg01" style="height:6%"></span></p>
+								</div>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg02" style="height:42%"></span></p>
+								</div>
+								<span class="graph_t1">사망</span>
+								<span class="graph_t2">구조</span>
+								<p class="graph_year">2012년</p>
+							</li>
+							<li>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg01" style="height:4%"></span></p>
+								</div>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg02" style="height:50%"></span></p>
+								</div>
+								<span class="graph_t1">사망</span>
+								<span class="graph_t2">구조</span>
+								<p class="graph_year">2013년</p>
+							</li>
+							<li>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg01" style="height:4%"></span></p>
+								</div>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg02" style="height:40%"></span></p>
+								</div>
+								<span class="graph_t1">사망</span>
+								<span class="graph_t2">구조</span>
+								<p class="graph_year">2014년</p>
+							</li>
+							<li>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg01" style="height:1%"></span></p>
+								</div>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg02" style="height:68%"></span></p>
+								</div>
+								<span class="graph_t1">사망</span>
+								<span class="graph_t2">구조</span>
+								<p class="graph_year">2015년</p>
+							</li>
+							<li>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg01" style="height:2%"></span></p>
+								</div>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg02" style="height:46%"></span></p>
+								</div>
+								<span class="graph_t1">사망</span>
+								<span class="graph_t2">구조</span>
+								<p class="graph_year">2016년 9월</p>
+							</li>
+						</ul>
+					</div>
+					 -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="fm_logo">국립공원</p> 
+		<ul class="nav">
+			<li><a href="#" class="nav01" onClick=location.href('./sub04_02.html') >이전</a></li>
+			<li><a class="nav02_no" style="margin-right: 54px;">다음</a></li>
+			<li><a href="#" class="nav03" onClick=location.href('../main/main.html') >홈</a></li>
+		</ul>
+	</div>
+</body>
+</html>

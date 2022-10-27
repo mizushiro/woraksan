@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/common2.css">
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script>
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            type: 'category',
+            labels: {
+                style: {
+                    fontSize: '20px',
+                    fontFamily: 'Verdana, sans-serif',
+					color: '#000000'
+                }
+            }
+        },
+        yAxis: {
+            title: {
+                text: ''
+            },
+			labels: {
+                style: {
+                    fontSize: '20px',
+                    fontFamily: 'Verdana, sans-serif',
+					color: '#000000'
+                }
+            }
+        },
+		plotOptions: {
+			column: {
+				dataLabels: {
+					enabled: true,
+					format: '{point.y}천명',
+					style: {
+						fontSize: '20px',
+						fontFamily: 'Verdana, sans-serif',
+						fontWeight: 'nomale'
+					}
+				}
+			}
+		},
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            enabled: false
+        },
+        series: [{
+            name: 'Sales',
+            colorByPoint: true,
+            data: [
+                ['2013년', 1082],
+                ['2014년', 978],
+                ['2015년', 995],
+                ['2016년', 1052],
+                ['2017년', 1055],
+                ['2018년', 1014],
+                ['2019년', 1000],
+                ['2020년', 828],
+                ['2021년', 841]
+            ]
+        }]
+    });
+});
+</script>
+</head>
+<body class="bodyfont">
+	<div class="wrap">
+		<div class="lnb bg01">
+			<h1 style="letter-spacing: 3px;">일반현황</h1>
+			<ul>
+				<li><a href="#" onClick=location.href('../sub01/sub01_01.html')><span style="letter-spacing: 3px;">개요</span></a></li>
+				<li><a href="#" onClick=location.href('../sub01/sub01_02.html')><span style="letter-spacing: 3px;">공원현황</span></a></li>
+				<li><a href="#" onClick=location.href('../sub01/sub01_03.html') class="on"><span style="letter-spacing: 3px;">탐방객</span></a></li>
+				<li><a href="#" onClick=location.href('../sub01/sub01_04.html')><span style="letter-spacing: 3px;">조직도</span></a></li>
+			</ul>
+		</div>
+		<div class="content_box type01">
+			<div class="r_box">
+				<h2>탐방객</h2>
+				<div class="txt">
+					<div class="list th01">
+						<table>
+							<caption><img src="../../images/contents/blt01.png"/> 연도별 탐방객수&nbsp;&nbsp;<span>( 단위:천명 )</span></caption>
+							<tbody>
+								<tr height="60">
+									<th scope="row"><strong>구분</strong></th>
+									<td><strong>2013년</strong></td>
+									<td><strong>2014년</strong></td>
+									<td><strong>2015년</strong></td>
+									<td><strong>2016년</strong></td>
+									<td><strong>2017년</strong></td>
+									<td><strong>2018년</strong></td>
+									<td><strong>2019년</strong></td>
+									<td><strong>2020년</strong></td>
+									<td><strong>2021년</strong></td>
+								</tr>
+								<tr height="60">
+									<th scope="row"><strong>탐방객</th>
+									<td><strong>1,082</td>
+									<td><strong>978</td>
+									<td><strong>995</td>
+									<td><strong>1,052</td>
+									<td><strong>1,055</td>
+									<td><strong>1,014</td>
+									<td><strong>1,000</td>
+									<td><strong>828</td>
+									<td><strong>841</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<br><br>
+					<div id="container" style="min-width: 310px; height: 550px; margin: 0 auto"></div>
+					<!-- 
+					<div class="graph_wrap">
+						<p class="gt t01">1,000</p>
+						<p class="gt t02">500</p>
+						<p class="gt t03">0</p>
+						<ul>
+							<li>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg01" style="height:45%"></span></p>
+								</div>
+								<p class="graph_year">2006</p>
+							</li>
+							<li>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg02" style="height:52%"></span></p>
+								</div>
+								<p class="graph_year">2007</p>
+							</li>
+							<li>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg03" style="height:56.5%"></span></p>
+								</div>
+								<p class="graph_year">2008</p>
+							</li>
+							<li>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg04" style="height:60%"></span></p>
+								</div>
+								<p class="graph_year">2009</p>
+							</li>
+							<li>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg05" style="height:61%"></span></p>
+								</div>
+								<p class="graph_year">2010</p>
+							</li>
+							<li>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg06" style="height:60.8%"></span></p>
+								</div>
+								<p class="graph_year">2011</p>
+							</li>
+							<li>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg07" style="height:87.25%"></span></p>
+								</div>
+								<p class="graph_year">2012</p>
+							</li>
+							<li>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg08" style="height:90%"></span></p>
+								</div>
+								<p class="graph_year">2013</p>
+							</li>
+							<li>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg09" style="height:81.4%"></span></p>
+								</div>
+								<p class="graph_year">2014</p>
+							</li>
+							<li>
+								<div class="graph_bar">
+									<p class="bar_wrap"><span class="bg10" style="height:83%"></span></p>
+								</div>
+								<p class="graph_year">2015</p>
+							</li>
+						</ul>
+					</div>
+					 -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="fm_logo">국립공원</p> 
+		<ul class="nav">
+			<li><a href="#" class="nav01" onClick=location.href('./sub01_02.html')>이전</a></li>
+			<li><a href="#" class="nav02" onClick=location.href('./sub01_04.html')>다음</a></li>
+			<li><a href="#" class="nav03" onClick=location.href('../main/main.html')>홈</a></li>
+		</ul>
+	</div>
+</body>
+</html>

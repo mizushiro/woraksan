@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="../../css/style.css">
+<script>
+$(document).ready(function(){
+	var slider_02 =	$('.slider2').bxSlider({
+			auto: true,controls: false,autoControls: true,captions: true,
+		});
+		// 클릭시 멈춤 현상 해결 //
+		$(document).on('click','.bx-next, .bx-prev',function() {
+		slider_02.stopAuto();
+		slider_02.startAuto();;
+		});
+		$(document).on('mouseover','.bx-pager, #bx-pager1',function() {
+		slider_02.stopAuto();
+		slider_02.startAuto();
+		});	
+});
+</script>
+<link rel="stylesheet" href="../../css/common2.css">
+</head>
+<body class="bodyfont">
+	<div class="wrap">
+		<div class="lnb bg05">
+			<h1 style="letter-spacing: 3px;">공원탐방</h1>
+			<ul>
+				<li><a href="#" onClick=location.href('./sub05_01.html')><span style="letter-spacing: 3px;">탐방프로그램</span></a></li>
+				<li><a href="#" onClick=location.href('./sub05_02.html')><span style="letter-spacing: 3px;">미래세대<br/>환경교육</span></a></li>
+				<li><a href="#" onClick=location.href('./sub05_03.html')><span style="letter-spacing: 3px;">생태관광</span></a></li>
+				<li><a href="#" class="on" onClick=location.href('./sub05_04.html')><span style="letter-spacing: 3px;">명품마을</span></a></li>
+
+			</ul>
+		</div>
+		<div class="content_box type05">
+			<div class="r_box">
+				<h2>골뫼골 명품마을</h2>
+				<div class="txt">
+					<div class="program_wrap type3" style="min-height: 765px;">					
+						<div class="program_info">
+							<dl>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;width: 140px;"><img src="../../images/contents/blt05.png"/> 위치</dt>
+								<dd style="font-size: 24px;font-weight: bold;">충북 제천시 한수면 송계리 1088번지(송계4구마을)</dd>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;width: 140px;"><img src="../../images/contents/blt05.png"/> 특징</dt>
+								<dd style="font-size: 24px;font-weight: bold;">마을주민 직영 관리, 농촌체험 및 휴양시설</dd>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;width: 140px;"><img src="../../images/contents/blt05.png"/> 조성년도</dt>
+								<dd style="font-size: 24px;font-weight: bold;">2011년 조성</dd>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;width: 140px;"><img src="../../images/contents/blt05.png"/> 주요시설</dt>
+								<dd style="font-size: 24px;font-weight: bold;">골뫼골 숲 속 학교(세미나, 숙박 가능)</dd>
+								<dt style="padding-left: 0px; background-image: none;font-size: 24px;font-weight: bold;width: 140px;"><img src="../../images/contents/blt05.png"/> 체험거리</dt>
+								<dd style="font-size: 24px;font-weight: bold;">캠핑체험, 손두부 만들기, 팜스테이, 골뫼길 트래킹 등</dd>
+							</dl>
+						</div>
+						<div class="program_photo_bg">
+							<div class="program_photo">
+								<ul class="slider2">
+									<li><img src="../../images/contents/village01_01.jpg" alt="" style="width: 660px;height: 445px;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/contents/village01_02.jpg" alt="" style="width: 660px;height: 445px;"></li>
+									<li><img src="../../images/contents/village01_03.jpg" alt="" style="width: 660px;height: 445px;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/contents/village01_04.jpg" alt="" style="width: 660px;height: 445px;"></li>
+									<li><img src="../../images/contents/village01_05.jpg" alt="" style="width: 660px;height: 445px;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/contents/village01_06.jpg" alt="" style="width: 660px;height: 445px;"></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="fm_logo">국립공원</p> 
+		<ul class="nav">
+			
+
+			<li><a href="#" class="nav01" onClick=location.href('./sub05_03_04.html')>이전</a></li>
+			<li><a class="nav02_no" style="margin-right: 54px;">다음</a></li>
+			<li><a href="#" class="nav03" onClick=location.href('/html/main/main.html')>홈</a></li>
+
+		</ul>
+	</div>
+</body>
+</html>

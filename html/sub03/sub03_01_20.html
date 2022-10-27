@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="../../css/style.css">
+<script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=0c39d2727183afcc0e2f6c2edda6ebd7"></script>
+<script type="text/javascript" src="../../js/border.js"></script>
+
+<style type="text/css">
+	.map_wrap {position:relative;overflow:hidden;width:100%;height:650px; text-align:center;}
+	.radius_border{border:1px solid #919191;border-radius:5px;}     
+	.label {margin-bottom: 96px;}
+	.label * {display: inline-block;vertical-align: top;}
+	.label .left {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
+	.label .center {background: url(http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;}
+	.label .right {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
+	.custom_typecontrol {visibility: hidden;position:absolute;top:200px;overflow:hidden;width:600px;height:400px;margin-left:150px;padding:0;z-index:1;font-size:12px;font-family:'Malgun Gothic', '맑은 고딕', sans-serif;background-color: #3e8e41}
+
+	.button {
+		  display: inline-block;
+		  height:27px;
+		  padding: 0px 20px;
+		  font-size: 20px;
+		  cursor: pointer;
+		  text-align: center;
+		  text-decoration: none;
+		  outline: none;
+		  color: #fff;
+		  background-color: #cc0066;
+		  border: none;
+		  border-radius: 11px;
+		  line-height:25px;
+		  box-shadow:0px 5px 5px rgba(0,0,0,0.3);
+		  font-weight: bold;}
+	.buttonB {
+		  display: inline-block;
+		  height:25px;
+		  padding: 0px 20px;
+		  font-size: 20px;
+		  cursor: pointer;
+		  text-align: center;
+		  text-decoration: none;
+		  outline: none;
+		  color: #fff;
+		  background-color: #3a58db;
+		  border: none;
+		  border-radius: 3px;
+		  line-height:25px;
+		  box-shadow:0px 5px 5px rgba(0,0,0,0.3);
+		  font-weight: bold;}
+
+</style>
+
+
+<script>
+$(document).ready(function(){
+	var slider_03 =	$('.slider3').bxSlider({
+			auto: false,controls: false,autoControls: false,captions: true,
+		});
+		// 클릭시 멈춤 현상 해결 //
+		/*$(document).on('click','.bx-next, .bx-prev',function() {
+		slider_03.stopAuto();
+		slider_03.startAuto();;
+		});
+		$(document).on('mouseover','.bx-pager, #bx-pager1',function() {
+		slider_03.stopAuto();
+		slider_03.startAuto();
+		});	*/
+	$('.layer_box').hide();
+});
+</script>
+<link rel="stylesheet" href="../../css/common2.css">
+</head>
+<body class="bodyfont">
+	<div class="wrap">
+		<div class="lnb bg03">
+			<h1 style="letter-spacing: 3px;">공원시설</h1>
+			<ul>
+				<li><a href="#" class="on" onClick=location.href('./sub03_01.html')><span style="letter-spacing: 3px;">탐방로</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_02.html')><span style="letter-spacing: 3px;">자연관찰로</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_03.html')><span style="letter-spacing: 3px;">야영장</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_04.html')><span style="letter-spacing: 3px;">주차장</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_06.html')><span style="letter-spacing: 3px;">탐방지원센터</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_05.html')><span style="letter-spacing: 3px;">탐방안내소</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_07.html')><span style="letter-spacing: 3px;">자원봉사센터</span></a></li>
+			</ul>
+		</div>
+		<div class="content_box type03">
+			<div class="sub_nav type3">
+				<ul>
+			        <li><a href="#" onClick=location.href('./sub03_01_02.html') >영봉탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_06.html')>만수봉탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_07.html')>북바위산탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_08.html')>마패봉.부봉탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_09.html') >하늘재.포암산탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_10.html')>금수산탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_12.html')>가은산탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_13.html')>옥순봉.구담봉탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_15.html')>제비봉탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_17.html')>도락산탐방로</a></li>
+					<li><a href="#" onClick=location.href('./sub03_01_20.html') class="on">황장산탐방로</a></li>
+					<li><a href="javascript:alert('준비중입니다.');">선암골생태유람길</a></li>
+				</ul>
+			</div>
+			<div class="r_box2 small">
+				<div class="course_list">
+					<ul>
+						<li class="on">
+							<button class="course_name" onclick="javascript:window.location.href='./sub03_01_20.html'">황장산코스</button>
+						</li>
+						<li class="on">
+							<a href="#;" class="icon_type course_info" title="course_info01">탐방로</a>
+							<a href="#;" class="icon_type course_photo" title="course_photo01">사진</a>
+						</li>
+					</ul>
+				</div>
+				<div class="map_area">
+					<div class="map_daum"><div id="map" style="width:100%;height:690px;"></div>
+					</div>
+					<!-- S : 탐방로 -->
+					<div class="layer_box" id="course_info01">
+						<div class="gray_box" style="margin-right: 15px;height: 190px;font-size: 24px;padding-top: 10px;padding-bottom: 10px;">
+							<p style="line-height: 35px;"><strong>안생달~와인동굴 코스~작은차갓재~전망대~맷등바위~황장산~안생달(5.6km, 4시간 30분, 순환)<br>2016년에 신규 개방된 백두대간 코스로 100대 명산 중 하나</strong><br>-전망대에 오르면 도락산이 아주 가까이 느껴지며 멀리 소백산, 월악산 영봉까지 조망할 수 있다.<br>-월악산국립공원 문경지구에 처음 만들어진 탐방로이며, 백두대간 2.1km가 포함되어 있다.</p>
+						</div>
+						<div class="course_map"><img src="../../images/contents/course_map21.jpg" alt="" style="height: 427px;width: 1310px;"></div>
+						<button class="btn_close2">닫기</button>
+					</div>
+					<!-- E : 탐방로 -->
+					<!-- S : 사진 -->
+					<div class="layer_box" id="course_photo01">
+						<div class="course_photo">
+							<ul class="slider3">
+								<li><img src="../../images/contents/course20_01.jpg" alt="" style="height: 570px;width: 1000px;" title="작은차갓재"></li>
+								<li><img src="../../images/contents/course20_02.jpg" alt="" style="height: 570px;width: 1000px;" title="잣나무길"></li>
+								<li><img src="../../images/contents/course20_03.jpg" alt="" style="height: 570px;width: 1000px;" title="바위능선길"></li>
+								<li><img src="../../images/contents/course20_04.jpg" alt="" style="height: 570px;width: 1000px;" title="전망대에서 바라본 도락산"></li>
+								<li><img src="../../images/contents/course20_05.jpg" alt="" style="height: 570px;width: 1000px;" title="맷등바위"></li>
+                                <li><img src="../../images/contents/course20_06.jpg" alt="" style="height: 570px;width: 1000px;" title="황장산정상"></li>
+								<li><img src="../../images/contents/course20_07.jpg" alt="" style="height: 570px;width: 1000px;" title="계곡길"></li>
+
+							</ul>
+						</div>
+						<button class="btn_close2">닫기</button>
+					</div>
+					<!-- E : 사진 -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="fm_logo">국립공원</p> 
+		<ul class="nav">
+			
+			<li><a href="#" class="nav01" onClick=location.href('./sub03_01_19.html')>이전</a></li>
+			<li><a href="#" class="nav02" onClick=location.href('./sub03_02.html')>다음</a></li>
+			<li><a href="#" class="nav03" onClick=location.href('/html/main/main.html')>홈</a></li>
+
+		</ul>
+	</div>
+	<script>
+		/*
+
+ 
+		*/
+
+		var message='';
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+			mapOption = { 
+				center: new daum.maps.LatLng(36.88508761502684,128.1974791344576), // 지도의 중심좌표
+				level: 8
+			};
+		
+		var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+		map.setMapTypeId(daum.maps.MapTypeId.HYBRID);    
+		var mapTypeControl = new daum.maps.MapTypeControl();
+		map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+		var zoomControl = new daum.maps.ZoomControl();
+		map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+		// 지도에 표시할 선을 생성합니다
+		var polyline = new daum.maps.Polyline({
+			path: linePath, // 선을 구성하는 좌표배열 입니다
+			strokeWeight: 2, // 선의 두께 입니다
+			strokeColor: '#FF0000', // 선의 색깔입니다
+			strokeOpacity: 0.5, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+			strokeStyle: 'solid’' // 선의 스타일입니다
+		});
+		// 지도에 선을 표시합니다 
+		polyline.setMap(map);   
+		
+		 var imageSrc = '../../images/contents/climber.gif', // 마커이미지의 주소입니다    
+			imageSize = new daum.maps.Size(32, 32), // 마커이미지의 크기입니다
+			imageOption = {offset: new daum.maps.Point(0, 0)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+			  
+			// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다 
+			var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption),
+				markerPosition = new daum.maps.LatLng(36.812231, 128.257869 ); // 마커가 표시될 위치입니다
+			
+			// 마커를 생성합니다
+			var marker = new daum.maps.Marker({
+				position: markerPosition, 
+				image: markerImage // 마커이미지 설정 
+			});
+			
+			// 마커가 지도 위에 표시되도록 설정합니다
+			marker.setMap(map);   
+	
+	var linePath = [
+	//--------------------------------------------------
+		new daum.maps.LatLng(36.812231, 128.257869),
+		new daum.maps.LatLng(36.812539, 128.258404),
+		new daum.maps.LatLng(36.812616, 128.258715),
+		new daum.maps.LatLng(36.813037, 128.259059),
+		new daum.maps.LatLng(36.813243, 128.259488),
+		new daum.maps.LatLng(36.813527, 128.260228),
+		new daum.maps.LatLng(36.813587, 128.260711),
+		new daum.maps.LatLng(36.813948, 128.261011),
+		new daum.maps.LatLng(36.814162, 128.261655),
+		new daum.maps.LatLng(36.814308, 128.262363),
+		new daum.maps.LatLng(36.814729, 128.262803),
+		new daum.maps.LatLng(36.815150, 128.263200),
+		new daum.maps.LatLng(36.815537, 128.263608),
+		new daum.maps.LatLng(36.815771, 128.264026),
+		new daum.maps.LatLng(36.816063, 128.264509),
+		new daum.maps.LatLng(36.816544, 128.264820),
+		new daum.maps.LatLng(36.816785, 128.265239),
+	//--------------------------------------------------
+		new daum.maps.LatLng(36.817111, 128.265389),
+		new daum.maps.LatLng(36.817444, 128.265306),
+		new daum.maps.LatLng(36.817444, 128.265306),
+		new daum.maps.LatLng(36.818056, 128.265222),
+		new daum.maps.LatLng(36.818278, 128.265222),
+		new daum.maps.LatLng(36.818417, 128.265278),
+		new daum.maps.LatLng(36.818639, 128.265444),
+		new daum.maps.LatLng(36.818917, 128.265667),
+		new daum.maps.LatLng(36.819194, 128.265917),
+		new daum.maps.LatLng(36.819556, 128.266306),
+		new daum.maps.LatLng(36.819861, 128.266500),
+		new daum.maps.LatLng(36.820111, 128.266667),
+		new daum.maps.LatLng(36.820389, 128.266889),
+		new daum.maps.LatLng(36.820389, 128.266917),
+		new daum.maps.LatLng(36.820333, 128.267028),
+		new daum.maps.LatLng(36.820278, 128.267222),
+		new daum.maps.LatLng(36.820250, 128.267361),
+		new daum.maps.LatLng(36.820222, 128.267556),
+		new daum.maps.LatLng(36.820194, 128.267639),
+		new daum.maps.LatLng(36.820111, 128.267806),
+		new daum.maps.LatLng(36.820083, 128.267889),
+		new daum.maps.LatLng(36.820056, 128.268056),
+		new daum.maps.LatLng(36.820028, 128.268167),
+		new daum.maps.LatLng(36.820000, 128.268278),
+		new daum.maps.LatLng(36.819917, 128.268361),
+		new daum.maps.LatLng(36.819833, 128.268417),
+		new daum.maps.LatLng(36.819750, 128.268500),
+		new daum.maps.LatLng(36.819722, 128.268528),
+		new daum.maps.LatLng(36.819667, 128.268694),
+		new daum.maps.LatLng(36.819556, 128.268889),
+		new daum.maps.LatLng(36.819556, 128.269028),
+		new daum.maps.LatLng(36.819528, 128.269167),
+		new daum.maps.LatLng(36.819528, 128.269306),
+		new daum.maps.LatLng(36.819500, 128.269472),
+		new daum.maps.LatLng(36.819528, 128.269611),
+		new daum.maps.LatLng(36.819500, 128.269778),
+		new daum.maps.LatLng(36.819472, 128.269889),
+		new daum.maps.LatLng(36.819472, 128.270056),
+		new daum.maps.LatLng(36.819444, 128.270167),
+		new daum.maps.LatLng(36.819417, 128.270306),
+		new daum.maps.LatLng(36.819361, 128.270444),
+		new daum.maps.LatLng(36.819306, 128.270528),
+		new daum.maps.LatLng(36.819222, 128.270583),
+		new daum.maps.LatLng(36.819139, 128.270667),
+		new daum.maps.LatLng(36.819056, 128.270750),
+		new daum.maps.LatLng(36.818972, 128.270833),
+		new daum.maps.LatLng(36.818917, 128.270917),
+		new daum.maps.LatLng(36.818833, 128.271000),
+		new daum.maps.LatLng(36.818778, 128.271083),
+		new daum.maps.LatLng(36.818694, 128.271167),
+		new daum.maps.LatLng(36.818611, 128.271222),
+		new daum.maps.LatLng(36.818528, 128.271306),
+		new daum.maps.LatLng(36.818444, 128.271389),
+		new daum.maps.LatLng(36.818444, 128.271528),
+		new daum.maps.LatLng(36.818361, 128.271611),
+		new daum.maps.LatLng(36.818306, 128.271694),
+		new daum.maps.LatLng(36.818222, 128.271778),
+		new daum.maps.LatLng(36.818167, 128.271889),
+		new daum.maps.LatLng(36.818111, 128.272000),
+		new daum.maps.LatLng(36.818028, 128.272111),
+		new daum.maps.LatLng(36.817972, 128.272222),
+		new daum.maps.LatLng(36.817944, 128.272333),
+		new daum.maps.LatLng(36.817889, 128.272444),
+		new daum.maps.LatLng(36.817833, 128.272583),
+		new daum.maps.LatLng(36.817806, 128.272694),
+		new daum.maps.LatLng(36.817722, 128.272806),
+		new daum.maps.LatLng(36.817667, 128.272833),
+		new daum.maps.LatLng(36.817639, 128.272972),
+		new daum.maps.LatLng(36.817611, 128.273083),
+		new daum.maps.LatLng(36.817583, 128.273250),
+		new daum.maps.LatLng(36.817556, 128.273361),
+		new daum.maps.LatLng(36.817528, 128.273500),
+		new daum.maps.LatLng(36.817528, 128.273667),
+		new daum.maps.LatLng(36.817528, 128.273806),
+		new daum.maps.LatLng(36.817500, 128.273944),
+		new daum.maps.LatLng(36.817528, 128.274083),
+		new daum.maps.LatLng(36.817472, 128.274194),
+		new daum.maps.LatLng(36.817444, 128.274333),
+		new daum.maps.LatLng(36.817500, 128.274444),
+		new daum.maps.LatLng(36.817444, 128.274528),
+		new daum.maps.LatLng(36.817417, 128.274667),
+		new daum.maps.LatLng(36.817472, 128.274778),
+		new daum.maps.LatLng(36.817472, 128.274889),
+		new daum.maps.LatLng(36.817472, 128.275000),
+		new daum.maps.LatLng(36.817472, 128.275139),
+		new daum.maps.LatLng(36.817472, 128.275250),
+		new daum.maps.LatLng(36.817500, 128.275389),
+		new daum.maps.LatLng(36.817528, 128.275528),
+		new daum.maps.LatLng(36.817528, 128.275639),
+		new daum.maps.LatLng(36.817556, 128.275722),
+		new daum.maps.LatLng(36.817556, 128.275861),
+		new daum.maps.LatLng(36.817500, 128.275972),
+		new daum.maps.LatLng(36.817556, 128.276083),
+		new daum.maps.LatLng(36.817500, 128.276250),
+		new daum.maps.LatLng(36.817444, 128.276417),
+		new daum.maps.LatLng(36.817361, 128.276556),
+		new daum.maps.LatLng(36.816861, 128.276528),
+		new daum.maps.LatLng(36.816250, 128.276528),
+		new daum.maps.LatLng(36.815778, 128.276472),
+		new daum.maps.LatLng(36.815556, 128.276472),
+		new daum.maps.LatLng(36.815472, 128.276500),
+		new daum.maps.LatLng(36.815472, 128.276472),
+		new daum.maps.LatLng(36.815333, 128.276500),
+		new daum.maps.LatLng(36.815250, 128.276472),
+		new daum.maps.LatLng(36.815111, 128.276528),
+		new daum.maps.LatLng(36.814889, 128.276778),
+		new daum.maps.LatLng(36.814806, 128.276861),
+		new daum.maps.LatLng(36.814750, 128.276944),
+		new daum.maps.LatLng(36.814611, 128.277194),
+		new daum.maps.LatLng(36.814111, 128.277528),
+		new daum.maps.LatLng(36.813639, 128.277833),
+		new daum.maps.LatLng(36.813222, 128.278000),
+		new daum.maps.LatLng(36.812806, 128.278139),
+		new daum.maps.LatLng(36.812750, 128.278139),
+		new daum.maps.LatLng(36.812750, 128.278194),
+		new daum.maps.LatLng(36.812583, 128.278167),
+		new daum.maps.LatLng(36.812389, 128.278028),
+		new daum.maps.LatLng(36.812389, 128.278028),
+		new daum.maps.LatLng(36.811583, 128.277500),
+		new daum.maps.LatLng(36.811278, 128.277611),
+		new daum.maps.LatLng(36.811194, 128.277667),
+		new daum.maps.LatLng(36.811194, 128.277694),
+		new daum.maps.LatLng(36.811167, 128.277694),
+		new daum.maps.LatLng(36.811056, 128.277806),
+		new daum.maps.LatLng(36.811083, 128.277778),
+		new daum.maps.LatLng(36.811028, 128.277694),
+		new daum.maps.LatLng(36.810944, 128.277444),
+		new daum.maps.LatLng(36.810833, 128.277306),
+		new daum.maps.LatLng(36.810750, 128.277000),
+		new daum.maps.LatLng(36.810722, 128.276694),
+		new daum.maps.LatLng(36.810667, 128.276500),
+		new daum.maps.LatLng(36.810556, 128.276250),
+		new daum.maps.LatLng(36.810444, 128.276028),
+		new daum.maps.LatLng(36.810444, 128.275611),
+		new daum.maps.LatLng(36.810444, 128.275361),
+		new daum.maps.LatLng(36.810278, 128.275111),
+		new daum.maps.LatLng(36.810361, 128.274833),
+		new daum.maps.LatLng(36.810472, 128.274417),
+		new daum.maps.LatLng(36.810417, 128.274167),
+		new daum.maps.LatLng(36.810417, 128.273778),
+		new daum.maps.LatLng(36.810361, 128.273500),
+		new daum.maps.LatLng(36.810389, 128.273278),
+		new daum.maps.LatLng(36.810389, 128.272972),
+		new daum.maps.LatLng(36.810361, 128.272583),
+		new daum.maps.LatLng(36.810333, 128.272361),
+		new daum.maps.LatLng(36.810250, 128.272278),
+		new daum.maps.LatLng(36.810361, 128.271667),
+		new daum.maps.LatLng(36.810333, 128.271500),
+		new daum.maps.LatLng(36.810306, 128.270806),
+		new daum.maps.LatLng(36.810306, 128.270250),
+		new daum.maps.LatLng(36.810444, 128.269944),
+		new daum.maps.LatLng(36.810528, 128.269583),
+		new daum.maps.LatLng(36.810472, 128.269028),
+		new daum.maps.LatLng(36.810444, 128.268556),
+		new daum.maps.LatLng(36.810528, 128.268000),
+		new daum.maps.LatLng(36.810639, 128.267417),
+		new daum.maps.LatLng(36.810639, 128.267028),
+		new daum.maps.LatLng(36.810722, 128.266472),
+		new daum.maps.LatLng(36.810833, 128.266056),
+		new daum.maps.LatLng(36.810944, 128.265444),
+		new daum.maps.LatLng(36.811111, 128.264889),
+		new daum.maps.LatLng(36.811139, 128.264194),
+		new daum.maps.LatLng(36.811361, 128.263556),
+		new daum.maps.LatLng(36.811333, 128.263194),
+		new daum.maps.LatLng(36.811333, 128.262917)
+	//-------------------------------------------------
+		,new daum.maps.LatLng(36.811316, 128.262488)
+		,new daum.maps.LatLng(36.811522, 128.261801)
+		,new daum.maps.LatLng(36.811470, 128.261168)
+		,new daum.maps.LatLng(36.811793, 128.260658)
+		,new daum.maps.LatLng(36.812102, 128.260272)
+		,new daum.maps.LatLng(36.812257, 128.259789)
+		,new daum.maps.LatLng(36.812386, 128.259242)
+		,new daum.maps.LatLng(36.812338, 128.258368)
+		,new daum.maps.LatLng(36.812231, 128.257869)
+	//-------------------------------------------------
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#5AB067', // 선의 색깔입니다
+		strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	   
+		var content = '<div class="button">황장산(2.4km 2시간)</div>';
+		var position = new daum.maps.LatLng(36.81403900291631,128.27811866323722);  
+		var customOverlay = new daum.maps.CustomOverlay({
+			position: position,
+			content: content,
+			xAnchor: 0.3,
+			yAnchor: -0.05
+		});
+
+		// 커스텀 오버레이를 지도에 표시합니다
+		customOverlay.setMap(map);
+
+
+
+		function movepos(x,y){
+			var moveLatLon = new daum.maps.LatLng(x,y);
+			map.panTo(moveLatLon);  
+		}
+		
+		function setLevel(level){
+				map.setLevel(level);
+		}
+		
+
+		$( document ).ready(function() {
+			var myVar = setInterval(function(){ setMap( 36.81503900291631,128.26811866323722  ); clearInterval(myVar); }, 1000);
+		});
+
+		function setMap(x,y){
+			movepos(x,y);  
+			window.setTimeout(function(){ setLevel(5);}, 1000);
+			window.setTimeout(function(){ setLevel(4);}, 2000);
+
+		//--------------------------------------------------
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.812231, 128.257869) );},   3000 );
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.812539, 128.258404) );},   3100 );
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.812616, 128.258715) );},   3200 );
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.813037, 128.259059) );},   3300 );
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.813243, 128.259488) );},   3400 );
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.813527, 128.260228) );},   3500 );
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.813587, 128.260711) );},   3600 );
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.813948, 128.261011) );},   3700 );
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.814162, 128.261655) );},   3800 );
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.814308, 128.262363) );},   3900 );
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.814729, 128.262803) );},   4000 );
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.815150, 128.263200) );},   4100 );
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.815537, 128.263608) );},   4200 );
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.815771, 128.264026) );},   4300 );
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.816063, 128.264509) );},   4400 );
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.816544, 128.264820) );},   4500 );
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.816785, 128.265239) );},   4600 );
+		//--------------------------------------------------
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.817111, 128.265389) );},   4700 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.817444, 128.265306) );},   4800 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.818278, 128.265222) );},   4900 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.818639, 128.265444) );},   5000 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.819194, 128.265917) );},   5100 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.819861, 128.266500) );},   5200 );  
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.820389, 128.266889) );},   5300 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.820250, 128.267361) );},   5400 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.820083, 128.267889) );},   5500 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.819917, 128.268361) );},   5600 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.819667, 128.268694) );},   5700 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.819528, 128.269306) );},   5800 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.819472, 128.269889) );},   5900 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.819361, 128.270444) );},   6000 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.819056, 128.270750) );},   6100 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.818778, 128.271083) );},   6200 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.818444, 128.271389) );},   6300 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.818222, 128.271778) );},   6400 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.817972, 128.272222) );},   6500 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.817806, 128.272694) );},   6600 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.817611, 128.273083) );},   6700 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.817528, 128.273667) );},   6800 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.817472, 128.274194) );},   6900 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.817417, 128.274667) );},   7000 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.817472, 128.275139) );},   7100 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.817528, 128.275639) );},   7200 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.817556, 128.276083) );},   7300 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.817444, 128.276417) );},   7400 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.817261, 128.276448) );},   7500 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.817061, 128.276488) );},   7600 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.816861, 128.276528) );},   7700 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.816511, 128.276528) );},   7800 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.816161, 128.276528) );},   7900 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.815778, 128.276472) );},   8000 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.815472, 128.276500) );},   8100 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.815333, 128.276500) );},   8200 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.815111, 128.276528) );},   8300 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.814806, 128.276861) );},   8400 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.814611, 128.277194) );},   8500 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.814139, 128.277533) );},   8600 );
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.813639, 128.277683) );},   8700 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.813239, 128.277833) );},   8800 );
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.812806, 128.278139) );},   8900 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.812750, 128.278194) );},   9000 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.812389, 128.278028) );},   9100 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.811983, 128.277900) );},   9200 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.811583, 128.277500) );},   9300 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.811194, 128.277667) );},   9400 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.811167, 128.277694) );},   9500 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.811083, 128.277778) );},   9600 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.810944, 128.277444) );},   9700 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.810750, 128.277000) );},   9800 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.810667, 128.276500) );},   9900 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.810444, 128.276028) );},   10000 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.810444, 128.275361) );},   10100 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.810361, 128.274833) );},   10200 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.810417, 128.274167) );},   10300 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.810361, 128.273500) );},   10400 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.810389, 128.272972) );},   10500 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.810333, 128.272361) );},   10600 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.810361, 128.271667) );},   10700 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.810306, 128.270806) );},   10800 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.810444, 128.269944) );},   10900 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.810472, 128.269028) );},   11000 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.810528, 128.268000) );},   11100 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.810639, 128.267028) );},   11200 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.810833, 128.266056) );},   11300 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.811111, 128.264889) );},   11400 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.811361, 128.263556) );},   11500 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.811333, 128.262917) );},   11600 ); 
+		//-------------------------------------------------
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.811316, 128.262488) );},   11700 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.811522, 128.261801) );},   11800 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.811470, 128.261168) );},   11900 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.811793, 128.260658) );},   12000 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.812102, 128.260272) );},   12100 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.812257, 128.259789) );},   12200 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.812386, 128.259242) );},   12300 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.812338, 128.258368) );},   12400 ); 
+			window.setTimeout(function(){ marker.setPosition(new daum.maps.LatLng(36.812231, 128.257869) );},   12500 );
+			window.setTimeout(function(){
+				var content = '<div class="buttonB">안생달(5.6km 4시간 30분)</div>';
+				var position = new daum.maps.LatLng(36.812231, 128.257869);  
+				var customOverlay = new daum.maps.CustomOverlay({
+					position: position,
+					content: content,
+					xAnchor: 0.3,
+					yAnchor: -0.05
+				});
+				customOverlay.setMap(map);
+			}, 12500 );
+		//-------------------------------------------------
+
+			window.setTimeout(function(){
+				var content = '<div class="buttonB">황장산하단(3.4km 2시간 40분)</div>';
+				var position = new daum.maps.LatLng(36.811083, 128.277707); 
+				var customOverlay = new daum.maps.CustomOverlay({
+					position: position,
+					content: content,
+					xAnchor: 0.3,
+					yAnchor: -0.05
+				});
+				customOverlay.setMap(map);
+			}, 9500 );   
+			window.setTimeout(function(){
+				var content = '<div class="buttonB">황장산(3.1km 2시간 30분)</div>';
+				var position = new daum.maps.LatLng(36.812687, 128.278109);  
+				var customOverlay = new daum.maps.CustomOverlay({
+					position: position,
+					content: content,
+					xAnchor: 0.3,
+					yAnchor: -0.05
+				});
+				customOverlay.setMap(map);
+			}, 9000 );   
+			window.setTimeout(function(){
+				var content = '<div class="buttonB">맷등바위(2.7km 2시간 15분)</div>';
+				var position = new daum.maps.LatLng(36.815259, 128.276454);  
+				var customOverlay = new daum.maps.CustomOverlay({
+					position: position,
+					content: content,
+					xAnchor: 0.3,
+					yAnchor: -0.05
+				});
+				customOverlay.setMap(map);
+			}, 8500 );   
+			window.setTimeout(function(){
+				var content = '<div class="buttonB">능선갈림길(2.5km 2시간 5분)</div>';
+				var position = new daum.maps.LatLng(36.816673, 128.276531);  
+				var customOverlay = new daum.maps.CustomOverlay({
+					position: position,
+					content: content,
+					xAnchor: 0.3,
+					yAnchor: -0.05
+				});
+				customOverlay.setMap(map);
+			}, 8000 );   
+			window.setTimeout(function(){
+				var content = '<div class="buttonB">전망대(1.8km 1시간 20분)</div>';
+				var position = new daum.maps.LatLng(36.818547, 128.271264);  
+				var customOverlay = new daum.maps.CustomOverlay({
+					position: position,
+					content: content,
+					xAnchor: 0.3,
+					yAnchor: -0.05
+				});
+				customOverlay.setMap(map);
+			}, 6500 );   
+			window.setTimeout(function(){
+				var content = '<div class="buttonB">작은차갓재(1.3km 50분)</div>';
+				var position = new daum.maps.LatLng(36.820931, 128.265756);  
+				var customOverlay = new daum.maps.CustomOverlay({
+					position: position,
+					content: content,
+					xAnchor: 0.3,
+					yAnchor: -0.05
+				});
+				customOverlay.setMap(map);
+			}, 5300 );  
+		}
+	</script>
+</body>
+</html>

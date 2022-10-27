@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="../../css/style.css">
+<script>
+$(document).ready(function(){
+	var slider_01 =	$('.slider').bxSlider({
+			auto: true,controls: false,autoControls: false,captions: true,
+		});
+		// 클릭시 멈춤 현상 해결 //
+		$(document).on('click','.bx-next, .bx-prev',function() {
+		slider_01.stopAuto();
+		slider_01.startAuto();;
+		});
+		$(document).on('mouseover','.bx-pager, #bx-pager1',function() {
+		slider_01.stopAuto();
+		slider_01.startAuto();
+		});	
+});
+</script>
+</head>
+<body class="popup">
+	<p class="top_tit">송계 자동차야영장</p>
+	<div class="pop_content">
+		<div class="con_photo">
+			<ul class="slider">
+				<li><img src="../../images/contents/resource07_01_01.jpg" alt="" title="송계 자동차야영장01"></li>
+				<li><img src="../../images/contents/resource07_01_02.jpg" alt="" title="송계 자동차야영장02"></li>
+				<li><img src="../../images/contents/resource07_01_03.jpg" alt="" title="송계 자동차야영장03"></li>
+			</ul>
+		</div>
+		<div class="con_info">
+			<p class="sub_tit">야영장 소개</p>
+			<p class="pop_basic">주차와 영지를 1:1로 구성한 자동차야영장으로, 도로변에 있어 접근이 용이하며 맑고 시원한 송계계곡 바로 옆에 위치하고 영봉이 눈앞에 펼쳐져있어 오토캠핑을 선호하는 야영객에게 큰 인기이다.</p>
+			<ul class="list_arr type2">
+				<li>위치 : 송계지구</li>
+				<li>면적 : 14,095(㎡)</li>
+				<li>규모 : 75(동)</li>
+				<li>영지 : 자동차 - 68 /  풀옵션 - 7</li>
+				<li>편의시설 : 전기, 취사장, 화장실</li>
+				<li>이용방법 : 예약제</li>
+				<li>이용기간 : 연중</li>
+				<li>비고 : 91년 주차장으로 조성</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

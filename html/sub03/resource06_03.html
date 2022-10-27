@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="../../css/style.css">
+<script>
+$(document).ready(function(){
+	var slider_01 =	$('.slider').bxSlider({
+			auto: true,controls: false,autoControls: false,captions: true,
+		});
+		// 클릭시 멈춤 현상 해결 //
+		$(document).on('click','.bx-next, .bx-prev',function() {
+		slider_01.stopAuto();
+		slider_01.startAuto();;
+		});
+		$(document).on('mouseover','.bx-pager, #bx-pager1',function() {
+		slider_01.stopAuto();
+		slider_01.startAuto();
+		});	
+});
+</script>
+</head>
+<body class="popup">
+	<p class="top_tit">하늘재역사자연관찰로</p>
+	<div class="pop_content">
+		<div class="con_photo">
+			<ul class="slider">
+				<li><img src="../../images/contents/resource06_04_00.jpg" alt="" title="하늘재역사자연관찰로 안내도" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_04_01.jpg" alt="" title="미륵대원지" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_04_02.jpg" alt="" title="자연관찰로입구" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_04_03.jpg" alt="" title="하늘재 숲 길" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_04_04.jpg" alt="" title="하늘재 데크길" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_04_05.jpg" alt="" title="김연아소나무" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_04_06.jpg" alt="" title="하늘재 흙길" style="height: 535px;width: 655px;"></li>
+				<li><img src="../../images/contents/resource06_04_07.jpg" alt="" title="하늘재 정상 비석" style="height: 535px;width: 655px;"></li>
+			</ul>
+		</div>
+		<div class="con_info">
+			<p class="sub_tit">관찰로 소개</p>
+			<div class="pop_box01 type3" style="height: 450px;">
+				<p class="pop_basic" style="font-size: 18px;font-weight: bold;">이천년의 역사를 간직한 최초의 고갯길, 하늘재</p>
+				<ul class="list_arr type2">
+					<li style="font-size: 18px;font-weight: bold;">거리 : 2.0km/왕복</li>
+					<li style="font-size: 18px;font-weight: bold;">시간 : 2시간 소요</li>
+					<li style="font-size: 18px;font-weight: bold;">위치 : 충주미륵대원지 입구</li>
+					<li style="font-size: 18px;font-weight: bold;">특징 <br>충주미륵대원지 등 유명한 역사유적지 관람, 완만한 숲길을 걷다보면 ‘연아소나무’를 지나 하늘재 정상에서 백두대간 조망가능</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

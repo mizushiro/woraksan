@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.fancybox.js"></script>
+<link rel="stylesheet" href="../../css/jquery.fancybox.css">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/common2.css">
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.fancybox').fancybox();
+	});
+</script>
+<script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=0c39d2727183afcc0e2f6c2edda6ebd7"></script>
+<script type="text/javascript" src="../../js/border.js"></script>
+<style>
+
+	.map_wrap {position:relative;overflow:hidden;width:100%;height:650px; text-align:center;}
+	.radius_border{border:1px solid #919191;border-radius:5px;}     
+	.label {margin-bottom: 96px;}
+	.label * {display: inline-block;vertical-align: top;}
+	.label .left {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
+	.label .center {background: url(http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;}
+	.label .right {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
+	.custom_typecontrol {visibility: hidden;position:absolute;top:200px;overflow:hidden;width:600px;height:400px;margin-left:150px;padding:0;z-index:1;font-size:12px;font-family:'Malgun Gothic', '맑은 고딕', sans-serif;background-color: #3e8e41}
+	.button {
+      display: inline-block;
+	  height:57px;
+	  padding: 5px 20px;
+	  font-size: 20px;
+	  cursor: pointer;
+	  text-align: center;
+	  text-decoration: none;
+	  outline: none;
+	  color: #fff;
+	  background-color: #cc0066;
+	  border: none;
+	  border-radius: 7px;
+	  line-height:25px;
+	  box-shadow:0px 5px 5px rgba(0,0,0,0.3);	  
+	  letter-spacing: 1px;
+	}
+	
+
+	</style>
+</head>
+<body class="bodyfont">
+	<div class="wrap">
+		<div class="lnb bg02">
+			<h1 style="letter-spacing: 3px;">자원보전</h1>
+			<ul>
+				<li><a href="#" onClick=location.href('./sub02_01.html') class="on"    ><span style="letter-spacing: 3px;">자원현황</span></a></li>
+				<li><a href="#" onClick=location.href('./sub02_02.html')><span style="letter-spacing: 3px;">특별보호구</span></a></li>
+				<li><a href="#" onClick=location.href('./sub02_03.html')><span style="letter-spacing: 3px;">생태복원</span></a></li>
+			</ul>
+		</div>
+		<div class="content_box type02">
+			<div class="sub_nav">
+				<ul>
+					<li><a href="#" onClick=location.href('./sub02_01.html')>생물자원</a></li>
+					<li><a href="#" onClick=location.href('./sub02_01_2.html') class="on"> 역사자원</a></li>
+					<li><a href="#" onClick=location.href('./sub02_01_3.html')>경관자원</a></li>
+				</ul>
+			</div>
+			<div class="r_box2">
+				<h2>역사자원</h2>
+				<div class="mapb">
+					<div class="map_area">
+						<div class="map_daum">
+							 <div id="map" style="width:100%;height:720px;"></div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="btn_open"><a href="#;">open</a></div>
+				<div class="tg_box" style="height: 460px;">
+					<div class="list type2">
+						<table>
+							<caption style="font-weight: bold;">역사자원 현황</caption>
+							<colgroup>
+								<col width="10%">
+								<col width="10%">
+								<col width="*">
+							</colgroup>
+							<thead>
+								<tr height=80>
+									<th scope="col"><strong>구분</strong></th>
+									<th scope="col"><strong>수량</strong></th>
+									<th scope="col"><strong>문화자원</strong></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr height=80>
+									<td><strong>보물</strong></td>
+									<td><strong>5</strong></td>
+									<td class="tl"><strong>제천 사자빈신사지 사사자 구층석탑(제94호),   충주 미륵리 오층석탑(제95호), <br>충주 미륵리 석조여래입상(제96호),  제천 덕주사 마애여래입상(제406호),  제천 신륵사 삼층석탑(제1296호)</strong></td>
+								</tr>
+								<tr height=80>
+									<td><strong>사적</strong></td>
+									<td><strong>1</strong></td>
+									<td class="tl"><strong>충주 미륵대원지(제317호)</strong></td>
+								</tr>
+								<tr height=80>
+									<td><strong>명승</strong></td>
+									<td><strong>3</strong></td>
+									<td class="tl"><strong>단양 구담봉(제46호), 제천 옥순봉(제48호), 충주 계립령로 하늘재(제49호)</strong></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="btn_close"><a href="#;">close</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="fm_logo">국립공원</p> 
+		<ul class="nav">
+			<li><a href="#" class="nav01" onClick=location.href('./sub02_01.html')>이전</a></li>
+			<li><a href="#" class="nav02" onClick=location.href('./sub02_01_3.html')>다음</a></li>
+			<li><a href="#" class="nav03" onClick=location.href('../main/main.html')>홈</a></li>
+		</ul>
+	</div>
+	<script>
+    
+    var message='';
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	    mapOption = { 
+			center: new daum.maps.LatLng(36.88508761502684,128.1974791344576), // 지도의 중심좌표
+	        level: 8
+	    };
+	
+	var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+	map.setMapTypeId(daum.maps.MapTypeId.HYBRID);    
+	var mapTypeControl = new daum.maps.MapTypeControl();
+	map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+	var zoomControl = new daum.maps.ZoomControl();
+	map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+    
+
+	// 지도에 표시할 선을 생성합니다
+	var polyline = new daum.maps.Polyline({
+	    path: linePath, // 선을 구성하는 좌표배열 입니다
+	    strokeWeight: 2, // 선의 두께 입니다
+	    strokeColor: '#FF0000', // 선의 색깔입니다
+	    strokeOpacity: 0.5, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+	    strokeStyle: 'solid’' // 선의 스타일입니다
+	});
+
+	// 지도에 선을 표시합니다 
+	polyline.setMap(map);  
+	
+	var linePath = [
+		new daum.maps.LatLng(36.8573,128.0835),
+		new daum.maps.LatLng(36.8673, 128.150246)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_03.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.8573,128.0835); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+
+	
+	var content = '<ul class="position02"><li><a href="resource02_01.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -95px;"><div class="button" style="background-color: #B3248A;"><strong>보물 제94호<br>제천 사자빈신사지 사사자 구층석탑</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.8673, 128.150246);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var linePath = [
+		new daum.maps.LatLng(36.821603, 128.095101),
+		new daum.maps.LatLng(36.821439, 128.023849)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_03.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.821603, 128.095101); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+
+	var content = '<ul class="position02"><li><a href="resource02_02.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -115px;"><div class="button" style="background-color: #B3248A;"><strong>보물 제96호<br>충주 미륵리 석조여래입상</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.821439, 128.023849);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var linePath = [
+		new daum.maps.LatLng(36.822003, 128.095101),
+		new daum.maps.LatLng(36.846439, 128.023849)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_03.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.822003, 128.095101); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+
+	var content = '<ul class="position02"><li><a href="resource02_03.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -115px;"><div class="button" style="background-color: #B3248A;"><strong>보물 제95호<br>충주 미륵리 5층석탑</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.846439, 128.023849);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var linePath = [
+		new daum.maps.LatLng(36.823303, 128.094401),
+		new daum.maps.LatLng(36.871439, 128.023849)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_02.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.823303, 128.094401); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+
+	var content = '<ul class="position02"><li><a href="resource02_04.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -115px;"><div class="button" style="background-color: #2469EE;"><strong>사적 제317호<br>충주미륵대원지</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.871439, 128.023849);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var linePath = [
+		new daum.maps.LatLng(36.8816, 128.0845),
+		new daum.maps.LatLng(36.923503, 128.023849)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_03.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.8816, 128.0845); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+
+	var content = '<ul class="position02"><li><a href="resource02_05.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -115px;"><div class="button" style="background-color: #B3248A;"><strong>보물 제406호<br>제천 덕주사 마애여래입상</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.923503, 128.023849);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var linePath = [
+		new daum.maps.LatLng(36.879247, 128.130246),
+		new daum.maps.LatLng(36.911147, 128.150246)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_03.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.879247, 128.130246); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+
+	var content = '<ul class="position02"><li><a href="resource02_06.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="button" style="background-color: #B3248A;"><strong>보물 제1296호<br>제천 신륵사삼층석탑</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.911147, 128.150246);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var linePath = [
+		new daum.maps.LatLng(36.814747, 128.110946),
+		new daum.maps.LatLng(36.806503, 128.150246)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_04.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.814747, 128.110946); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+
+	var content = '<ul class="position02"><li><a href="resource02_07.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="button" style="background-color: #EE8B24;"><strong>명승 제49호<br>충주 계립령로 하늘재</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.806503, 128.150246);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var linePath = [
+		new daum.maps.LatLng(36.943625, 128.236998),
+		new daum.maps.LatLng(36.948429, 128.204246)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_04.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.943625, 128.236998); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+
+	var content = '<ul class="position02"><li><a href="resource02_08.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -95px;"><div class="button" style="background-color: #EE8B24;"><strong>명승 제48호<br>제천 옥순봉</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.948429, 128.204246);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+
+	var linePath = [
+		new daum.maps.LatLng(36.937593, 128.247077),
+		new daum.maps.LatLng(36.932593, 128.264246)
+	];
+	var polyline = new daum.maps.Polyline({
+		path: linePath, // 선을 구성하는 좌표배열 입니다
+		strokeWeight: 3, // 선의 두께 입니다
+		strokeColor: '#FFFFFF', // 선의 색깔입니다
+		strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		strokeStyle: 'solid' // 선의 스타일입니다
+	});
+	polyline.setMap(map);
+
+	var imageSrc = '../../images/contents/pin_04.png'; // 마커이미지의 주소입니다    
+	var imageSize = new daum.maps.Size(30, 43); // 마커이미지의 크기입니다
+	var imageOption = {offset: new daum.maps.Point(15, 40)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+		  
+	// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+	var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var markerPosition  = new daum.maps.LatLng(36.937593, 128.247077); 
+	var marker = new daum.maps.Marker({
+		position: markerPosition,
+		image: markerImage // 마커이미지 설정
+	});
+	marker.setMap(map);
+
+	var content = '<ul class="position02"><li><a href="resource02_09.html" class="fancybox fancybox.iframe" data-fancybox-group="mygroup2" style="background: none;box-shadow: none;padding: 0px;margin-top: -10px;margin-left: -5px;"><div class="button" style="background-color: #EE8B24;"><strong>명승 제46호<br>단양 구담봉</strong></div></a></li></ul>';
+	var position = new daum.maps.LatLng(36.932593, 128.264246);  
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position,
+	    content: content,
+		clickable : true,
+	    xAnchor: 0.3,
+	    yAnchor: -0.05
+	});
+	customOverlay.setMap(map);
+</script>
+</body>
+</html>

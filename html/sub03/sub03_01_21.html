@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>월악산 국립공원</title>
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/design.js"></script>
+<script src="../../js/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="../../css/style.css">
+<script>
+$(document).ready(function(){
+	var slider_03 =	$('.slider3').bxSlider({
+			auto: true,controls: false,autoControls: true,
+		});
+		// 클릭시 멈춤 현상 해결 //
+		$(document).on('click','.bx-next, .bx-prev',function() {
+		slider_03.stopAuto();
+		slider_03.startAuto();;
+		});
+		$(document).on('mouseover','.bx-pager, #bx-pager1',function() {
+		slider_03.stopAuto();
+		slider_03.startAuto();
+		});	
+	$('.layer_box').hide();
+});
+</script>
+<link rel="stylesheet" href="../../css/common2.css">
+</head>
+<body class="bodyfont">
+	<div class="wrap">
+		<div class="lnb bg03">
+			<h1 style="letter-spacing: 3px;">공원시설</h1>
+			<ul>
+				<li><a href="#" class="on" onClick=location.href('./sub03_01.html')><span style="letter-spacing: 3px;">탐방로</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_02.html')><span style="letter-spacing: 3px;">자연관찰로</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_03.html')><span style="letter-spacing: 3px;">야영장</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_04.html')><span style="letter-spacing: 3px;">주차장</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_06.html')><span style="letter-spacing: 3px;">탐방지원센터</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_05.html')><span style="letter-spacing: 3px;">탐방안내소</span></a></li>
+				<li><a href="#" onClick=location.href('./sub03_07.html')><span style="letter-spacing: 3px;">자원봉사센터</span></a></li>
+			</ul>
+		</div>
+		<div class="content_box">
+			<div class="sub_nav type3">
+				<ul>
+					<li><a href="">영봉탐방로</a></li>
+					<li><a href="">만수봉탐방로</a></li>
+					<li><a href="">북바위산탐방로</a></li>
+					<li><a href="">마패봉.부봉탐방로</a></li>
+					<li><a href="">하늘재.포암산탐방로</a></li>
+					<li><a href="">금수산탐방로</a></li>
+					<li><a href="">가은산탐방로</a></li>
+					<li><a href="">옥순봉.구담봉탐방로</a></li>
+					<li><a href="">제비봉탐방로</a></li>
+					<li><a href="">도락산탐방로</a></li>
+					<li><a href="">황장산탐방로</a></li>
+					<li><a href="" class="on">선암골생태유람길</a></li>
+				</ul>
+			</div>
+			<div class="r_box2 small">
+				<div class="course_list">
+					<ul>
+						<li>
+							<button class="course_name">선암골생태유람코스</button>
+							<a href="#;" class="icon_type course_info" title="course_info01">탐방로</a>
+							<a href="#;" class="icon_type course_photo" title="course_photo01">사진</a>
+						</li>
+					</ul>
+				</div>
+				<div class="map_area">
+					<div class="map_daum"><img src="../../images/contents/map06.jpg" alt=""></div>
+					<!-- S : 탐방로 -->
+					<div class="layer_box" id="course_info01">
+						<p><strong>안생달~황장산~맷등바위~전망대~작은차갓재~와인동굴 코스(5.6km, 4시간 30분, 왕복)<br>2016년에 신규 개방된 백두대간 코스로 100대 명산 중 하나</strong><br>-전망대에 오르면 도락산이 아주 가까이 느껴지며 멀리 소백산, 월악산 영봉까지 조망할 수 있다.<br>-월악산국립공원 문경지구에 처음 만들어진 탐방로이며, 백두대간 2.1km가 포함되어 있다.</p>
+						<div class="course_map"><img src="../../images/contents/course_map21.jpg" alt=""></div>
+						<button class="btn_close2">닫기</button>
+					</div>
+					<!-- E : 탐방로 -->
+					<!-- S : 사진 -->
+					<div class="layer_box" id="course_photo01">
+						<div class="course_photo">
+							<ul class="slider3">
+								<li><img src="../../images/contents/course01_01.jpg" alt=""></li>
+								<li><img src="../../images/contents/course01_01.jpg" alt=""></li>
+								<li><img src="../../images/contents/course01_01.jpg" alt=""></li>
+								<li><img src="../../images/contents/course01_01.jpg" alt=""></li>
+								<li><img src="../../images/contents/course01_01.jpg" alt=""></li>
+							</ul>
+						</div>
+						<button class="btn_close2">닫기</button>
+					</div>
+					<!-- E : 사진 -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="fm_logo">국립공원</p> 
+		<ul class="nav">
+			<li><a href="#" class="nav01">이전</a></li>
+			<li><a href="#" class="nav02">다음</a></li>
+			<li><a href="#" class="nav03">홈</a></li>
+		</ul>
+	</div>
+</body>
+</html>
