@@ -100,9 +100,9 @@ body.main h1 img {height:50px}
 .lh30 {line-height:30px}
 .mb_s {margin-bottom:-15px}
 
-.sub_nav {min-height:66px;padding:14px 40px 14px 40px;margin:-20px 0 20px 0;border-radius:13px}
+.sub_nav {min-height:66px;padding:14px 40px 14px 40px;margin:-20px 0 20px 0;border-radius:8px}
 .sub_nav ul li {float:left;margin-right:10px}
-.sub_nav ul li a {display:block;width:220px;text-align:center;border-radius:7px;height:38px;line-height:34px;color:#fff;padding:0 30px;border:1px solid #fff}
+.sub_nav ul li a {display:block;width:220px;text-align:center;border-radius:4px;height:38px;line-height:34px;color:#fff;padding:0 30px;border:1px solid #fff}
 .sub_nav ul li a.on {background-color:#0397c8;border:2px solid #fff;line-height:32px}
 .sub_nav ul.type2 li a {width:250px}
 .sub_nav.type2 ul li a {width:auto}
@@ -126,10 +126,10 @@ body.main h1 img {height:50px}
 */
 .sub_nav.type3.wide {margin-bottom:20px}
 
-.r_box2 {border-radius:17px;box-shadow:0 5px 7px #9b9b9b;height:859px;padding:33px 40px;background-color:#fff;position:relative;
-	background-image:-moz-linear-gradient(#fff, #dfdfdf);
-	background-image:-webkit-linear-gradient(#fff, #dfdfdf);
-	background-image:linear-gradient(#fff, #dfdfdf);
+.r_box2 {border-radius:12px;box-shadow:0 5px 7px #9b9b9b;height:839px;padding:33px 40px;background-color:#fff;position:relative;
+	background-image:-moz-linear-gradient(#fff, #fef9f0);
+	background-image:-webkit-linear-gradient(#fff, #fef9f0);
+	background-image:linear-gradient(#fff, #fef9f0);
 }
 
 .r_box2.big {height:905px}

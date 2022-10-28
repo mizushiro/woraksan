@@ -56,14 +56,14 @@ textarea {box-sizing:border-box;padding:10px;resize:none;border:1px solid #c4c4c
 ul:after, .wrap:after, .footer:after {display:block;clear:both;content:''}
 .wrap {width:1819px;margin:0 auto;padding-top:30px;background: url(../images/common/bg.jpg) 50% 0 no-repeat;background-size:cover}
 .hidden {display:none}
-.lnb {float:left;width:239px;background-repeat:no-repeat;height:970px;background-position:0 0;padding:20px;border-radius:8px;overflow:hidden}
+.lnb {float:left;width:239px;background-repeat:no-repeat;height:970px;background-position:0 0;padding:20px;border-radius:8px;overflow:hidden;box-shadow:0 5px 5px rgba(0,0,0,.35)}
 .lnb.bg01 {background-image:url('../images/contents/lnb_bg01.jpg')}
 .lnb.bg02 {background-image:url('../images/contents/lnb_bg01.jpg')}
 .lnb.bg03 {background-image:url('../images/contents/lnb_bg01.jpg')}
 .lnb.bg04 {background-image:url('../images/contents/lnb_bg01.jpg')}
 .lnb.bg05 {background-image:url('../images/contents/lnb_bg01.jpg')}
 .lnb.bg06 {background-image:url('../images/contents/lnb_bg01.jpg')}
-.content_box {float:right;width:1550px;height:970px;padding:40px;background-color:rgba(255,255,255,.3);border:2px solid #fff;border-radius:8px}
+.content_box {float:right;width:1550px;height:970px;padding:40px;background-color:rgba(255,255,255,.5);border-radius:8px;box-shadow:0 5px 5px rgba(0,0,0,.35)}
 
 /* lnb */
 .lnb h1 {border:1px solid #fff;border-radius:8px;text-align:center;color:#fff;font-size:28px;height:179px;font-weight:normal;padding-top:31px;margin-bottom:15px;background-color:#c4a76f}
@@ -86,7 +86,7 @@ ul:after, .wrap:after, .footer:after {display:block;clear:both;content:''}
 .lnb.bg06 h1:before {background:url('../images/contents/lnb_i106.png') no-repeat 0 0;width:52px;height:56px;margin-bottom:18px}
 
 /* footer */
-.footer {width:1819px;margin:10px auto;padding:10px 0;background-color:rgba(36,65,81,.85);display:flex;align-items:center;border-radius:8px}
+.footer {width:1819px;margin:10px auto;padding:6px 0;background-color:rgba(36,65,81,.85);display:flex;align-items:center;border-radius:8px;box-shadow:0 5px 5px rgba(0,0,0,.35)}
 .footer .fm_logo {width:180px;height:45px;background:url('../images/common/fm_logo.png') no-repeat 0 0;background-size:100%;overflow:hidden;font-size:0;text-indent:-999px;margin-left:22px}
 .footer .nav {margin-left:auto;display:flex;align-items:center}
 .footer .nav li {}
