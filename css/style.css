@@ -3,16 +3,16 @@
 
 /* main */
 body.main {background:url('../images/main/main_bg.jpg') no-repeat 50% 0;position:relative;height:1080px}
-.cloudbg {height:408px;width:100%;overflow:hidden;position:absolute;background:url('../images/main/cloud.png') no-repeat 50% 0}
-.cloud {background:url('../images/main/cloud2.png') no-repeat 50% 0;height:408px;position:absolute;top:0;left:0;width:100%}
-body.main h1 {text-align:center;position:relative;top:35px;display:none}
+.cloudbg {height:408px;width:100%;overflow:hidden;position:absolute;background:url('../images/main/cloud.png') no-repeat 50% -150px}
+.cloud {background:url('../images/main/cloud2.png') no-repeat 50% 0;height:408px;position:absolute;top:-150px;left:0;width:100%}
+body.main h1 {text-align:left;padding-left:100px;position:relative;top:35px;display:none}
 body.main h1 img {height:50px}
-.main_nav {position:absolute;bottom:115px;left:0;width:100%}
-.main_nav ul {width:1920px;margin:0 auto; height:230px; }
-.main_nav ul li {float:left;width:230px;height:230px;margin:0 22px;display:table}
+.main_nav {position:absolute;bottom:30px;right:0;width:100%;display:flex;justify-content:flex-end}
+.main_nav ul {height:130px;display:flex;align-items:center;gap:12px;width:1000px}
+.main_nav ul li {width:130px;height:130px;display:table}
 .main_nav ul li * {transition:all .2s ease;-webkit-transition:all .2s ease;-moz-transition:all .2s ease}
-.main_nav ul li a {display:Table-cell;vertical-align:middle;text-align:center;font-size:30px;color:#fff;border:7px solid #fff;border-radius:50%;box-shadow:0 15px 15px rgba(0,0,0,.3)}
-.main_nav ul li a:before {display:block;content:'';margin:0 auto}
+.main_nav ul li a {display:Table-cell;vertical-align:middle;text-align:center;font-size:22px;color:#fff;border:5px solid #fff;border-radius:50%;box-shadow:0 15px 15px rgba(0,0,0,.3)}
+.main_nav ul li a:before {display:block;content:'';margin:0 auto 4px;width:36px;height:36px;background-size:contain;background-repeat:no-repeat;background-position:center}
 .main_nav ul li.nav01 a {background-color:#3ca516}
 .main_nav ul li.nav02 a {background-color:#04839b}
 .main_nav ul li.nav03 a {background-color:#4f3e9d}
@@ -20,14 +20,14 @@ body.main h1 img {height:50px}
 .main_nav ul li.nav05 a {background-color:#c92766}
 .main_nav ul li.nav06 a {background-color:#d57227}
 .main_nav ul li.nav07 a {background-color:#F15F5F}
-.main_nav ul li.nav01 a:before {background:url('../images/contents/lnb_i101.png') no-repeat 0 0;width:58px;height:54px;margin-bottom:22px}
-.main_nav ul li.nav02 a:before {background:url('../images/contents/lnb_i102.png') no-repeat 0 0;width:57px;height:56px;margin-bottom:20px}
-.main_nav ul li.nav03 a:before {background:url('../images/contents/lnb_i103.png') no-repeat 0 0;width:62px;height:45px;margin-bottom:26px;margin-top:5px}
-.main_nav ul li.nav04 a:before {background:url('../images/contents/lnb_i104.png') no-repeat 0 0;width:50px;height:50px;margin-bottom:26px}
-.main_nav ul li.nav05 a:before {background:url('../images/contents/lnb_i105.png') no-repeat 0 0;width:44px;height:60px;margin-bottom:16px}
-.main_nav ul li.nav06 a:before {background:url('../images/contents/lnb_i106.png') no-repeat 0 0;width:52px;height:56px;margin-bottom:20px}
-.main_nav ul li.nav07 a:before {background:url('../images/contents/lnb_i107.png') no-repeat 0 0;width:52px;height:56px;margin-bottom:20px}
-.main_nav ul li a:hover {font-size:36px;border:2px solid #fff;background-color:rgba(255,255,255,0.1)}
+.main_nav ul li.nav01 a:before {background-image:url('../images/main/main-icon01.png')}
+.main_nav ul li.nav02 a:before {background-image:url('../images/main/main-icon02.png')}
+.main_nav ul li.nav03 a:before {background-image:url('../images/main/main-icon03.png')}
+.main_nav ul li.nav04 a:before {background-image:url('../images/main/main-icon04.png')}
+.main_nav ul li.nav05 a:before {background-image:url('../images/main/main-icon05.png')}
+.main_nav ul li.nav06 a:before {background-image:url('../images/main/main-icon06.png')}
+.main_nav ul li.nav07 a:before {background-image:url('../images/main/main-icon07.png')}
+.main_nav ul li a:hover {font-size:28px;border:2px solid #fff;background-color:rgba(0,0,0,0.7)}
 .main_nav ul li a:hover:before {display:none}
 
 /* content */
