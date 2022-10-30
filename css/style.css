@@ -32,6 +32,7 @@ body.main h1 img {height:50px}
 
 /* content */
 .r_box {border-radius:12px;background:#fff;box-shadow:0 5px 7px rgba(0,0,0,.15)}
+.r_box.min-h {min-height:100%}
 .r_box + .r_box {margin-top:40px}
 .r_box h2 {/*background:#ccc;*/height:72px;line-height:70px;padding:0 40px;position:relative;color:#fff;font-size:26px;font-weight:normal;border-radius:12px 12px 0 0}
 .r_box h2:after, .r_box2 h2:after {display:block;position:absolute;top:72px;left:54px;content:'';width:24px;height:14px}
@@ -46,7 +47,7 @@ body.main h1 img {height:50px}
 .top_tb dl dd {background:#eee;color:#000;height:36px;line-height:34px;padding:0 18px;margin-bottom:3px;overflow:hidden}
 .maps {position:relative;width:1108px;margin:0 auto}
 .r_box .maps {margin-bottom:-15px}
-.r_box .maps ul li {position:absolute;background:#7e27b0;line-height:22px;color:#fff;font-size:15px;text-align:center;height:58px;width:190px;border-radius:28px;padding-top:6px}
+.r_box .maps ul li {position:absolute;background:#2d4baf;line-height:22px;color:#fff;font-size:15px;text-align:center;height:58px;width:190px;border-radius:28px;padding-top:6px}
 .r_box .maps ul li.p01 {top:54px;left:-2px;background:#c70d65;border-radius:18px;height:35px;line-height:33px;padding-top:0;width:237px;font-size:16px}
 .r_box .maps ul li.p01:after {content:'';display:block;position:absolute;top:35px;left:32px;width:12px;height:11px;background:url('../images/contents/map_point.png') no-repeat 0 0}
 .r_box .maps ul li.p02 {top:400px;left:80px}
@@ -612,3 +613,20 @@ body.popup {background:none;width:auto;min-width:1470px}
 .type04 .tg_box .list table caption {background-color:#2649ef}
 /*.type02 .tg_box .list table caption:after {display:block;position:absolute;top:40px;left:54px;content:'';width:24px;height:14px}*/
 /*.popup.type02 .top_tit {background:#007789;color:#fff}*/
+
+.r_box.layout-flex {height:100%;display:flex;flex-direction:column}
+.r_box.layout-flex h2 {flex-shrink:0}
+.r_box.layout-flex .box-flex {flex:1}
+.box-flex {display:flex}
+.box-flex .map-box {width:40%;position:relative;display:flex;align-items:center;justify-content:center}
+.box-flex .chart-box {width:60%;display:flex;flex-wrap:wrap;gap:40px;padding:80px 60px}
+.box-flex .chart-box .chart-item {width:calc(50% - 20px)}
+.box-flex .chart-box .chart-img {height:280px;border:1px solid #ccc;border-radius:8px}
+.box-flex .chart-box .chart-title {display:flex;align-items:center;justify-content:center;height:40px;border-radius:8px;background-color:#32a505;color:#fff;font-size:20px;margin-top:8px}
+.box-flex .map-box ul li {position:absolute;background:#2d4baf;line-height:22px;color:#fff;font-size:20px;text-align:center;height:58px;width:190px;border-radius:28px;padding-top:6px}
+.box-flex .map-box ul li.p01 {top:50px;left:40px;background:#c70d65;border-radius:10px;height:50px;line-height:48px;padding-top:0;width:260px;font-size:22px}
+.box-flex .map-box ul li.p01:after {content:'';display:block;position:absolute;bottom:-11px;left:32px;width:12px;height:11px;background:url('../images/contents/map_point.png') no-repeat 0 0}
+.box-flex .map-box ul li.p02 {top:70px;left:420px}
+.box-flex .map-box ul li.p03 {top:210px;left:130px}
+.box-flex .map-box ul li.p04 {top:370px;left:40px}
+.box-flex .map-box ul li.p05 {top:480px;left:340px}
